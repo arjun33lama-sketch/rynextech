@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blog &amp; Insights — Rynex Tech</title>
 <meta name="description" content="Practical notes, architectural insights and guides on offshore development, AI engineering and Japan-Nepal collaboration.">
@@ -33,126 +34,178 @@
 <div id="rx-header"></div>
 
 <main>
-  <!-- Hero Section -->
-  <section class="blog-hero">
+  <!-- Hero Section matching site-wide standard hero -->
+  <section class="hero phero">
     <div class="w">
-      <div class="crumb">
+      <div class="crumb" aria-label="Breadcrumb" data-rx-aria-en="Breadcrumb" data-rx-aria-ja="パンくずリスト">
         <a href="index.html" data-rx-en="Home" data-rx-ja="ホーム">Home</a>
-        <span aria-hidden="true">›</span>
-        <b data-rx-en="Blog" data-rx-ja="ブログ">Blog</b>
+        <i>/</i>
+        <b data-rx-en="Blog &amp; Insights" data-rx-ja="ブログ・知見">Blog &amp; Insights</b>
       </div>
       <span class="eyebrow" data-rx-en="Insights &amp; Engineering Notes" data-rx-ja="知見とエンジニアリングノート">Insights &amp; Engineering Notes</span>
-      <h1 data-rx-en="Thoughts on building software &lt;em&gt;across borders.&lt;/em&gt;" data-rx-ja="国境を越えた&lt;em&gt;ソフトウェア開発&lt;/em&gt;の現場から。" data-rx-html>Thoughts on building software <em>across borders.</em></h1>
+      <h1 data-rx-en="Thoughts on building software <em>across borders.</em>" data-rx-ja="国境を越えた<em>ソフトウェア開発</em>の現場から。" data-rx-html>Thoughts on building software <em>across borders.</em></h1>
       <p class="lead" data-rx-en="Practical guides, architecture decisions, and operational lessons from our Kathmandu and Tokyo engineering teams." data-rx-ja="カトマンズと東京のエンジニアリングチームが、現場での実践やアーキテクチャの判断から得た知見と教訓をお届けします。">Practical guides, architecture decisions, and operational lessons from our Kathmandu and Tokyo engineering teams.</p>
+      <div class="cta">
+        <a class="btn p" href="index.html#contact" data-quote data-rx-en="Request a Quote" data-rx-ja="お見積り依頼">Request a Quote</a>
+        <a class="btn" href="index.html" data-rx-en="← Back to home" data-rx-ja="← ホームに戻る">← Back to home</a>
+      </div>
     </div>
   </section>
 
-  <div class="w">
-    <!-- Featured Article Spotlight -->
-    <a class="featured-post" href="how-to-evaluate-ai-tools-objectively.html" aria-label="Featured article: How to Evaluate AI Tools Objectively">
-      <div class="f-img">
-        <img src="images/ai-assisted-senior-review.jpg" width="1200" height="675" decoding="async" fetchpriority="high" alt="Senior engineer conducting an objective architectural evaluation of AI-assisted tools and developer workflows">
-      </div>
-      <div class="f-content">
-        <span class="f-tag" data-rx-en="Featured · AI &amp; Engineering Advisory" data-rx-ja="注目記事 · AI・エンジニアリング助言">Featured · AI &amp; Engineering Advisory</span>
-        <h2 data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</h2>
-        <p data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a 3-step in-house pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4種類の証拠、公開レーティングの6つの検証テスト、そして自社パイロットの実施手順。">Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a 3-step in-house pilot protocol.</p>
-        <div class="f-meta">
-          <span data-rx-en="May 26, 2026" data-rx-ja="2026年5月26日">May 26, 2026</span>
-          <span aria-hidden="true">·</span>
-          <span data-rx-en="8 min read" data-rx-ja="読了目安 8分">8 min read</span>
-          <span aria-hidden="true">·</span>
-          <span style="color:var(--acc);font-weight:600;" data-rx-en="Read article →" data-rx-ja="記事を読む →">Read article →</span>
+  <!-- Main Blog Articles Section -->
+  <section class="blog-sec" id="articles">
+    <div class="w">
+      <!-- Featured Article Spotlight -->
+      <a class="featured-post" href="how-to-evaluate-ai-tools-objectively.html" aria-label="Featured article: How to Evaluate AI Tools Objectively">
+        <div class="f-img">
+          <img src="images/ai-assisted-senior-review.jpg" width="1200" height="675" decoding="async" fetchpriority="high" alt="Senior engineer conducting an objective architectural evaluation of AI-assisted tools and developer workflows">
+        </div>
+        <div class="f-content">
+          <span class="f-tag" data-rx-en="Featured · AI &amp; Engineering Advisory" data-rx-ja="注目記事 · AI・エンジニアリング助言">Featured · AI &amp; Engineering Advisory</span>
+          <h2 data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</h2>
+          <p data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a 3-step in-house pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4種類の証拠、公開レーティングの6つの検証テスト、そして自社パイロットの実施手順。">Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a 3-step in-house pilot protocol.</p>
+          <div class="f-meta">
+            <span class="f-author">
+              <img src="images/clients/founder.jpg" alt="Rikesh Bhattarai" width="26" height="26" loading="lazy">
+              <span>Rikesh Bhattarai</span>
+            </span>
+            <span aria-hidden="true">·</span>
+            <span data-rx-en="CEO &amp; AI Advisory Lead" data-rx-ja="代表取締役・AI助言責任者">CEO &amp; AI Advisory Lead</span>
+            <span style="color:var(--acc);font-weight:600;margin-left:auto;" data-rx-en="Read article →" data-rx-ja="記事を読む →">Read article →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Category Filter Tabs & Real-time Search -->
+      <div class="blog-filter-bar">
+        <div class="category-tabs" id="cat-tabs" role="tablist" aria-label="Article categories">
+          <button type="button" class="active" data-cat="all" data-rx-en="All Articles (4)" data-rx-ja="すべての記事 (4)">All Articles (4)</button>
+          <button type="button" data-cat="ai" data-rx-en="AI &amp; Technology (2)" data-rx-ja="AI・テクノロジー (2)">AI &amp; Technology (2)</button>
+          <button type="button" data-cat="dev" data-rx-en="Software Engineering (2)" data-rx-ja="ソフトウェア開発 (2)">Software Engineering (2)</button>
+          <button type="button" data-cat="collaboration" data-rx-en="Cross-border Teams (2)" data-rx-ja="国境を越えた協業 (2)">Cross-border Teams (2)</button>
+        </div>
+        <div class="blog-search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="search" id="blog-search" placeholder="Search articles…" aria-label="Search articles" data-rx-ph-en="Search articles…" data-rx-ph-ja="記事を検索…">
         </div>
       </div>
-    </a>
 
-    <!-- Category Tabs & Live Search -->
-    <div class="blog-filter-bar">
-      <div class="category-tabs" id="cat-tabs" role="tablist" aria-label="Article categories">
-        <button type="button" class="active" data-cat="all" data-rx-en="All Articles" data-rx-ja="すべての記事">All Articles</button>
-        <button type="button" data-cat="ai" data-rx-en="AI &amp; Technology" data-rx-ja="AI・テクノロジー">AI &amp; Technology</button>
-        <button type="button" data-cat="dev" data-rx-en="Software Engineering" data-rx-ja="ソフトウェア開発">Software Engineering</button>
-        <button type="button" data-cat="collaboration" data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</button>
+      <!-- 4 Blog Detail Cards in Balanced 2x2 Grid -->
+      <div class="blog-grid" id="blog-posts-grid">
+        <!-- Article 1: How to Evaluate AI Tools Objectively -->
+        <article class="blog-card" data-cat="ai dev" data-keywords="ai evaluation tools prompt benchmark pilot sweet test saas models rikesh bhattarai">
+          <div class="card-thumb">
+            <a href="how-to-evaluate-ai-tools-objectively.html" tabindex="-1" aria-hidden="true">
+              <img src="images/ai-assisted-senior-review.jpg" loading="lazy" decoding="async" alt="How to Evaluate AI Tools Objectively">
+            </a>
+          </div>
+          <div class="card-body">
+            <span class="card-cat" data-rx-en="AI &amp; Technology" data-rx-ja="AI・テクノロジー">AI &amp; Technology</span>
+            <h3><a href="how-to-evaluate-ai-tools-objectively.html" data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</a></h3>
+            <p data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and our step-by-step pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4種類の証拠、公開レーティングの6つの検証テスト、自社パイロットの進め方。">Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a step-by-step pilot protocol.</p>
+            <div class="card-author-row">
+              <img src="images/clients/founder.jpg" alt="Rikesh Bhattarai" width="28" height="28" loading="lazy">
+              <span class="name">Rikesh Bhattarai</span>
+              <span aria-hidden="true">·</span>
+              <span data-rx-en="CEO &amp; AI Advisory Lead" data-rx-ja="代表取締役・AI助言責任者">CEO &amp; AI Advisory Lead</span>
+            </div>
+            <div class="card-footer">
+              <a class="read-more" href="how-to-evaluate-ai-tools-objectively.html" data-rx-en="Read article →" data-rx-ja="記事を読む →">Read article →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2: Setting Up a Nepal Offshore Development Center -->
+        <article class="blog-card" data-cat="dev collaboration" data-keywords="offshore development center nepal kathmandu dedicated team squad cost guide kushal giri legal ip">
+          <div class="card-thumb">
+            <a href="setting-up-nepal-offshore-development-center.html" tabindex="-1" aria-hidden="true">
+              <img src="images/nepal-development-center.jpg" loading="lazy" decoding="async" alt="Setting Up a Nepal Offshore Development Center: A Practical Guide">
+            </a>
+          </div>
+          <div class="card-body">
+            <span class="card-cat" data-rx-en="Cross-border Teams · Strategy" data-rx-ja="国境を越えた協業 · 開発戦略">Cross-border Teams · Strategy</span>
+            <h3><a href="setting-up-nepal-offshore-development-center.html" data-rx-en="Setting Up a Nepal Offshore Development Center: A Practical Guide" data-rx-ja="ネパールにオフショア開発センターを設ける：実践ガイド">Setting Up a Nepal Offshore Development Center: A Practical Guide</a></h3>
+            <p data-rx-en="When a dedicated development center beats one-off project outsourcing, how to manage cross-border squads, and what budget expectations look like." data-rx-ja="単発の外注ではなく専任開発センターを設立すべきタイミング、国境を越えたチームの運営手法、費用の考え方についての完全ガイド。">When a dedicated development center beats one-off project outsourcing, how to manage cross-border squads, and what budget expectations look like.</p>
+            <div class="card-author-row">
+              <img src="images/clients/kushal.jpeg" alt="Kushal Giri" width="28" height="28" loading="lazy">
+              <span class="name">Kushal Giri</span>
+              <span aria-hidden="true">·</span>
+              <span data-rx-en="Managing Director, Japan" data-rx-ja="日本担当取締役">Managing Director, Japan</span>
+            </div>
+            <div class="card-footer">
+              <a class="read-more" href="setting-up-nepal-offshore-development-center.html" data-rx-en="Read article →" data-rx-ja="記事を読む →">Read article →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3: Japan–Nepal Collaboration -->
+        <article class="blog-card" data-cat="collaboration" data-keywords="japan nepal collaboration cross-border offshore culture time-zone agreement kushal giri">
+          <div class="card-thumb">
+            <a href="blog-japan-nepal-collaboration.html" tabindex="-1" aria-hidden="true">
+              <img src="images/japan-nepal-collaboration.jpg" loading="lazy" decoding="async" alt="Japan–Nepal Collaboration: What We Learned Along the Way">
+            </a>
+          </div>
+          <div class="card-body">
+            <span class="card-cat" data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</span>
+            <h3><a href="blog-japan-nepal-collaboration.html" data-rx-en="Japan–Nepal Collaboration: What We Learned Along the Way" data-rx-ja="日本とネパールの協業：現場で学んだこと">Japan–Nepal Collaboration: What We Learned Along the Way</a></h3>
+            <p data-rx-en="Practical lessons on running software projects between Tokyo and Kathmandu: how agreement is expressed, scheduling across time zones, documentation, and mutual trust." data-rx-ja="東京とカトマンズを結ぶソフトウェア開発の実銭的な学び。合意の示し方、時差を考慮したスケジュール、ドキュメントの共通化、現地駐在について。">Practical lessons on running software projects between Tokyo and Kathmandu: how agreement is expressed, scheduling across time zones, documentation, and mutual trust.</p>
+            <div class="card-author-row">
+              <img src="images/clients/kushal.jpeg" alt="Kushal Giri" width="28" height="28" loading="lazy">
+              <span class="name">Kushal Giri</span>
+              <span aria-hidden="true">·</span>
+              <span data-rx-en="Managing Director, Japan" data-rx-ja="日本担当取締役">Managing Director, Japan</span>
+            </div>
+            <div class="card-footer">
+              <a class="read-more" href="blog-japan-nepal-collaboration.html" data-rx-en="Read article →" data-rx-ja="記事を読む →">Read article →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4: How AI-Assisted, Senior-Led Teams Deliver Faster Offshore -->
+        <article class="blog-card" data-cat="ai dev" data-keywords="claude code ai offshore delivery scrum senior architecture speed budget prabesh thapa rikesh bhattarai">
+          <div class="card-thumb">
+            <a href="ai-assisted-senior-led-teams-deliver-faster.html" tabindex="-1" aria-hidden="true">
+              <img src="images/offshore-development.jpg" loading="lazy" decoding="async" alt="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore">
+            </a>
+          </div>
+          <div class="card-body">
+            <span class="card-cat" data-rx-en="Software Engineering · AI Delivery" data-rx-ja="ソフトウェア開発 · AIデリバリー">Software Engineering · AI Delivery</span>
+            <h3><a href="ai-assisted-senior-led-teams-deliver-faster.html" data-rx-en="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore" data-rx-ja="AI活用×シニア主導のチームがオフショアで速く届ける理由">How AI-Assisted, Senior-Led Teams Deliver Faster Offshore</a></h3>
+            <p data-rx-en="A deep look at the day-to-day workflow behind our AI-accelerated builds: how senior engineers direct architecture while AI handles boilerplate and repetitive tasks." data-rx-ja="AIを活用した開発プロセスの実際：シニアエンジニアがアーキテクチャを統括し、AIが定型コードを高速生成することで工期を短縮する手法。">A deep look at the day-to-day workflow behind our AI-accelerated builds: how senior engineers direct architecture while AI handles boilerplate and repetitive tasks.</p>
+            <div class="card-author-row">
+              <img src="images/clients/founder.jpg" alt="Rikesh Bhattarai" width="28" height="28" loading="lazy">
+              <span class="name">Rikesh Bhattarai</span>
+              <span aria-hidden="true">·</span>
+              <span data-rx-en="CEO &amp; Managing Director" data-rx-ja="代表取締役">CEO &amp; Managing Director</span>
+            </div>
+            <div class="card-footer">
+              <a class="read-more" href="ai-assisted-senior-led-teams-deliver-faster.html" data-rx-en="Read article →" data-rx-ja="記事を読む →">Read article →</a>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="blog-search-box">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input type="search" id="blog-search" placeholder="Search articles…" aria-label="Search articles" data-rx-ph-en="Search articles…" data-rx-ph-ja="記事を検索…">
+
+      <!-- Empty state when search produces no matches -->
+      <div id="no-articles" class="no-results" style="display:none;" data-rx-en="No articles found matching your criteria." data-rx-ja="条件に一致する記事が見つかりませんでした。">
+        No articles found matching your criteria.
       </div>
     </div>
+  </section>
 
-    <!-- Articles Grid -->
-    <div class="blog-grid" id="blog-posts-grid">
-      <!-- Article 1: How to Evaluate AI Tools Objectively -->
-      <article class="blog-card" data-cat="ai" data-keywords="ai evaluation tools prompt benchmark pilot sweet test saas models">
-        <div class="card-thumb">
-          <img src="images/ai-assisted-senior-review.jpg" loading="lazy" decoding="async" alt="How to Evaluate AI Tools Objectively">
+  <!-- Consultation / Work With Us Callout Banner (Matching Other Pages) -->
+  <section class="blog-cta-sec">
+    <div class="w">
+      <div class="blog-cta-box">
+        <span class="eyebrow" data-rx-en="Work with us" data-rx-ja="ご相談・協業">Work with us</span>
+        <h2 data-rx-en="Have a software project in mind?" data-rx-ja="ソフトウェア開発のご相談はこちら">Have a software project in mind?</h2>
+        <p class="lead" data-rx-en="Whether you need an AI tool pilot, a dedicated offshore squad in Kathmandu, or senior architecture advisory in Tokyo, our engineers are ready to help." data-rx-ja="AIツールのパイロット検証から、カトマンズの専任オフショアチーム組成、東京での技術顧問まで、お気軽にご相談ください。">Whether you need an AI tool pilot, a dedicated offshore squad in Kathmandu, or senior architecture advisory in Tokyo, our engineers are ready to help.</p>
+        <div class="cta">
+          <a class="btn p" href="index.html#contact" data-quote data-rx-en="Request a Quote" data-rx-ja="お見積り依頼">Request a Quote</a>
+          <a class="btn" href="services.html" data-rx-en="Explore Our Services →" data-rx-ja="サービス一覧を見る →">Explore Our Services →</a>
         </div>
-        <div class="card-body">
-          <span class="card-cat" data-rx-en="AI &amp; Technology" data-rx-ja="AI・テクノロジー">AI &amp; Technology</span>
-          <h3><a href="how-to-evaluate-ai-tools-objectively.html" data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</a></h3>
-          <p data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a step-by-step pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4種類の証拠、公開レーティングの6つの検証テスト、自社パイロットの進め方。">Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a step-by-step pilot protocol.</p>
-          <div class="card-footer">
-            <span data-rx-en="May 26, 2026 · 8 min read" data-rx-ja="2026年5月26日 · 8分">May 26, 2026 · 8 min read</span>
-            <a class="read-more" href="how-to-evaluate-ai-tools-objectively.html" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Article 2: Japan-Nepal Collaboration -->
-      <article class="blog-card" data-cat="collaboration" data-keywords="japan nepal collaboration cross-border offshore culture time-zone agreement">
-        <div class="card-thumb">
-          <img src="images/japan-nepal-collaboration.jpg" loading="lazy" decoding="async" alt="Japan–Nepal Collaboration: What We Learned Along the Way">
-        </div>
-        <div class="card-body">
-          <span class="card-cat" data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</span>
-          <h3><a href="blog-japan-nepal-collaboration.html" data-rx-en="Japan–Nepal Collaboration: What We Learned Along the Way" data-rx-ja="日本とネパールの協業：現場で学んだこと">Japan–Nepal Collaboration: What We Learned Along the Way</a></h3>
-          <p data-rx-en="Practical lessons on running software projects between Japan and Nepal: how agreement is expressed, scheduling across time zones, documentation, on-site embeds and partnership." data-rx-ja="日本とネパールをまたぐソフトウェア開発の実践的な学び。合意の示し方、時差を考慮したスケジュール、ドキュメントの共通化、現地駐在について。">Practical lessons on running software projects between Japan and Nepal: how agreement is expressed, scheduling across time zones, documentation, on-site embeds and partnership.</p>
-          <div class="card-footer">
-            <span data-rx-en="May 26, 2026 · 6 min read" data-rx-ja="2026年5月26日 · 6分">May 26, 2026 · 6 min read</span>
-            <a class="read-more" href="blog-japan-nepal-collaboration.html" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Article 3: AI-Assisted, Senior-Led Teams -->
-      <article class="blog-card" data-cat="ai dev" data-keywords="claude code ai offshore delivery scrum senior architecture speed budget">
-        <div class="card-thumb">
-          <img src="images/offshore-development.jpg" loading="lazy" decoding="async" alt="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore">
-        </div>
-        <div class="card-body">
-          <span class="card-cat" data-rx-en="Software Engineering" data-rx-ja="ソフトウェア開発">Software Engineering</span>
-          <h3><a href="how-to-evaluate-ai-tools-objectively.html#senior-review" data-rx-en="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore" data-rx-ja="AI活用×シニア主導のチームがオフショアで速く届ける理由">How AI-Assisted, Senior-Led Teams Deliver Faster Offshore</a></h3>
-          <p data-rx-en="A deep look at the day-to-day workflow behind our AI-accelerated builds: how senior engineers direct architecture while AI handles boilerplate and repetitive tasks." data-rx-ja="AIを活用した開発プロセスの実際：シニアエンジニアがアーキテクチャを統括し、AIが定型コードを高速生成することで工期を短縮する手法。">A deep look at the day-to-day workflow behind our AI-accelerated builds: how senior engineers direct architecture while AI handles boilerplate and repetitive tasks.</p>
-          <div class="card-footer">
-            <span data-rx-en="May 26, 2026 · 12 min read" data-rx-ja="2026年5月26日 · 12分">May 26, 2026 · 12 min read</span>
-            <a class="read-more" href="how-to-evaluate-ai-tools-objectively.html#senior-review" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Article 4: Setting Up a Nepal Offshore Development Center -->
-      <article class="blog-card" data-cat="dev collaboration" data-keywords="offshore development center nepal kathmandu dedicated team squad cost guide">
-        <div class="card-thumb">
-          <img src="images/nepal-development-center.jpg" loading="lazy" decoding="async" alt="Setting Up a Nepal Offshore Development Center: A Practical Guide">
-        </div>
-        <div class="card-body">
-          <span class="card-cat" data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</span>
-          <h3><a href="services.html#offshore" data-rx-en="Setting Up a Nepal Offshore Development Center: A Practical Guide" data-rx-ja="ネパールにオフショア開発センターを設ける：実践ガイド">Setting Up a Nepal Offshore Development Center: A Practical Guide</a></h3>
-          <p data-rx-en="When a dedicated development center beats one-off project outsourcing, how to manage cross-border squads, and what budget expectations look like." data-rx-ja="単発の外注ではなく専任開発センターを設立すべきタイミング、国境を越えたチームの運営手法、費用の考え方についての完全ガイド。">When a dedicated development center beats one-off project outsourcing, how to manage cross-border squads, and what budget expectations look like.</p>
-          <div class="card-footer">
-            <span data-rx-en="May 26, 2026 · 11 min read" data-rx-ja="2026年5月26日 · 11分">May 26, 2026 · 11 min read</span>
-            <a class="read-more" href="services.html#offshore" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
-
-    <!-- Empty state -->
-    <div id="no-articles" class="no-results" style="display:none;" data-rx-en="No articles found matching your criteria." data-rx-ja="条件に一致する記事が見つかりませんでした。">
-      No articles found matching your criteria.
-    </div>
-  </div>
+  </section>
 </main>
 
 <div id="rx-footer"></div>

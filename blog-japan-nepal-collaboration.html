@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Japan–Nepal Collaboration: What We Learned Along the Way — Rynex Tech</title>
 <meta name="description" content="Practical lessons on running software projects between Japan and Nepal: how agreement is expressed, scheduling across time zones, documentation, on-site embeds and partnership.">
@@ -58,10 +59,6 @@
             <span class="post-author-name">Kushal Giri</span>
             <div class="post-author-sub">
               <span data-rx-en="Managing Director, Japan" data-rx-ja="日本担当取締役">Managing Director, Japan</span>
-              <span aria-hidden="true">·</span>
-              <time datetime="2026-05-26" data-rx-en="May 26, 2026" data-rx-ja="2026年5月26日">May 26, 2026</time>
-              <span aria-hidden="true">·</span>
-              <span data-rx-en="6 min read" data-rx-ja="読了目安 6分">6 min read</span>
             </div>
           </div>
         </div>
@@ -84,6 +81,17 @@
       </figure>
 
       <p class="lead" data-rx-en="Building software across Japan and Nepal works best when both sides agree on a few simple habits. These are the lessons that matter most, and the ones that, left alone, quietly cause the most damage." data-rx-ja="日本とネパールにまたがるソフトウェア開発は、双方がいくつかのシンプルな習慣に合意しているときに最もうまくいきます。ここでは特に大切な学びと、放っておくと静かに影響が広がる落とし穴をまとめます。">Building software across Japan and Nepal works best when both sides agree on a few simple habits. These are the lessons that matter most, and the ones that, left alone, quietly cause the most damage.</p>
+
+      <!-- Executive Takeaways Card -->
+      <div class="takeaway-card">
+        <h3 data-rx-en="Executive Takeaways" data-rx-ja="要点のまとめ">Executive Takeaways</h3>
+        <ul>
+          <li data-rx-en="&lt;strong&gt;Clarify commitments in writing:&lt;/strong&gt; End every planning meeting with a same-day written decision summary to prevent misunderstandings between 「はい」 and firm commitments." data-rx-ja="&lt;strong&gt;合意事項を文章で即日確定：&lt;/strong&gt;会議での「はい」のニュアンスの違いによる手戻りを防ぐため、決定事項と担当者を当日中に文書化して相互確認します。" data-rx-html><strong>Clarify commitments in writing:</strong> End every planning meeting with a same-day written decision summary to prevent misunderstandings between 「はい」 and firm commitments.</li>
+          <li data-rx-en="&lt;strong&gt;Respect the golden overlap window:&lt;/strong&gt; Nepal is 3 hours 15 minutes behind Japan year-round. Group meetings thrive between 13:00–17:00 JST (09:45–13:45 NPT), leaving mornings and late afternoons for deep focus." data-rx-ja="&lt;strong&gt;黄金の協業コアタイム：&lt;/strong&gt;日本とネパールの時差は通年で3時間15分。全体会議は日本時間13:00〜17:00（ネパール09:45〜13:45）に設定し、残りの時間は集中作業にあてます。" data-rx-html><strong>Respect the golden overlap window:</strong> Nepal is 3 hours 15 minutes behind Japan year-round. Group meetings thrive between 13:00–17:00 JST (09:45–13:45 NPT), leaving mornings and late afternoons for deep focus.</li>
+          <li data-rx-en="&lt;strong&gt;ADRs and Runbooks replace hallway chatter:&lt;/strong&gt; Distributed teams cannot rely on informal office chat. Architecture Decision Records, runbooks, and blameless postmortems build institutional memory." data-rx-ja="&lt;strong&gt;雑談に代わるドキュメント文化：&lt;/strong&gt;オフィスでの何気ない会話ができない分散環境では、ADR（アーキテクチャ決定記録）やランブック、再発防止ポストモーテムが不可欠です。" data-rx-html><strong>ADRs and Runbooks replace hallway chatter:</strong> Distributed teams cannot rely on informal office chat. Architecture Decision Records, runbooks, and blameless postmortems build institutional memory.</li>
+          <li data-rx-en="&lt;strong&gt;Treat teams as long-term partners, not cost centers:&lt;/strong&gt; Purely transactional outsourcing turns differences into friction; true ownership and aligned goals turn them into velocity." data-rx-ja="&lt;strong&gt;外注ではなく対等なパートナーシップ：&lt;/strong&gt;単なるコスト削減の下請けとして扱うと摩擦が生じますが、共通の成果を目指す仲間として接することで強固な推進力が生まれます。" data-rx-html><strong>Treat teams as long-term partners, not cost centers:</strong> Purely transactional outsourcing turns differences into friction; true ownership and aligned goals turn them into velocity.</li>
+        </ul>
+      </div>
 
       <!-- Section 1 -->
       <section id="yes">
@@ -114,6 +122,41 @@
           <li data-rx-en="&lt;strong&gt;Postmortems:&lt;/strong&gt; Written after every production incident, focused on blameless learning and preventative action." data-rx-ja="&lt;strong&gt;ポストモーテム：&lt;/strong&gt;本番障害のたびに作成し、責任追及ではなく再発防止と学びに焦点を当てる。" data-rx-html><strong>Postmortems:</strong> Written after every production incident, focused on blameless learning and preventative action.</li>
         </ul>
         <p data-rx-en="Setting aside protected writing time each week, and reviewing the output at the next stand-up, costs a small share of engineering capacity. It pays back through faster onboarding and calmer incident response." data-rx-ja="毎週ドキュメントを書く時間を確保し、次のスタンドアップでレビューする。開発の稼働のごく一部を使いますが、オンボーディングの短縮や落ち着いた障害対応という形で十分に見合います。">Setting aside protected writing time each week, and reviewing the output at the next stand-up, costs a small share of engineering capacity. It pays back through faster onboarding and calmer incident response.</p>
+
+        <!-- Operational Comparison Table -->
+        <div class="table-responsive">
+          <table class="rubric-table">
+            <thead>
+              <tr>
+                <th data-rx-en="Collaboration Area" data-rx-ja="協業領域">Collaboration Area</th>
+                <th data-rx-en="Common Trap (Transactional)" data-rx-ja="ありがちな落とし穴（受託下請け型）">Common Trap (Transactional)</th>
+                <th data-rx-en="Rynex High-Trust Protocol" data-rx-ja="Rynexの実践プロトコル（信頼構築型）">Rynex High-Trust Protocol</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-rx-en="&lt;strong&gt;Meeting Agreement&lt;/strong&gt;" data-rx-ja="&lt;strong&gt;会議での合意&lt;/strong&gt;" data-rx-html><strong>Meeting Agreement</strong></td>
+                <td data-rx-en="Assuming verbal nods mean unambiguous contract commitments." data-rx-ja="口頭での相槌や「はい」をそのまま確実な合意と誤解する。">Assuming verbal nods mean unambiguous contract commitments.</td>
+                <td data-rx-en="Same-day written decision briefs with explicit sign-off." data-rx-ja="当日中に決定事項と担当者を箇条書きで文章化し、双方が確認。">Same-day written decision briefs with explicit sign-off.</td>
+              </tr>
+              <tr>
+                <td data-rx-en="&lt;strong&gt;Time-zone Alignment&lt;/strong&gt;" data-rx-ja="&lt;strong&gt;時差の運用&lt;/strong&gt;" data-rx-html><strong>Time-zone Alignment</strong></td>
+                <td data-rx-en="Unscheduled ad-hoc calls forcing early/late off-hours work." data-rx-ja="突発的な会議を頻発させ、早朝や深夜の無理な稼働を強いる。">Unscheduled ad-hoc calls forcing early/late off-hours work.</td>
+                <td data-rx-en="Fixed overlap window (13:00–17:00 JST) with protected morning deep work." data-rx-ja="13:00〜17:00（日本時間）を協業帯とし、午前は集中開発に保護。">Fixed overlap window (13:00–17:00 JST) with protected morning deep work.</td>
+              </tr>
+              <tr>
+                <td data-rx-en="&lt;strong&gt;Documentation&lt;/strong&gt;" data-rx-ja="&lt;strong&gt;ドキュメント管理&lt;/strong&gt;" data-rx-html><strong>Documentation</strong></td>
+                <td data-rx-en="Scattered Slack threads with tacit knowledge locked in heads." data-rx-ja="Slackやチャットの断片的なやりとりのみで暗黙知が放置される。">Scattered Slack threads with tacit knowledge locked in heads.</td>
+                <td data-rx-en="Versioned ADRs, operational runbooks, and blameless incident reviews." data-rx-ja="Git管理のADR、標準運用手順書（ランブック）、ポストモーテム。">Versioned ADRs, operational runbooks, and blameless incident reviews.</td>
+              </tr>
+              <tr>
+                <td data-rx-en="&lt;strong&gt;Production Releases&lt;/strong&gt;" data-rx-ja="&lt;strong&gt;本番リリース&lt;/strong&gt;" data-rx-html><strong>Production Releases</strong></td>
+                <td data-rx-en="Friday afternoon deploys that create cross-border weekend panic." data-rx-ja="金曜午後のデプロイで、週末に緊急対応が発生する。">Friday afternoon deploys that create cross-border weekend panic.</td>
+                <td data-rx-en="Tuesday/Wednesday early slot in shared hours with automated rollback." data-rx-ja="火曜・水曜のコアタイム序盤に実施し、自動ロールバックを完備。">Tuesday/Wednesday early slot in shared hours with automated rollback.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- Section 4 -->
@@ -129,6 +172,15 @@
         <p data-rx-en="Some projects do struggle, and they tend to share one pattern: the offshore team is treated as a cost-cutting tool rather than a partner. In a purely transactional relationship, every cultural difference turns into a dispute. Where ownership is shared, the same difference is treated as useful feedback." data-rx-ja="うまくいかないプロジェクトには、共通するパターンがあります。オフショアチームをパートナーではなく、コスト削減の手段として扱うことです。取引だけの関係では、文化の違いがすべて対立に変わります。責任を分かち合う関係では、同じ違いが有益なフィードバックになります。">Some projects do struggle, and they tend to share one pattern: the offshore team is treated as a cost-cutting tool rather than a partner. In a purely transactional relationship, every cultural difference turns into a dispute. Where ownership is shared, the same difference is treated as useful feedback.</p>
         <p data-rx-en="So choose a partner carefully, and look for one that wants to share the outcome with you." data-rx-ja="だからこそ、パートナー選びは慎重に。成果を一緒に分かち合いたいと考えてくれる相手を選んでください。">So choose a partner carefully, and look for one that wants to share the outcome with you.</p>
       </section>
+
+      <!-- Author Bio Box -->
+      <div class="author-box">
+        <img class="author-avatar" src="images/clients/kushal.jpeg" alt="Kushal Giri" width="68" height="68" loading="lazy">
+        <div class="author-info">
+          <h4 data-rx-en="Written by Kushal Giri — Managing Director, Japan" data-rx-ja="執筆：クシャル・ギリ — 日本担当取締役">Written by Kushal Giri — Managing Director, Japan</h4>
+          <p data-rx-en="Kushal leads Rynex Tech’s Japan operations from Tokyo, managing client partnerships, cross-cultural engineering teams, and seamless operational delivery between Japan and Nepal." data-rx-ja="東京を拠点にRynex Techの日本事業を統括。日本企業のDXパートナーシップ、国境を越えたエンジニアリングチームの組成、日ネ両国の円滑な開発運用を推進しています。">Kushal leads Rynex Tech’s Japan operations from Tokyo, managing client partnerships, cross-cultural engineering teams, and seamless operational delivery between Japan and Nepal.</p>
+        </div>
+      </div>
 
       <!-- Bottom Share Bar -->
       <div class="share" role="group" aria-label="Share this article" data-rx-aria-en="Share this article" data-rx-aria-ja="この記事をシェア">
@@ -161,12 +213,12 @@
         <h2 data-rx-en="Keep reading" data-rx-ja="関連記事">Keep reading</h2>
         <div class="pc-grid">
           <a class="pc-card" href="how-to-evaluate-ai-tools-objectively.html">
-            <small data-rx-en="AI &amp; Technology · 8 min read" data-rx-ja="AI・テクノロジー · 読了目安 8分">AI &amp; Technology · 8 min read</small>
+            <small data-rx-en="AI &amp; Technology" data-rx-ja="AI・テクノロジー">AI &amp; Technology</small>
             <b data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</b>
             <span data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, and a 3-step pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4つの証拠、3段階のパイロット手順。">Why standard SaaS evaluation models fail for probabilistic tools, and a 3-step pilot protocol.</span>
           </a>
-          <a class="pc-card" href="services.html#offshore">
-            <small data-rx-en="Cross-border Teams · 11 min read" data-rx-ja="国境を越えた協業 · 読了目安 11分">Cross-border Teams · 11 min read</small>
+          <a class="pc-card" href="setting-up-nepal-offshore-development-center.html">
+            <small data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</small>
             <b data-rx-en="Setting Up a Nepal Offshore Development Center: A Practical Guide" data-rx-ja="ネパールにオフショア開発センターを設ける：実践ガイド">Setting Up a Nepal Offshore Development Center: A Practical Guide</b>
             <span data-rx-en="When dedicated squads beat one-off outsourcing and how to manage them." data-rx-ja="単発外注より専任チームを選ぶべき理由と管理手法。">When dedicated squads beat one-off outsourcing and how to manage them.</span>
           </a>
