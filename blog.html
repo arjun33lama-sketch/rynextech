@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog &amp; Insights — Rynex Tech</title>
+<meta name="description" content="Practical notes, architectural insights and guides on offshore development, AI engineering and Japan-Nepal collaboration.">
+<link rel="canonical" href="https://jp.rynextech.com/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rynex Tech">
+<meta property="og:title" content="Blog &amp; Insights — Rynex Tech">
+<meta property="og:description" content="Practical notes, architectural insights and guides on offshore development, AI engineering and Japan-Nepal collaboration.">
+<meta property="og:url" content="https://jp.rynextech.com/blog.html">
+<meta property="og:image" content="https://jp.rynextech.com/images/ai-assisted-senior-review.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog &amp; Insights — Rynex Tech">
+<meta name="twitter:description" content="Practical notes, architectural insights and guides on offshore development, AI engineering and Japan-Nepal collaboration.">
+<meta name="twitter:image" content="https://jp.rynextech.com/images/ai-assisted-senior-review.jpg">
+<script>try { if (localStorage.getItem("rx-lang") === "en") document.documentElement.lang = "en" } catch (e) { }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Instrument+Serif:ital@1&family=Noto+Sans+JP:wght@400;600;800&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="blog"
+  data-rx-title-en="Blog &amp; Insights — Rynex Tech"
+  data-rx-title-ja="ブログ・知見 — Rynex Tech"
+  data-rx-desc-en="Practical notes, architectural insights and guides on offshore development, AI engineering and Japan-Nepal collaboration."
+  data-rx-desc-ja="オフショア開発、AIエンジニアリング、日本とネパールの協業に関する実践ノートと知見。">
+
+<div id="rx-header"></div>
+
+<main>
+  <!-- Hero Section -->
+  <section class="blog-hero">
+    <div class="w">
+      <div class="crumb">
+        <a href="index.html" data-rx-en="Home" data-rx-ja="ホーム">Home</a>
+        <span aria-hidden="true">›</span>
+        <b data-rx-en="Blog" data-rx-ja="ブログ">Blog</b>
+      </div>
+      <span class="eyebrow" data-rx-en="Insights &amp; Engineering Notes" data-rx-ja="知見とエンジニアリングノート">Insights &amp; Engineering Notes</span>
+      <h1 data-rx-en="Thoughts on building software &lt;em&gt;across borders.&lt;/em&gt;" data-rx-ja="国境を越えた&lt;em&gt;ソフトウェア開発&lt;/em&gt;の現場から。" data-rx-html>Thoughts on building software <em>across borders.</em></h1>
+      <p class="lead" data-rx-en="Practical guides, architecture decisions, and operational lessons from our Kathmandu and Tokyo engineering teams." data-rx-ja="カトマンズと東京のエンジニアリングチームが、現場での実践やアーキテクチャの判断から得た知見と教訓をお届けします。">Practical guides, architecture decisions, and operational lessons from our Kathmandu and Tokyo engineering teams.</p>
+    </div>
+  </section>
+
+  <div class="w">
+    <!-- Featured Article Spotlight -->
+    <a class="featured-post" href="how-to-evaluate-ai-tools-objectively.html" aria-label="Featured article: How to Evaluate AI Tools Objectively">
+      <div class="f-img">
+        <img src="images/ai-assisted-senior-review.jpg" width="1200" height="675" decoding="async" fetchpriority="high" alt="Senior engineer conducting an objective architectural evaluation of AI-assisted tools and developer workflows">
+      </div>
+      <div class="f-content">
+        <span class="f-tag" data-rx-en="Featured · AI &amp; Engineering Advisory" data-rx-ja="注目記事 · AI・エンジニアリング助言">Featured · AI &amp; Engineering Advisory</span>
+        <h2 data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</h2>
+        <p data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a 3-step in-house pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4種類の証拠、公開レーティングの6つの検証テスト、そして自社パイロットの実施手順。">Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a 3-step in-house pilot protocol.</p>
+        <div class="f-meta">
+          <span data-rx-en="May 26, 2026" data-rx-ja="2026年5月26日">May 26, 2026</span>
+          <span aria-hidden="true">·</span>
+          <span data-rx-en="8 min read" data-rx-ja="読了目安 8分">8 min read</span>
+          <span aria-hidden="true">·</span>
+          <span style="color:var(--acc);font-weight:600;" data-rx-en="Read article →" data-rx-ja="記事を読む →">Read article →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Category Tabs & Live Search -->
+    <div class="blog-filter-bar">
+      <div class="category-tabs" id="cat-tabs" role="tablist" aria-label="Article categories">
+        <button type="button" class="active" data-cat="all" data-rx-en="All Articles" data-rx-ja="すべての記事">All Articles</button>
+        <button type="button" data-cat="ai" data-rx-en="AI &amp; Technology" data-rx-ja="AI・テクノロジー">AI &amp; Technology</button>
+        <button type="button" data-cat="dev" data-rx-en="Software Engineering" data-rx-ja="ソフトウェア開発">Software Engineering</button>
+        <button type="button" data-cat="collaboration" data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</button>
+      </div>
+      <div class="blog-search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="search" id="blog-search" placeholder="Search articles…" aria-label="Search articles" data-rx-ph-en="Search articles…" data-rx-ph-ja="記事を検索…">
+      </div>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="blog-grid" id="blog-posts-grid">
+      <!-- Article 1: How to Evaluate AI Tools Objectively -->
+      <article class="blog-card" data-cat="ai" data-keywords="ai evaluation tools prompt benchmark pilot sweet test saas models">
+        <div class="card-thumb">
+          <img src="images/ai-assisted-senior-review.jpg" loading="lazy" decoding="async" alt="How to Evaluate AI Tools Objectively">
+        </div>
+        <div class="card-body">
+          <span class="card-cat" data-rx-en="AI &amp; Technology" data-rx-ja="AI・テクノロジー">AI &amp; Technology</span>
+          <h3><a href="how-to-evaluate-ai-tools-objectively.html" data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</a></h3>
+          <p data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a step-by-step pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4種類の証拠、公開レーティングの6つの検証テスト、自社パイロットの進め方。">Why standard SaaS evaluation models fail for probabilistic tools, the four types of evidence, six tests for published ratings, and a step-by-step pilot protocol.</p>
+          <div class="card-footer">
+            <span data-rx-en="May 26, 2026 · 8 min read" data-rx-ja="2026年5月26日 · 8分">May 26, 2026 · 8 min read</span>
+            <a class="read-more" href="how-to-evaluate-ai-tools-objectively.html" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2: Japan-Nepal Collaboration -->
+      <article class="blog-card" data-cat="collaboration" data-keywords="japan nepal collaboration cross-border offshore culture time-zone agreement">
+        <div class="card-thumb">
+          <img src="images/japan-nepal-collaboration.jpg" loading="lazy" decoding="async" alt="Japan–Nepal Collaboration: What We Learned Along the Way">
+        </div>
+        <div class="card-body">
+          <span class="card-cat" data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</span>
+          <h3><a href="blog-japan-nepal-collaboration.html" data-rx-en="Japan–Nepal Collaboration: What We Learned Along the Way" data-rx-ja="日本とネパールの協業：現場で学んだこと">Japan–Nepal Collaboration: What We Learned Along the Way</a></h3>
+          <p data-rx-en="Practical lessons on running software projects between Japan and Nepal: how agreement is expressed, scheduling across time zones, documentation, on-site embeds and partnership." data-rx-ja="日本とネパールをまたぐソフトウェア開発の実践的な学び。合意の示し方、時差を考慮したスケジュール、ドキュメントの共通化、現地駐在について。">Practical lessons on running software projects between Japan and Nepal: how agreement is expressed, scheduling across time zones, documentation, on-site embeds and partnership.</p>
+          <div class="card-footer">
+            <span data-rx-en="May 26, 2026 · 6 min read" data-rx-ja="2026年5月26日 · 6分">May 26, 2026 · 6 min read</span>
+            <a class="read-more" href="blog-japan-nepal-collaboration.html" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3: AI-Assisted, Senior-Led Teams -->
+      <article class="blog-card" data-cat="ai dev" data-keywords="claude code ai offshore delivery scrum senior architecture speed budget">
+        <div class="card-thumb">
+          <img src="images/offshore-development.jpg" loading="lazy" decoding="async" alt="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore">
+        </div>
+        <div class="card-body">
+          <span class="card-cat" data-rx-en="Software Engineering" data-rx-ja="ソフトウェア開発">Software Engineering</span>
+          <h3><a href="how-to-evaluate-ai-tools-objectively.html#senior-review" data-rx-en="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore" data-rx-ja="AI活用×シニア主導のチームがオフショアで速く届ける理由">How AI-Assisted, Senior-Led Teams Deliver Faster Offshore</a></h3>
+          <p data-rx-en="A deep look at the day-to-day workflow behind our AI-accelerated builds: how senior engineers direct architecture while AI handles boilerplate and repetitive tasks." data-rx-ja="AIを活用した開発プロセスの実際：シニアエンジニアがアーキテクチャを統括し、AIが定型コードを高速生成することで工期を短縮する手法。">A deep look at the day-to-day workflow behind our AI-accelerated builds: how senior engineers direct architecture while AI handles boilerplate and repetitive tasks.</p>
+          <div class="card-footer">
+            <span data-rx-en="May 26, 2026 · 12 min read" data-rx-ja="2026年5月26日 · 12分">May 26, 2026 · 12 min read</span>
+            <a class="read-more" href="how-to-evaluate-ai-tools-objectively.html#senior-review" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4: Setting Up a Nepal Offshore Development Center -->
+      <article class="blog-card" data-cat="dev collaboration" data-keywords="offshore development center nepal kathmandu dedicated team squad cost guide">
+        <div class="card-thumb">
+          <img src="images/nepal-development-center.jpg" loading="lazy" decoding="async" alt="Setting Up a Nepal Offshore Development Center: A Practical Guide">
+        </div>
+        <div class="card-body">
+          <span class="card-cat" data-rx-en="Cross-border Teams" data-rx-ja="国境を越えた協業">Cross-border Teams</span>
+          <h3><a href="services.html#offshore" data-rx-en="Setting Up a Nepal Offshore Development Center: A Practical Guide" data-rx-ja="ネパールにオフショア開発センターを設ける：実践ガイド">Setting Up a Nepal Offshore Development Center: A Practical Guide</a></h3>
+          <p data-rx-en="When a dedicated development center beats one-off project outsourcing, how to manage cross-border squads, and what budget expectations look like." data-rx-ja="単発の外注ではなく専任開発センターを設立すべきタイミング、国境を越えたチームの運営手法、費用の考え方についての完全ガイド。">When a dedicated development center beats one-off project outsourcing, how to manage cross-border squads, and what budget expectations look like.</p>
+          <div class="card-footer">
+            <span data-rx-en="May 26, 2026 · 11 min read" data-rx-ja="2026年5月26日 · 11分">May 26, 2026 · 11 min read</span>
+            <a class="read-more" href="services.html#offshore" data-rx-en="Read →" data-rx-ja="読む →">Read →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Empty state -->
+    <div id="no-articles" class="no-results" style="display:none;" data-rx-en="No articles found matching your criteria." data-rx-ja="条件に一致する記事が見つかりませんでした。">
+      No articles found matching your criteria.
+    </div>
+  </div>
+</main>
+
+<div id="rx-footer"></div>
+<script src="site.js"></script>
+
+<!-- Category Filtering & Search Script -->
+<script>
+(function() {
+  var activeCat = 'all';
+  var searchInput = document.getElementById('blog-search');
+  var catTabs = document.querySelectorAll('#cat-tabs button');
+  var cards = document.querySelectorAll('#blog-posts-grid .blog-card');
+  var emptyState = document.getElementById('no-articles');
+
+  function filterPosts() {
+    var query = (searchInput.value || '').trim().toLowerCase();
+    var visibleCount = 0;
+
+    cards.forEach(function(card) {
+      var cardCat = card.getAttribute('data-cat') || '';
+      var cardKeywords = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText;
+      var matchesCat = (activeCat === 'all') || (cardCat.indexOf(activeCat) !== -1);
+      var matchesQuery = !query || (cardKeywords.toLowerCase().indexOf(query) !== -1);
+
+      if (matchesCat && matchesQuery) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  catTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      catTabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      activeCat = tab.getAttribute('data-cat') || 'all';
+      filterPosts();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterPosts);
+  }
+})();
+</script>
+</body>
+</html>

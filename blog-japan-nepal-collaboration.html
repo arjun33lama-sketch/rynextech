@@ -26,101 +26,272 @@
 <body data-page="blog-post"
   data-rx-title-en="Japan–Nepal Collaboration: What We Learned Along the Way — Rynex Tech" data-rx-title-ja="日本とネパールの協業：現場で学んだこと — Rynex Tech"
   data-rx-desc-en="Practical lessons on running software projects between Japan and Nepal: how agreement is expressed, scheduling across time zones, documentation, on-site embeds and partnership." data-rx-desc-ja="日本とネパールをまたぐソフトウェア開発を進める上での実践的な学び。合意の伝え方、時差を踏まえたスケジュール、ドキュメント、現地駐在、パートナーシップについて。">
+
+<div id="rx-reading-progress" aria-hidden="true"></div>
 <div id="rx-header"></div>
-<main><article class="w doc post">
 
-<nav class="crumb" aria-label="Breadcrumb" data-rx-aria-en="Breadcrumb" data-rx-aria-ja="パンくずリスト">
-<a href="index.html" data-rx-en="Home" data-rx-ja="ホーム">Home</a> <span aria-hidden="true">›</span>
-<a href="index.html#blog" data-rx-en="Blog" data-rx-ja="ブログ">Blog</a> <span aria-hidden="true">›</span>
-<span data-rx-en="Japan–Nepal Collaboration" data-rx-ja="日本とネパールの協業">Japan–Nepal Collaboration</span>
-</nav>
+<main>
+  <!-- Publication Hero Header -->
+  <header class="post-hero-header">
+    <div class="w">
+      <nav class="post-crumb" aria-label="Breadcrumb" data-rx-aria-en="Breadcrumb" data-rx-aria-ja="パンくずリスト">
+        <a href="index.html" data-rx-en="Home" data-rx-ja="ホーム">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="blog.html" data-rx-en="Blog" data-rx-ja="ブログ">Blog</a>
+        <span aria-hidden="true">›</span>
+        <span data-rx-en="Japan–Nepal Collaboration" data-rx-ja="日本とネパールの協業">Japan–Nepal Collaboration</span>
+      </nav>
 
-<span class="eyebrow" data-rx-en="Software Development" data-rx-ja="ソフトウェア開発">Software Development</span>
-<h1 data-rx-en="Japan–Nepal Collaboration: What We Learned Along the Way" data-rx-ja="日本とネパールの協業：現場で学んだこと">Japan–Nepal Collaboration: What We Learned Along the Way</h1>
-<p class="meta"><span data-rx-en="By Rynex Tech" data-rx-ja="Rynex Tech編集部">By Rynex Tech</span> · <time datetime="2026-05-26" data-rx-en="May 26, 2026" data-rx-ja="2026年5月26日">May 26, 2026</time> · <span data-rx-en="6 min read" data-rx-ja="読了目安 6分">6 min read</span></p>
+      <div class="post-kicker-row">
+        <span class="post-kicker" data-rx-en="Cross-Border Engineering" data-rx-ja="国境を越えた協業">Cross-Border Engineering</span>
+        <span class="post-badge-edition" data-rx-en="Operational Guide" data-rx-ja="実践運用ガイド">Operational Guide</span>
+      </div>
 
-<figure class="hero-img">
-<img src="images/japan-nepal-collaboration.jpg" width="1200" height="675" decoding="async" alt="Himalayas and Mount Fuji linked by a glowing arc, stupa and torii gate" data-rx-alt-en="Himalayas and Mount Fuji linked by a glowing arc, stupa and torii gate" data-rx-alt-ja="ヒマラヤと富士山を光の弧で結んだ、ストゥーパと鳥居のイラスト">
-</figure>
+      <h1 class="post-main-title" data-rx-en="Japan–Nepal Collaboration: What We Learned Along the Way" data-rx-ja="日本とネパールの協業：現場で学んだこと">Japan–Nepal Collaboration: What We Learned Along the Way</h1>
 
-<p class="lead" data-rx-en="Building software across Japan and Nepal works best when both sides agree on a few simple habits. These are the lessons that matter most, and the ones that, left alone, quietly cause the most damage." data-rx-ja="日本とネパールにまたがるソフトウェア開発は、双方がいくつかのシンプルな習慣に合意しているときに最もうまくいきます。ここでは特に大切な学びと、放っておくと静かに影響が広がる落とし穴をまとめます。">Building software across Japan and Nepal works best when both sides agree on a few simple habits. These are the lessons that matter most, and the ones that, left alone, quietly cause the most damage.</p>
+      <p class="post-lead-summary" data-rx-en="Practical lessons on running distributed software projects between Tokyo and Kathmandu: how agreement is expressed, time-zone math that works, documentation discipline, and genuine partnership." data-rx-ja="東京とカトマンズを結ぶ分散ソフトウェア開発の実践的な教訓。合意の示し方、無理のない時差の運用ルール、ドキュメントの規律、そして信頼に基づくパートナーシップについて。">Practical lessons on running distributed software projects between Tokyo and Kathmandu: how agreement is expressed, time-zone math that works, documentation discipline, and genuine partnership.</p>
 
-<aside class="toc" aria-label="Table of contents" data-rx-aria-en="Table of contents" data-rx-aria-ja="目次">
-<b data-rx-en="In this article" data-rx-ja="この記事の内容">In this article</b>
-<ol>
-<li><a href="#yes" data-rx-en="The “yes” that means three things" data-rx-ja="三つの意味を持つ「はい」">The “yes” that means three things</a></li>
-<li><a href="#time" data-rx-en="Time-zone math that works" data-rx-ja="無理のない時差のルール">Time-zone math that works</a></li>
-<li><a href="#docs" data-rx-en="Documentation as a shared language" data-rx-ja="共通言語としてのドキュメント">Documentation as a shared language</a></li>
-<li><a href="#embed" data-rx-en="The on-site embed" data-rx-ja="現地駐在という選択肢">The on-site embed</a></li>
-<li><a href="#fail" data-rx-en="When it goes wrong" data-rx-ja="うまくいかないとき">When it goes wrong</a></li>
-</ol>
-</aside>
+      <div class="post-byline-bar">
+        <div class="post-author-cluster">
+          <img src="images/clients/kushal.jpeg" alt="Kushal Giri" width="48" height="48" loading="lazy">
+          <div class="post-author-meta">
+            <span class="post-author-name">Kushal Giri</span>
+            <div class="post-author-sub">
+              <span data-rx-en="Managing Director, Japan" data-rx-ja="日本担当取締役">Managing Director, Japan</span>
+              <span aria-hidden="true">·</span>
+              <time datetime="2026-05-26" data-rx-en="May 26, 2026" data-rx-ja="2026年5月26日">May 26, 2026</time>
+              <span aria-hidden="true">·</span>
+              <span data-rx-en="6 min read" data-rx-ja="読了目安 6分">6 min read</span>
+            </div>
+          </div>
+        </div>
 
-<section id="yes">
-<h2 data-rx-en="1. The “yes” that means three things" data-rx-ja="1. 三つの意味を持つ「はい」">1. The “yes” that means three things</h2>
-<p data-rx-en="The biggest misunderstanding between distributed teams is rarely language. It is how agreement is expressed. In many Nepali workplaces, a “yes” in a meeting is a commitment. In a Japanese meeting, 「はい」 can be a commitment, a sign that the listener is following, or a polite way of leaving a reservation unspoken." data-rx-ja="分散チームで最も大きな誤解は、言葉そのものよりも「合意の示し方」から生まれます。ネパールの職場では、会議での「Yes」は多くの場合コミットメントを意味します。一方、日本の会議での「はい」は、約束、話を聞いているという合図、あるいは懸念をあえて口にしない丁寧な返事のいずれにもなり得ます。">The biggest misunderstanding between distributed teams is rarely language. It is how agreement is expressed. In many Nepali workplaces, a “yes” in a meeting is a commitment. In a Japanese meeting, 「はい」 can be a commitment, a sign that the listener is following, or a polite way of leaving a reservation unspoken.</p>
-<p data-rx-en="The remedy is procedural, not cultural. End every planning call with a written summary of decisions and owners, send it the same day, and ask each side to confirm it in writing. This single habit removes the largest category of avoidable rework." data-rx-ja="対策は文化ではなく手順で解決できます。計画会議の最後に、決定事項と担当者を文章でまとめて当日中に共有し、双方が文面で確認する。この一つの習慣だけで、避けられる手戻りの最大の原因を減らせます。">The remedy is procedural, not cultural. End every planning call with a written summary of decisions and owners, send it the same day, and ask each side to confirm it in writing. This single habit removes the largest category of avoidable rework.</p>
-</section>
+        <div class="post-header-actions">
+          <button type="button" class="btn-copy-link" id="header-copy-btn" data-rx-en="🔗 Copy link" data-rx-ja="🔗 リンクをコピー">🔗 Copy link</button>
+          <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer" aria-label="Share on X">Share on X</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<section id="time">
-<h2 data-rx-en="2. Time-zone math that works" data-rx-ja="2. 無理のない時差のルール">2. Time-zone math that works</h2>
-<p data-rx-en="Nepal is 3 hours 15 minutes behind Japan all year round, because neither country uses daylight saving time. That leaves a comfortable shared window in the Japanese afternoon, which is the Nepali late morning. A pattern that keeps both sides comfortable:" data-rx-ja="ネパールは日本より年間を通して3時間15分遅れています（どちらの国も夏時間を採用していません）。日本の午後、ネパールの午前後半にちょうど良い共通の時間帯が生まれます。双方が無理なく働ける進め方の一例です。">Nepal is 3 hours 15 minutes behind Japan all year round, because neither country uses daylight saving time. That leaves a comfortable shared window in the Japanese afternoon, which is the Nepali late morning. A pattern that keeps both sides comfortable:</p>
-<ul>
-<li data-rx-en="Schedule meetings with more than a few attendees between 13:00 and 17:00 Japan time (09:45–13:45 in Nepal)." data-rx-ja="参加者が多い会議は、日本時間の13:00〜17:00（ネパール時間 09:45〜13:45）に設定する。">Schedule meetings with more than a few attendees between 13:00 and 17:00 Japan time (09:45–13:45 in Nepal).</li>
-<li data-rx-en="Finish decision-making meetings by 16:00 Japan time, so follow-up questions can still be answered the same day." data-rx-ja="意思決定の会議は日本時間16:00までに終え、追加の質問にも当日中に答えられるようにする。">Finish decision-making meetings by 16:00 Japan time, so follow-up questions can still be answered the same day.</li>
-<li data-rx-en="Release to production early in the shared window on a Tuesday or Wednesday, never on a Monday morning or a Friday afternoon." data-rx-ja="本番リリースは、共通時間帯の早い時間に、火曜日か水曜日に行う。月曜の朝と金曜の午後は避ける。">Release to production early in the shared window on a Tuesday or Wednesday, never on a Monday morning or a Friday afternoon.</li>
-</ul>
-<p data-rx-en="Limits like these protect trust. Neither side feels that the other is constantly asking for inconvenient hours." data-rx-ja="こうした線引きは信頼を守ります。どちらも「相手がいつも都合の悪い時間を求めてくる」と感じずに済むからです。">Limits like these protect trust. Neither side feels that the other is constantly asking for inconvenient hours.</p>
-</section>
+  <!-- Editorial Two-Column Layout -->
+  <div class="post-layout-wrap">
+    <!-- Left Column: Core Article -->
+    <article class="post-article-core">
+      <figure class="hero-figure">
+        <img src="images/japan-nepal-collaboration.jpg" width="1200" height="675" decoding="async" fetchpriority="high" alt="Himalayas and Mount Fuji linked by a glowing arc, stupa and torii gate" data-rx-alt-en="Himalayas and Mount Fuji linked by a glowing arc, stupa and torii gate" data-rx-alt-ja="ヒマラヤと富士山を光の弧で結んだ、ストゥーパと鳥居のイラスト">
+        <figcaption class="hero-caption" data-rx-en="Bridging Tokyo and Kathmandu through shared engineering standards and daily transparency." data-rx-ja="共通のエンジニアリング基準と日々の透明性を通じて、東京とカトマンズをつなぐ。">Bridging Tokyo and Kathmandu through shared engineering standards and daily transparency.</figcaption>
+      </figure>
 
-<section id="docs">
-<h2 data-rx-en="3. Documentation as a shared language" data-rx-ja="3. 共通言語としてのドキュメント">3. Documentation as a shared language</h2>
-<p data-rx-en="In a shared office, knowledge travels through casual conversation. Distributed teams lose that, so the writing has to replace it. Three kinds of documents carry most of the weight:" data-rx-ja="同じオフィスにいれば、知識は何気ない会話で伝わります。分散チームではそれができないため、文章がその役割を担います。特に重要なのは次の三種類です。">In a shared office, knowledge travels through casual conversation. Distributed teams lose that, so the writing has to replace it. Three kinds of documents carry most of the weight:</p>
-<ul>
-<li data-rx-en="Architecture decision records, written for every significant technical choice and the reasons behind it." data-rx-ja="アーキテクチャ決定記録（ADR）：重要な技術的判断と、その理由を記録する。">Architecture decision records, written for every significant technical choice and the reasons behind it.</li>
-<li data-rx-en="Runbooks, one for each operational procedure, so anyone on call can follow them." data-rx-ja="運用手順書：運用作業ごとに用意し、当番の誰でも実行できるようにする。">Runbooks, one for each operational procedure, so anyone on call can follow them.</li>
-<li data-rx-en="Postmortems, written after every production incident, focused on learning rather than blame." data-rx-ja="ポストモーテム：本番障害のたびに作成し、責任追及ではなく学びに焦点を当てる。">Postmortems, written after every production incident, focused on learning rather than blame.</li>
-</ul>
-<p data-rx-en="Setting aside protected writing time each week, and reviewing the output at the next stand-up, costs a small share of engineering capacity. It pays back through faster onboarding and calmer incident response." data-rx-ja="毎週ドキュメントを書く時間を確保し、次のスタンドアップでレビューする。開発の稼働のごく一部を使いますが、オンボーディングの短縮や落ち着いた障害対応という形で十分に見合います。">Setting aside protected writing time each week, and reviewing the output at the next stand-up, costs a small share of engineering capacity. It pays back through faster onboarding and calmer incident response.</p>
-</section>
+      <p class="lead" data-rx-en="Building software across Japan and Nepal works best when both sides agree on a few simple habits. These are the lessons that matter most, and the ones that, left alone, quietly cause the most damage." data-rx-ja="日本とネパールにまたがるソフトウェア開発は、双方がいくつかのシンプルな習慣に合意しているときに最もうまくいきます。ここでは特に大切な学びと、放っておくと静かに影響が広がる落とし穴をまとめます。">Building software across Japan and Nepal works best when both sides agree on a few simple habits. These are the lessons that matter most, and the ones that, left alone, quietly cause the most damage.</p>
 
-<section id="embed">
-<h2 data-rx-en="4. The on-site embed" data-rx-ja="4. 現地駐在という選択肢">4. The on-site embed</h2>
-<p data-rx-en="For larger engagements, it helps to send one senior engineer to work beside the client’s product team in Japan for several weeks. They join internal meetings, absorb the context, and act as a living translator between two ways of working. Without that presence, a remote team is like someone building a model of a city from satellite photos. An embedded engineer provides the view from the street." data-rx-ja="大きなプロジェクトでは、シニアエンジニアを1名、数週間にわたって日本のクライアントのプロダクトチームの隣に派遣すると効果的です。社内会議に参加して文脈を吸収し、二つの仕事の進め方をつなぐ「生きた通訳」になります。この存在がないリモートチームは、衛星写真だけで街の模型を作るようなものです。駐在エンジニアは、街角からの視点を届けてくれます。">For larger engagements, it helps to send one senior engineer to work beside the client’s product team in Japan for several weeks. They join internal meetings, absorb the context, and act as a living translator between two ways of working. Without that presence, a remote team is like someone building a model of a city from satellite photos. An embedded engineer provides the view from the street.</p>
-<blockquote data-rx-en="The hardest part of cross-border work is not the technical handoff. It is making sure both sides genuinely believe the other cares about the same outcome. Everything else follows from that." data-rx-ja="国境を越える仕事で最も難しいのは、技術的な引き継ぎではありません。双方が「相手も同じ成果を大切に思っている」と心から信じられる状態をつくることです。他のことはすべて、そこから始まります。">The hardest part of cross-border work is not the technical handoff. It is making sure both sides genuinely believe the other cares about the same outcome. Everything else follows from that.</blockquote>
-</section>
+      <!-- Section 1 -->
+      <section id="yes">
+        <h2 data-rx-en="1. The “yes” that means three things" data-rx-ja="1. 三つの意味を持つ「はい」">1. The “yes” that means three things</h2>
+        <p data-rx-en="The biggest misunderstanding between distributed teams is rarely language. It is how agreement is expressed. In many Nepali workplaces, a “yes” in a meeting is a commitment. In a Japanese meeting, 「はい」 can be a commitment, a sign that the listener is following, or a polite way of leaving a reservation unspoken." data-rx-ja="分散チームで最も大きな誤解は、言葉そのものよりも「合意の示し方」から生まれます。ネパールの職場では、会議での「Yes」は多くの場合コミットメントを意味します。一方、日本の会議での「はい」は、約束、話を聞いているという合図、あるいは懸念をあえて口にしない丁寧な返事のいずれにもなり得ます。">The biggest misunderstanding between distributed teams is rarely language. It is how agreement is expressed. In many Nepali workplaces, a “yes” in a meeting is a commitment. In a Japanese meeting, 「はい」 can be a commitment, a sign that the listener is following, or a polite way of leaving a reservation unspoken.</p>
+        <p data-rx-en="The remedy is procedural, not cultural. End every planning call with a written summary of decisions and owners, send it the same day, and ask each side to confirm it in writing. This single habit removes the largest category of avoidable rework." data-rx-ja="対策は文化ではなく手順で解決できます。計画会議の最後に、決定事項と担当者を文章でまとめて当日中に共有し、双方が文面で確認する。この一つの習慣だけで、避けられる手戻りの最大の原因を減らせます。">The remedy is procedural, not cultural. End every planning call with a written summary of decisions and owners, send it the same day, and ask each side to confirm it in writing. This single habit removes the largest category of avoidable rework.</p>
+      </section>
 
-<section id="fail">
-<h2 data-rx-en="5. When it goes wrong" data-rx-ja="5. うまくいかないとき">5. When it goes wrong</h2>
-<p data-rx-en="Some projects do struggle, and they tend to share one pattern: the offshore team is treated as a cost-cutting tool rather than a partner. In a purely transactional relationship, every cultural difference turns into a dispute. Where ownership is shared, the same difference is treated as useful feedback." data-rx-ja="うまくいかないプロジェクトには、共通するパターンがあります。オフショアチームをパートナーではなく、コスト削減の手段として扱うことです。取引だけの関係では、文化の違いがすべて対立に変わります。責任を分かち合う関係では、同じ違いが有益なフィードバックになります。">Some projects do struggle, and they tend to share one pattern: the offshore team is treated as a cost-cutting tool rather than a partner. In a purely transactional relationship, every cultural difference turns into a dispute. Where ownership is shared, the same difference is treated as useful feedback.</p>
-<p data-rx-en="So choose a partner carefully, and look for one that wants to share the outcome with you." data-rx-ja="だからこそ、パートナー選びは慎重に。成果を一緒に分かち合いたいと考えてくれる相手を選んでください。">So choose a partner carefully, and look for one that wants to share the outcome with you.</p>
-</section>
+      <!-- Section 2 -->
+      <section id="time">
+        <h2 data-rx-en="2. Time-zone math that works" data-rx-ja="2. 無理のない時差のルール">2. Time-zone math that works</h2>
+        <p data-rx-en="Nepal is 3 hours 15 minutes behind Japan all year round, because neither country uses daylight saving time. That leaves a comfortable shared window in the Japanese afternoon, which is the Nepali late morning. A pattern that keeps both sides comfortable:" data-rx-ja="ネパールは日本より年間を通して3時間15分遅れています（どちらの国も夏時間を採用していません）。日本の午後、ネパールの午前後半にちょうど良い共通の時間帯が生まれます。双方が無理なく働ける進め方の一例です。">Nepal is 3 hours 15 minutes behind Japan all year round, because neither country uses daylight saving time. That leaves a comfortable shared window in the Japanese afternoon, which is the Nepali late morning. A pattern that keeps both sides comfortable:</p>
+        <ul>
+          <li data-rx-en="Schedule meetings with more than a few attendees between 13:00 and 17:00 Japan time (09:45–13:45 in Nepal)." data-rx-ja="参加者が多い会議は、日本時間の13:00〜17:00（ネパール時間 09:45〜13:45）に設定する。">Schedule meetings with more than a few attendees between 13:00 and 17:00 Japan time (09:45–13:45 in Nepal).</li>
+          <li data-rx-en="Finish decision-making meetings by 16:00 Japan time, so follow-up questions can still be answered the same day." data-rx-ja="意思決定の会議は日本時間16:00までに終え、追加の質問にも当日中に答えられるようにする。">Finish decision-making meetings by 16:00 Japan time, so follow-up questions can still be answered the same day.</li>
+          <li data-rx-en="Release to production early in the shared window on a Tuesday or Wednesday, never on a Monday morning or a Friday afternoon." data-rx-ja="本番リリースは、共通時間帯の早い時間に、火曜日か水曜日に行う。月曜の朝と金曜の午後は避ける。">Release to production early in the shared window on a Tuesday or Wednesday, never on a Monday morning or a Friday afternoon.</li>
+        </ul>
+        <p data-rx-en="Limits like these protect trust. Neither side feels that the other is constantly asking for inconvenient hours." data-rx-ja="こうした線引きは信頼を守ります。どちらも「相手がいつも都合の悪い時間を求めてくる」と感じずに済むからです。">Limits like these protect trust. Neither side feels that the other is constantly asking for inconvenient hours.</p>
+      </section>
 
-<div class="share" role="group" aria-label="Share this article" data-rx-aria-en="Share this article" data-rx-aria-ja="この記事をシェア">
-<b data-rx-en="Share" data-rx-ja="シェア">Share</b>
-<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">X</a>
-<a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">Facebook</a>
-</div>
+      <!-- Section 3 -->
+      <section id="docs">
+        <h2 data-rx-en="3. Documentation as a shared language" data-rx-ja="3. 共通言語としてのドキュメント">3. Documentation as a shared language</h2>
+        <p data-rx-en="In a shared office, knowledge travels through casual conversation. Distributed teams lose that, so the writing has to replace it. Three kinds of documents carry most of the weight:" data-rx-ja="同じオフィスにいれば、知識は何気ない会話で伝わります。分散チームではそれができないため、文章がその役割を担います。特に重要なのは次の三種類です。">In a shared office, knowledge travels through casual conversation. Distributed teams lose that, so the writing has to replace it. Three kinds of documents carry most of the weight:</p>
+        <ul>
+          <li data-rx-en="&lt;strong&gt;Architecture Decision Records (ADRs):&lt;/strong&gt; Written for every significant technical choice and the reasoning behind it." data-rx-ja="&lt;strong&gt;アーキテクチャ決定記録（ADR）：&lt;/strong&gt;重要な技術的判断と、その理由を文書として残す。" data-rx-html><strong>Architecture Decision Records (ADRs):</strong> Written for every significant technical choice and the reasoning behind it.</li>
+          <li data-rx-en="&lt;strong&gt;Runbooks:&lt;/strong&gt; One for each operational procedure, so anyone on call can follow them safely." data-rx-ja="&lt;strong&gt;運用手順書（ランブック）：&lt;/strong&gt;運用タスクごとに用意し、当番の誰でも実行できるようにする。" data-rx-html><strong>Runbooks:</strong> One for each operational procedure, so anyone on call can follow them safely.</li>
+          <li data-rx-en="&lt;strong&gt;Postmortems:&lt;/strong&gt; Written after every production incident, focused on blameless learning and preventative action." data-rx-ja="&lt;strong&gt;ポストモーテム：&lt;/strong&gt;本番障害のたびに作成し、責任追及ではなく再発防止と学びに焦点を当てる。" data-rx-html><strong>Postmortems:</strong> Written after every production incident, focused on blameless learning and preventative action.</li>
+        </ul>
+        <p data-rx-en="Setting aside protected writing time each week, and reviewing the output at the next stand-up, costs a small share of engineering capacity. It pays back through faster onboarding and calmer incident response." data-rx-ja="毎週ドキュメントを書く時間を確保し、次のスタンドアップでレビューする。開発の稼働のごく一部を使いますが、オンボーディングの短縮や落ち着いた障害対応という形で十分に見合います。">Setting aside protected writing time each week, and reviewing the output at the next stand-up, costs a small share of engineering capacity. It pays back through faster onboarding and calmer incident response.</p>
+      </section>
 
-<section class="post-cta">
-<h2 data-rx-en="Need help with this?" data-rx-ja="お困りですか？">Need help with this?</h2>
-<div class="pc-grid">
-<a class="pc-card" href="services.html#offshore"><b data-rx-en="Senior dev teams in Nepal" data-rx-ja="ネパールのシニア開発チーム">Senior dev teams in Nepal</b><span data-rx-en="Dedicated offshore teams that extend your in-house team." data-rx-ja="御社の開発チームを拡張する専任オフショアチーム。">Dedicated offshore teams that extend your in-house team.</span><em data-rx-en="Learn more →" data-rx-ja="詳しく見る →">Learn more →</em></a>
-<a class="pc-card" href="services.html#hr"><b data-rx-en="HR services Japan–Nepal" data-rx-ja="日本・ネパール人材サービス">HR services Japan–Nepal</b><span data-rx-en="Recruitment and staffing support connecting both countries." data-rx-ja="両国をつなぐ採用・人材派遣支援。">Recruitment and staffing support connecting both countries.</span><em data-rx-en="Learn more →" data-rx-ja="詳しく見る →">Learn more →</em></a>
-</div>
-</section>
+      <!-- Section 4 -->
+      <section id="embed">
+        <h2 data-rx-en="4. The on-site embed" data-rx-ja="4. 現地駐在という選択肢">4. The on-site embed</h2>
+        <p data-rx-en="For larger engagements, it helps to send one senior engineer to work beside the client’s product team in Japan for several weeks. They join internal meetings, absorb the context, and act as a living translator between two ways of working. Without that presence, a remote team is like someone building a model of a city from satellite photos. An embedded engineer provides the view from the street." data-rx-ja="大きなプロジェクトでは、シニアエンジニアを1名、数週間にわたって日本のクライアントのプロダクトチームの隣に派遣すると効果的です。社内会議に参加して文脈を吸収し、二つの仕事の進め方をつなぐ「生きた通訳」になります。この存在がないリモートチームは、衛星写真だけで街の模型を作るようなものです。駐在エンジニアは、街角からの視点を届けてくれます。">For larger engagements, it helps to send one senior engineer to work beside the client’s product team in Japan for several weeks. They join internal meetings, absorb the context, and act as a living translator between two ways of working. Without that presence, a remote team is like someone building a model of a city from satellite photos. An embedded engineer provides the view from the street.</p>
+        <blockquote data-rx-en="The hardest part of cross-border work is not the technical handoff. It is making sure both sides genuinely believe the other cares about the same outcome. Everything else follows from that." data-rx-ja="国境を越える仕事で最も難しいのは、技術的な引き継ぎではありません。双方が「相手も同じ成果を大切に思っている」と心から信じられる状態をつくることです。他のことはすべて、そこから始まります。">The hardest part of cross-border work is not the technical handoff. It is making sure both sides genuinely believe the other cares about the same outcome. Everything else follows from that.</blockquote>
+      </section>
 
-<section class="related">
-<h2 data-rx-en="Keep reading" data-rx-ja="関連記事">Keep reading</h2>
-<div class="pc-grid">
-<a class="pc-card" href="index.html#blog"><small data-rx-en="Software Development · 11 min read" data-rx-ja="ソフトウェア開発 · 読了目安 11分">Software Development · 11 min read</small><b data-rx-en="Setting Up a Nepal Offshore Development Center: A Practical Guide" data-rx-ja="ネパールにオフショア開発センターを設ける：実践ガイド">Setting Up a Nepal Offshore Development Center: A Practical Guide</b></a>
-<a class="pc-card" href="index.html#blog"><small data-rx-en="AI Development · 12 min read" data-rx-ja="AI開発 · 読了目安 12分">AI Development · 12 min read</small><b data-rx-en="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore" data-rx-ja="AI活用×シニア主導のチームがオフショアで速く届ける理由">How AI-Assisted, Senior-Led Teams Deliver Faster Offshore</b></a>
-</div>
-</section>
+      <!-- Section 5 -->
+      <section id="fail">
+        <h2 data-rx-en="5. When it goes wrong" data-rx-ja="5. うまくいかないとき">5. When it goes wrong</h2>
+        <p data-rx-en="Some projects do struggle, and they tend to share one pattern: the offshore team is treated as a cost-cutting tool rather than a partner. In a purely transactional relationship, every cultural difference turns into a dispute. Where ownership is shared, the same difference is treated as useful feedback." data-rx-ja="うまくいかないプロジェクトには、共通するパターンがあります。オフショアチームをパートナーではなく、コスト削減の手段として扱うことです。取引だけの関係では、文化の違いがすべて対立に変わります。責任を分かち合う関係では、同じ違いが有益なフィードバックになります。">Some projects do struggle, and they tend to share one pattern: the offshore team is treated as a cost-cutting tool rather than a partner. In a purely transactional relationship, every cultural difference turns into a dispute. Where ownership is shared, the same difference is treated as useful feedback.</p>
+        <p data-rx-en="So choose a partner carefully, and look for one that wants to share the outcome with you." data-rx-ja="だからこそ、パートナー選びは慎重に。成果を一緒に分かち合いたいと考えてくれる相手を選んでください。">So choose a partner carefully, and look for one that wants to share the outcome with you.</p>
+      </section>
 
-</article></main>
+      <!-- Bottom Share Bar -->
+      <div class="share" role="group" aria-label="Share this article" data-rx-aria-en="Share this article" data-rx-aria-ja="この記事をシェア">
+        <b data-rx-en="Share this article:" data-rx-ja="この記事をシェア：">Share this article:</b>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <button type="button" class="btn-copy-link" id="bottom-copy-btn" data-rx-en="🔗 Copy link" data-rx-ja="🔗 リンクをコピー">🔗 Copy link</button>
+      </div>
+
+      <!-- Contextual CTA -->
+      <section class="post-cta">
+        <h2 data-rx-en="Need a trusted engineering partner in Nepal?" data-rx-ja="ネパールでの信頼できる開発パートナーをお探しですか？">Need a trusted engineering partner in Nepal?</h2>
+        <div class="pc-grid">
+          <a class="pc-card" href="services.html#offshore">
+            <b data-rx-en="Senior dev teams in Nepal" data-rx-ja="ネパールのシニア開発チーム">Senior dev teams in Nepal</b>
+            <span data-rx-en="Dedicated offshore teams that extend your in-house team." data-rx-ja="御社の開発チームを拡張する専任オフショアチーム。">Dedicated offshore teams that extend your in-house team.</span>
+            <em data-rx-en="Learn more →" data-rx-ja="詳しく見る →">Learn more →</em>
+          </a>
+          <a class="pc-card" href="services.html#hr">
+            <b data-rx-en="HR services Japan–Nepal" data-rx-ja="日本・ネパール人材サービス">HR services Japan–Nepal</b>
+            <span data-rx-en="Recruitment and staffing support connecting both countries." data-rx-ja="両国をつなぐ採用・人材派遣支援。">Recruitment and staffing support connecting both countries.</span>
+            <em data-rx-en="Learn more →" data-rx-ja="詳しく見る →">Learn more →</em>
+          </a>
+        </div>
+      </section>
+
+      <!-- Related Articles -->
+      <section class="related">
+        <h2 data-rx-en="Keep reading" data-rx-ja="関連記事">Keep reading</h2>
+        <div class="pc-grid">
+          <a class="pc-card" href="how-to-evaluate-ai-tools-objectively.html">
+            <small data-rx-en="AI &amp; Technology · 8 min read" data-rx-ja="AI・テクノロジー · 読了目安 8分">AI &amp; Technology · 8 min read</small>
+            <b data-rx-en="How to Evaluate AI Tools Objectively" data-rx-ja="AIツールを客観的に評価する方法：現場視点の検証アプローチ">How to Evaluate AI Tools Objectively</b>
+            <span data-rx-en="Why standard SaaS evaluation models fail for probabilistic tools, and a 3-step pilot protocol." data-rx-ja="確率的モデルに対して従来のSaaS選定が通用しない理由、4つの証拠、3段階のパイロット手順。">Why standard SaaS evaluation models fail for probabilistic tools, and a 3-step pilot protocol.</span>
+          </a>
+          <a class="pc-card" href="services.html#offshore">
+            <small data-rx-en="Cross-border Teams · 11 min read" data-rx-ja="国境を越えた協業 · 読了目安 11分">Cross-border Teams · 11 min read</small>
+            <b data-rx-en="Setting Up a Nepal Offshore Development Center: A Practical Guide" data-rx-ja="ネパールにオフショア開発センターを設ける：実践ガイド">Setting Up a Nepal Offshore Development Center: A Practical Guide</b>
+            <span data-rx-en="When dedicated squads beat one-off outsourcing and how to manage them." data-rx-ja="単発外注より専任チームを選ぶべき理由と管理手法。">When dedicated squads beat one-off outsourcing and how to manage them.</span>
+          </a>
+        </div>
+      </section>
+    </article>
+
+    <!-- Right Column: Sticky Sidebar -->
+    <aside class="post-sidebar-col" aria-label="Article navigation and utilities">
+      <!-- Sticky Table of Contents -->
+      <div class="sidebar-box sidebar-toc">
+        <h4>
+          <span data-rx-en="Table of Contents" data-rx-ja="目次">Table of Contents</span>
+          <span id="read-pct" style="color:var(--acc);font-family:monospace;font-size:12px;">0%</span>
+        </h4>
+        <ol id="sidebar-toc-list">
+          <li><a href="#yes" data-rx-en="The “yes” that means three things" data-rx-ja="三つの意味を持つ「はい」">The “yes” that means three things</a></li>
+          <li><a href="#time" data-rx-en="Time-zone math that works" data-rx-ja="無理のない時差のルール">Time-zone math that works</a></li>
+          <li><a href="#docs" data-rx-en="Documentation as shared language" data-rx-ja="共通言語としてのドキュメント">Documentation as shared language</a></li>
+          <li><a href="#embed" data-rx-en="The on-site embed" data-rx-ja="現地駐在という選択肢">The on-site embed</a></li>
+          <li><a href="#fail" data-rx-en="When it goes wrong" data-rx-ja="うまくいかないとき">When it goes wrong</a></li>
+        </ol>
+      </div>
+
+      <!-- Quick Share Widget -->
+      <div class="sidebar-box">
+        <h4 data-rx-en="Share Article" data-rx-ja="記事をシェア">Share Article</h4>
+        <div class="sidebar-share-row">
+          <button type="button" id="side-copy-btn" title="Copy article link" data-rx-en="Copy Link" data-rx-ja="リンクコピー">Copy Link</button>
+          <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjp.rynextech.com%2Fblog-japan-nepal-collaboration.html" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Consultation CTA -->
+      <div class="sidebar-cta">
+        <h5 data-rx-en="Bridging Japan and Nepal?" data-rx-ja="日本とネパールをつなぐ開発">Bridging Japan and Nepal?</h5>
+        <p data-rx-en="Connect directly with our Tokyo representation office or Kathmandu engineering headquarters." data-rx-ja="東京都小金井市の日本窓口、またはカトマンズ本社へ直接ご相談いただけます。">Connect directly with our Tokyo representation office or Kathmandu engineering headquarters.</p>
+        <a class="btn p" style="width:100%;justify-content:center;font-size:14px;padding:10px 18px;" href="index.html#contact" data-quote data-rx-en="Connect with Us" data-rx-ja="お問い合わせ">Connect with Us</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div class="copy-toast" id="copy-toast" data-rx-en="Link copied to clipboard!" data-rx-ja="リンクをクリップボードにコピーしました！">Link copied to clipboard!</div>
+
 <div id="rx-footer"></div>
 <script src="site.js"></script>
+
+<!-- Interactive Article Utilities -->
+<script>
+(function() {
+  // Reading Progress Bar & Percentage
+  var bar = document.getElementById('rx-reading-progress');
+  var pctEl = document.getElementById('read-pct');
+
+  function updateProgress() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    var clamped = Math.min(Math.max(Math.round(scrolled), 0), 100);
+    if (bar) bar.style.width = clamped + '%';
+    if (pctEl) pctEl.textContent = clamped + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Copy Link with Toast Handler
+  var toast = document.getElementById('copy-toast');
+  function triggerCopy() {
+    var url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(showToast);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast();
+    }
+  }
+
+  function showToast() {
+    if (!toast) return;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 2500);
+  }
+
+  ['header-copy-btn', 'side-copy-btn', 'bottom-copy-btn'].forEach(function(id) {
+    var btn = document.getElementById(id);
+    if (btn) btn.addEventListener('click', triggerCopy);
+  });
+
+  // Smooth scroll and active TOC highlighting
+  var tocLinks = document.querySelectorAll('.sidebar-toc a');
+  var sections = [];
+  tocLinks.forEach(function(link) {
+    var id = link.getAttribute('href');
+    if (id && id.startsWith('#')) {
+      var sec = document.querySelector(id);
+      if (sec) sections.push({ link: link, sec: sec });
+    }
+  });
+
+  function highlightTOC() {
+    var scrollPos = window.scrollY + 150;
+    var activeFound = false;
+    for (var i = sections.length - 1; i >= 0; i--) {
+      var item = sections[i];
+      if (item.sec.offsetTop <= scrollPos) {
+        tocLinks.forEach(function(l) { l.classList.remove('active'); });
+        item.link.classList.add('active');
+        activeFound = true;
+        break;
+      }
+    }
+    if (!activeFound) {
+      tocLinks.forEach(function(l) { l.classList.remove('active'); });
+    }
+  }
+  window.addEventListener('scroll', highlightTOC, { passive: true });
+  highlightTOC();
+})();
+</script>
 </body>
 </html>

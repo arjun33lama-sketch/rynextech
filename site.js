@@ -12,14 +12,14 @@
     return '<a href="' + href + '"' + (extra || '') + ' data-rx-en="' + esc(en) + '" data-rx-ja="' + esc(ja) + '">' + esc(en) + '</a>';
   }
 
-  var PAGE_FILE = { main: 'index.html', team: 'team.html', projects: 'projects.html', about: 'about.html', services: 'services.html', 'blog-post': 'index.html#blog' };
+  var PAGE_FILE = { main: 'index.html', team: 'team.html', projects: 'projects.html', about: 'about.html', services: 'services.html', 'blog-post': 'blog.html', blog: 'blog.html' };
   var NAV = [
     ['index.html', 'Home', 'ホーム'],
     ['about.html', 'About Us', '会社概要'],
     ['team.html', 'Team', 'チーム'],
     ['services.html', 'Services', 'サービス'],
     ['projects.html', 'Portfolios', '実績'],
-    ['index.html#blog', 'Blog', 'ブログ'],
+    ['blog.html', 'Blog', 'ブログ'],
     ['index.html#career', 'Career', '採用情報'],
     ['index.html#contact', 'Contact', 'お問い合わせ']
   ];
@@ -75,7 +75,7 @@
           a('about.html', 'About Us', '会社概要') + a('team.html', 'Our Team', '私たちのチーム') + a('projects.html', 'Portfolios', '実績') +
           a('index.html#career', 'Career', '採用情報') + a('sitemap.html', 'Sitemap', 'サイトマップ') + '</div>' +
         '<div class="rx-col"><h4>' + t('Resources', 'リソース') + '</h4>' +
-          a('index.html#blog', 'Blog', 'ブログ') + a('index.html#contact', 'Contact', 'お問い合わせ') +
+          a('blog.html', 'Blog', 'ブログ') + a('index.html#contact', 'Contact', 'お問い合わせ') +
           a('index.html#contact', 'Request a Quote', 'お見積り依頼', ' data-quote') +
           a('legal.html#privacy', 'Privacy Policy', 'プライバシーポリシー') + a('legal.html#terms', 'Terms of Service', '利用規約') + '</div>' +
         '<div class="rx-f-contact"><h4>' + t('Contact', 'お問い合わせ') + '</h4>' +
@@ -105,8 +105,8 @@
   var fc = document.querySelector('.rx-f-contact');
   if (fc && !document.getElementById('contact')) fc.id = 'contact';
 
-  // Pages with no translation script of their own (legal, sitemap): default to Japanese like the other pages, unless English was saved.
-  if (page === 'legal' || page === 'sitemap' || page === 'about' || page === 'services') {
+  // Pages with no translation script of their own (legal, sitemap, about, services, blog, blog-post): default to Japanese like the other pages, unless English was saved.
+  if (page === 'legal' || page === 'sitemap' || page === 'about' || page === 'services' || page === 'blog' || page === 'blog-post') {
     var saved = null;
     try { saved = localStorage.getItem('rx-lang'); } catch (e) { }
     root.lang = saved === 'en' ? 'en' : 'ja';
