@@ -70,7 +70,7 @@
         '<div class="rx-col"><h4>' + t('Services', 'サービス') + '</h4>' +
           a('index.html#offshore', 'Offshore Development', 'オフショア開発') + a('index.html#support', 'Client Support', 'クライアントサポート') +
           a('index.html#hr', 'HR Service', '人材サービス') + a('index.html#consulting', 'IT Consulting', 'ITコンサルティング') +
-          a('index.html#engineering', 'Software Engineering', 'ソフトウェアエンジニアリング') +
+          a('index.html#engineering', 'SES System Engineering Service', 'SES（システムエンジニアリングサービス）') +
           a('index.html#method', 'Methodology', '開発手法') + a('services.html', 'All Services', 'サービス一覧') + '</div>' +
         '<div class="rx-col"><h4>' + t('Company', '会社情報') + '</h4>' +
           a('about.html', 'About Us', '会社概要') + a('team.html', 'Our Team', '私たちのチーム') + a('projects.html', 'Portfolios', '実績') +
