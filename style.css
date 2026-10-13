@@ -340,12 +340,49 @@ body[data-page="main"] .g2 {
 }
 
 body[data-page="main"] .service-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr))
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
 }
 
-@media(max-width:1100px) {
+body[data-page="main"] .service-grid .card {
+  padding: 24px 18px;
+}
+
+body[data-page="main"] .service-grid .card .n {
+  font-size: 34px;
+  right: 16px;
+  top: 16px;
+}
+
+body[data-page="main"] .service-grid .card h3 {
+  font-size: 19px;
+}
+
+body[data-page="main"] .service-grid .card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media(max-width:1180px) {
   body[data-page="main"] .service-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr))
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  body[data-page="main"] .service-grid .card {
+    padding: 28px 22px;
+  }
+}
+
+@media(max-width:800px) {
+  body[data-page="main"] .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media(max-width:580px) {
+  body[data-page="main"] .service-grid {
+    grid-template-columns: 1fr;
   }
 }
 
