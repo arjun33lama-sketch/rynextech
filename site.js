@@ -50,9 +50,9 @@
   // Social profiles. Currently the platforms' homepages; replace with the official company profile URLs when available (leave a URL empty to hide that icon).
   var SOCIAL = [
     ['https://www.facebook.com/Rynextech', 'Facebook', 'facebook'],
-    ['https://www.linkedin.com', 'LinkedIn', 'linkedin'],
+    // ['https://www.linkedin.com', 'LinkedIn', 'linkedin'],
     ['https://www.instagram.com/Rynextech', 'Instagram', 'instagram'],
-    ['https://x.com', 'X', 'x']
+    // ['https://x.com', 'X', 'x']
   ];
   function soc(href, label, icon) {
     return '<a href="' + href + '" target="_blank" rel="noopener noreferrer" aria-label="' + label + '">' + ICON[icon] + '</a>';
