@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Scalable Microservices with Go and Kubernetes — Rynex Tech</title>
+<meta name="description" content="A practical guide on designing fault-tolerant microservices with Go and Kubernetes, from service discovery to graceful degradation under load in distributed cloud systems.">
+<link rel="canonical" href="https://jp.rynextech.com/building-scalable-microservices-with-go-and-kubernetes.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rynex Tech">
+<meta property="og:title" content="Building Scalable Microservices with Go and Kubernetes — Rynex Tech">
+<meta property="og:description" content="A practical guide on designing fault-tolerant microservices with Go and Kubernetes, from service discovery to graceful degradation under load.">
+<meta property="og:url" content="https://jp.rynextech.com/building-scalable-microservices-with-go-and-kubernetes.html">
+<meta property="og:image" content="https://jp.rynextech.com/images/5.png">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Building Scalable Microservices with Go and Kubernetes — Rynex Tech">
+<meta name="twitter:description" content="A practical guide on designing fault-tolerant microservices with Go and Kubernetes, from service discovery to graceful degradation under load.">
+<meta name="twitter:image" content="https://jp.rynextech.com/images/5.png">
+<script>try { if (localStorage.getItem("rx-lang") === "en") document.documentElement.lang = "en" } catch (e) { }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Instrument+Serif:ital@1&family=Noto+Sans+JP:wght@400;600;800&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="blog-post"
+  data-rx-title-en="Building Scalable Microservices with Go and Kubernetes — Rynex Tech"
+  data-rx-title-ja="Goと言語とKubernetesによる高可用性マイクロサービスの設計 — Rynex Tech"
+  data-rx-desc-en="A practical guide on designing fault-tolerant microservices with Go and Kubernetes, from service discovery to graceful degradation under load."
+  data-rx-desc-ja="サービスの自動検知から負荷時のグレースフル・デグラデーションまで、GoとKubernetesで耐障害性に優れたマイクロサービス基盤を構築するための実践ガイド。">
+
+<div id="rx-reading-progress" aria-hidden="true"></div>
+<div id="rx-header"></div>
+
+<main>
+  <!-- Publication Hero Header -->
+  <header class="post-hero-header">
+    <div class="w">
+      <nav class="post-crumb" aria-label="Breadcrumb" data-rx-aria-en="Breadcrumb" data-rx-aria-ja="パンくずリスト">
+        <a href="index.html" data-rx-en="Home" data-rx-ja="ホーム">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="blog.html" data-rx-en="Blog" data-rx-ja="ブログ">Blog</a>
+        <span aria-hidden="true">›</span>
+        <span data-rx-en="Cloud Architecture" data-rx-ja="クラウドアーキテクチャ">Cloud Architecture</span>
+      </nav>
+
+      <div class="post-kicker-row">
+        <span class="post-kicker" data-rx-en="Software Development" data-rx-ja="ソフトウェア開発">Software Development</span>
+        <span class="post-badge-edition" data-rx-en="Production Architecture" data-rx-ja="プロダクションアーキテクチャ">Production Architecture</span>
+      </div>
+
+      <h1 class="post-main-title" data-rx-en="Building Scalable Microservices with Go and Kubernetes" data-rx-ja="Go言語とKubernetesによる高可用性マイクロサービスの設計">Building Scalable Microservices with Go and Kubernetes</h1>
+
+      <p class="post-lead-summary" data-rx-en="A battle-tested guide to designing distributed backend services that scale gracefully under traffic spikes, maintain sub-millisecond latencies, and minimize cloud operational costs." data-rx-ja="急激なトラフィック急増にも耐え、ミリ秒未満の低レイテンシを維持しながらクラウド運用費を抑制する、GoとKubernetesを用いた実践的マイクロサービス設計ガイド。">A battle-tested guide to designing distributed backend services that scale gracefully under traffic spikes, maintain sub-millisecond latencies, and minimize cloud operational costs.</p>
+
+      <div class="post-byline-bar">
+        <!-- Byline metadata omitted -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Two-Column Layout -->
+  <div class="post-layout-wrap">
+    <!-- Left Column: Core Article -->
+    <article class="post-article-core">
+      <figure class="hero-figure">
+        <img src="images/5.png" width="1200" height="675" decoding="async" fetchpriority="high" alt="Engineers collaborating on scalable microservices architecture, code and Kubernetes orchestration" data-rx-alt-en="Engineers collaborating on scalable microservices architecture, code and Kubernetes orchestration" data-rx-alt-ja="マイクロサービスアーキテクチャとKubernetesオーケストレーションを設計するエンジニアチーム">
+        <figcaption class="hero-caption" data-rx-en="Figure 1: Designing resilient, horizontally autoscaled microservices in Go and containerized Kubernetes clusters." data-rx-ja="図1：Go言語とKubernetesコンテナクラスタによる高耐障害性・水平オートスケールアーキテクチャ。">Figure 1: Designing resilient, horizontally autoscaled microservices in Go and containerized Kubernetes clusters.</figcaption>
+      </figure>
+
+      <p class="lead" data-rx-en="When modern web platforms scale from thousands to millions of concurrent users, the underlying architecture faces an existential stress test. Monolithic applications frequently choke on memory contention and database bottlenecks, while naive microservice migrations often result in distributed monoliths with cascading failures. At Rynex Tech, our engineering squads pair the lightweight concurrency of Go with the orchestration power of Kubernetes to build backends that remain rock-solid under enterprise load." data-rx-ja="Webプラットフォームが数千から数百万の同時接続ユーザーへと急成長する際、基盤アーキテクチャは極限の耐久テストに直面します。モノリス構成はメモリ逼迫やデータベースのボトルネックに直面しやすく、無計画なマイクロサービス化は連鎖障害を引き起こす「分散モノリス」に陥りがちです。Rynex Techのエンジニアリングチームは、Go言語の軽量な並行処理とKubernetesの強力なオーケストレーションを組み合わせ、高負荷でもびくともしない高可用性バックエンドを構築しています。">When modern web platforms scale from thousands to millions of concurrent users, the underlying architecture faces an existential stress test. Monolithic applications frequently choke on memory contention and database bottlenecks, while naive microservice migrations often result in distributed monoliths with cascading failures. At Rynex Tech, our engineering squads pair the lightweight concurrency of Go with the orchestration power of Kubernetes to build backends that remain rock-solid under enterprise load.</p>
+
+      <!-- Executive Takeaways Card -->
+      <div class="takeaway-card">
+        <h3 data-rx-en="Executive Takeaways" data-rx-ja="要点のまとめ">Executive Takeaways</h3>
+        <ul>
+          <li data-rx-en="&lt;strong&gt;Go for Low-Footprint Concurrency:&lt;/strong&gt; Goroutines consume only 2KB of initial stack space versus 1MB for OS threads, allowing a single 2-core node to comfortably manage 50,000+ simultaneous connections with microsecond response times." data-rx-ja="&lt;strong&gt;Go言語の軽量並行処理：&lt;/strong&gt;Goroutineは初期スタックわずか2KBで起動可能（OSスレッドの1MBに比べて極めて軽量）。2コアの単一ノードでも5万以上の同時接続をミリ秒未満で安定処理できます。" data-rx-html><strong>Go for Low-Footprint Concurrency:</strong> Goroutines consume only 2KB of initial stack space versus 1MB for OS threads, allowing a single 2-core node to comfortably manage 50,000+ simultaneous connections with microsecond response times.</li>
+          <li data-rx-en="&lt;strong&gt;Zero-Downtime Rollouts:&lt;/strong&gt; Kubernetes rolling update strategies, paired with smart readiness probes and SIGTERM lifecycle handlers in Go, guarantee zero dropped packets during production deployments." data-rx-ja="&lt;strong&gt;ダウンタイムゼロのデプロイ：&lt;/strong&gt;Kubernetesのローリングアップデートと、GoのSIGTERMシグナル捕捉・Readiness Probeを連動させ、通信の切断やパケット欠落をゼロに抑制します。" data-rx-html><strong>Zero-Downtime Rollouts:</strong> Kubernetes rolling update strategies, paired with smart readiness probes and SIGTERM lifecycle handlers in Go, guarantee zero dropped packets during production deployments.</li>
+          <li data-rx-en="&lt;strong&gt;Graceful Degradation over Outages:&lt;/strong&gt; Implement circuit breakers (Sony/gobreaker), rate limiters, and exponential backoff retry policies to isolate external third-party failures before they cascade to your primary customer journey." data-rx-ja="&lt;strong&gt;連鎖障害を防ぐグレースフル・デグラデーション：&lt;/strong&gt;サーキットブレーカーやレートリミットを実装し、外部APIや特定サービスの遅延がシステム全体へと波及するのを瞬時に防ぎます。" data-rx-html><strong>Graceful Degradation over Outages:</strong> Implement circuit breakers (Sony/gobreaker), rate limiters, and exponential backoff retry policies to isolate external third-party failures before they cascade to your primary customer journey.</li>
+          <li data-rx-en="&lt;strong&gt;Cost Efficiency &amp; Auto-Scaling:&lt;/strong&gt; Go's ultra-compact static binaries (15–30MB container images) boot in milliseconds, enabling Kubernetes Horizontal Pod Autoscaling (HPA) to react to sudden surges in seconds rather than minutes." data-rx-ja="&lt;strong&gt;クラウド費用の最小化と高速オートスケール：&lt;/strong&gt;Goの静的バイナリはコンテナ容量が15〜30MBと極小で数ミリ秒で起動。Kubernetes HPAによるオートスケールが数秒で完了し、クラウドインフラ費用を劇的に抑制します。" data-rx-html><strong>Cost Efficiency &amp; Auto-Scaling:</strong> Go's ultra-compact static binaries (15–30MB container images) boot in milliseconds, enabling Kubernetes Horizontal Pod Autoscaling (HPA) to react to sudden surges in seconds rather than minutes.</li>
+        </ul>
+      </div>
+
+      <!-- Section 1 -->
+      <section id="why-go">
+        <h2 data-rx-en="1. Why Go is the Preferred Engine for Microservices" data-rx-ja="1. マイクロサービス開発でGo言語が選ばれる理由">1. Why Go is the Preferred Engine for Microservices</h2>
+        <p data-rx-en="When building independent services that must communicate constantly over gRPC and HTTP/2, raw CPU efficiency and memory economy are paramount. In languages with heavy runtime footprints or heavy garbage collectors, container overhead can quickly inflate your AWS or GCP monthly bill." data-rx-ja="gRPCやHTTP/2を通じて常に通信し合う独立サービス群を開発する場合、CPU効率とメモリ消費の少なさは最重要要件となります。ランタイムの肥大化や過度なガベージコレクションが発生する言語では、コンテナのインフラ費用が急速に膨らんでしまいます。">When building independent services that must communicate constantly over gRPC and HTTP/2, raw CPU efficiency and memory economy are paramount. In languages with heavy runtime footprints or heavy garbage collectors, container overhead can quickly inflate your AWS or GCP monthly bill.</p>
+        <p data-rx-en="Go compiles directly into a standalone static binary with zero external OS dependencies. A minimal distroless Docker image containing a production Go microservice weighs less than 25MB, boots in 15 milliseconds, and consumes less than 30MB of RAM at baseline idle." data-rx-ja="Goは外部依存のない単一の静的バイナリへと直接コンパイルされます。本番用の軽量Distroless Dockerイメージは25MB未満に収まり、15ミリ秒で起動し、アイドル時のメモリ消費も30MB以下です。">Go compiles directly into a standalone static binary with zero external OS dependencies. A minimal distroless Docker image containing a production Go microservice weighs less than 25MB, boots in 15 milliseconds, and consumes less than 30MB of RAM at baseline idle.</p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="kubernetes-resilience">
+        <h2 data-rx-en="2. Kubernetes Orchestration: Pod Health and Graceful Termination" data-rx-ja="2. Kubernetes設計：ヘルスチェックと安全なシャットダウン">2. Kubernetes Orchestration: Pod Health and Graceful Termination</h2>
+        <p data-rx-en="A microservice is only as resilient as its contract with the orchestrator. If a pod is killed abruptly while processing an active in-flight request, users experience broken checkouts, incomplete database transactions, or 502 Bad Gateway errors." data-rx-ja="マイクロサービスの耐障害性は、オーケストレーターとの適切な連携ルールに左右されます。処理中のリクエストを抱えたままPodが強制終了されると、決済の不整合や502 Bad Gatewayエラーが発生してしまいます。">A microservice is only as resilient as its contract with the orchestrator. If a pod is killed abruptly while processing an active in-flight request, users experience broken checkouts, incomplete database transactions, or 502 Bad Gateway errors.</p>
+        <p data-rx-en="To ensure seamless rolling deployments, our Go services intercept `SIGTERM` signals, drain active connections over a preStop buffer window, and expose differentiated `/healthz` (liveness) and `/readyz` (readiness) endpoints to kubelet." data-rx-ja="完全なゼロダウンタイム更新を実現するため、当社のGoサービスは`SIGTERM`シグナルを検知し、安全に通信を完了させる猶予期間（preStop）を設けた上で、kubeletに対して分離されたLivenessとReadinessのエンドポイントを提供します。">To ensure seamless rolling deployments, our Go services intercept `SIGTERM` signals, drain active connections over a preStop buffer window, and expose differentiated `/healthz` (liveness) and `/readyz` (readiness) endpoints to kubelet.</p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="circuit-breaking">
+        <h2 data-rx-en="3. Preventing Cascading Failures with Circuit Breakers" data-rx-ja="3. 連鎖障害を遮断するサーキットブレーカーの設計">3. Preventing Cascading Failures with Circuit Breakers</h2>
+        <p data-rx-en="In a distributed architecture, if Service C becomes slow or unresponsive, Service B will queue worker threads waiting for responses, quickly exhausting its connection pools and bringing down Service A in a domino effect." data-rx-ja="分散環境において、下流のサービスCが応答遅延を起こすと、呼び出し元のサービスBがスレッドを枯渇させ、最上流のサービスAまでドミノ倒しのように全滅する「連鎖障害」が起きます。">In a distributed architecture, if Service C becomes slow or unresponsive, Service B will queue worker threads waiting for responses, quickly exhausting its connection pools and bringing down Service A in a domino effect.</p>
+        <p data-rx-en="We implement circuit breakers with three distinct states: Closed (normal), Open (immediate fail-fast returning fallback cache data), and Half-Open (controlled probe requests to test upstream recovery). This pattern preserves the core user experience even during partial cloud outages." data-rx-ja="これを防ぐため、3つの状態（クローズド：通常、オープン：即座にフォールバック応答、ハーフオープン：回復検証用の試験疎通）を持つサーキットブレーカーを適用。外部障害が発生しても、ユーザー体験を損なうことなくシステムを稼働し続けます。">We implement circuit breakers with three distinct states: Closed (normal), Open (immediate fail-fast returning fallback cache data), and Half-Open (controlled probe requests to test upstream recovery). This pattern preserves the core user experience even during partial cloud outages.</p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="observability">
+        <h2 data-rx-en="4. Distributed Tracing and OpenTelemetry" data-rx-ja="4. 分散トレーシングとOpenTelemetryによる可視化">4. Distributed Tracing and OpenTelemetry</h2>
+        <p data-rx-en="Debugging distributed services without end-to-end tracing is nearly impossible. By injecting OpenTelemetry trace IDs and span contexts into gRPC metadata and HTTP headers, engineering teams can pinpoint a single millisecond bottleneck across a mesh of 20 microservices within seconds." data-rx-ja="エンドツーエンドの分散トレーシングなしにマイクロサービスのボトルネックを特定することは困難です。gRPCメタデータやHTTPヘッダーにOpenTelemetryのTrace IDを伝播させることで、多数のマイクロサービスを横断するリクエストの遅延原因を数秒で特定できます。">Debugging distributed services without end-to-end tracing is nearly impossible. By injecting OpenTelemetry trace IDs and span contexts into gRPC metadata and HTTP headers, engineering teams can pinpoint a single millisecond bottleneck across a mesh of 20 microservices within seconds.</p>
+      </section>
+
+      <!-- Author Bio & Advisory Box -->
+      <div class="post-author-box">
+        <img class="author-avatar" src="images/clients/prabesh.png" alt="Prabesh Thapa" width="68" height="68" loading="lazy">
+        <div class="author-details">
+          <h4>Prabesh Thapa</h4>
+          <span class="author-role" data-rx-en="Cloud Systems Lead · Rynex Tech" data-rx-ja="クラウドシステム責任者 · Rynex Tech">Cloud Systems Lead · Rynex Tech</span>
+          <p data-rx-en="Prabesh specializes in Kubernetes clustering, distributed Go microservices, and high-performance cloud architecture for Japanese and international platforms." data-rx-ja="日系企業および海外向けプラットフォームにおいて、Kubernetesクラスタ運用、Goマイクロサービス設計、高可用性インフラの構築を担当。">Prabesh specializes in Kubernetes clustering, distributed Go microservices, and high-performance cloud architecture for Japanese and international platforms.</p>
+        </div>
+      </div>
+
+      <!-- Contextual CTA -->
+      <section class="post-cta">
+        <h2 data-rx-en="Scaling your cloud backends or microservices?" data-rx-ja="クラウド基盤やマイクロサービスの拡張をお考えですか？">Scaling your cloud backends or microservices?</h2>
+        <div class="pc-grid">
+          <a class="pc-card" href="services.html#offshore">
+            <b data-rx-en="Full-Stack Dev Squads" data-rx-ja="専任開発チーム（ラボ型）">Full-Stack Dev Squads</b>
+            <span data-rx-en="Experienced Go and cloud engineering teams ready to extend your backend roadmap." data-rx-ja="Go言語・クラウド基盤に精通したエンジニアが貴社チームを強力に拡張。">Experienced Go and cloud engineering teams ready to extend your backend roadmap.</span>
+            <em data-rx-en="Learn more →" data-rx-ja="詳しく見る →">Learn more →</em>
+          </a>
+          <a class="pc-card" href="services.html#consulting">
+            <b data-rx-en="Architecture Advisory" data-rx-ja="アーキテクチャ顧問・助言">Architecture Advisory</b>
+            <span data-rx-en="Independent audit of microservice boundaries, container security, and cloud TCO." data-rx-ja="マイクロサービス設計、コンテナセキュリティ、クラウド費用の最適化監査。">Independent audit of microservice boundaries, container security, and cloud TCO.</span>
+            <em data-rx-en="Learn more →" data-rx-ja="詳しく見る →">Learn more →</em>
+          </a>
+        </div>
+      </section>
+
+      <!-- Related Articles -->
+      <section class="related">
+        <h2 data-rx-en="Keep reading" data-rx-ja="関連記事">Keep reading</h2>
+        <div class="pc-grid">
+          <a class="pc-card" href="ai-assisted-senior-led-teams-deliver-faster.html">
+            <small data-rx-en="Engineering Methodology" data-rx-ja="開発手法">Engineering Methodology</small>
+            <b data-rx-en="How AI-Assisted, Senior-Led Teams Deliver Faster Offshore" data-rx-ja="AI活用×シニア主導のチームがオフショアで速く届ける理由">How AI-Assisted, Senior-Led Teams Deliver Faster Offshore</b>
+            <span data-rx-en="Why senior architects direct, AI tools build, and human peer review polishes working software." data-rx-ja="シニアエンジニアが設計を統括し、AIツールが実装を加速する運用モデル。">Why senior architects direct, AI tools build, and human peer review polishes working software.</span>
+          </a>
+          <a class="pc-card" href="setting-up-nepal-offshore-development-center.html">
+            <small data-rx-en="Global Operations" data-rx-ja="グローバル開発拠点">Global Operations</small>
+            <b data-rx-en="Setting Up a Nepal Offshore Development Center: A Practical Guide" data-rx-ja="ネパールにオフショア開発センターを設ける：実践ガイド">Setting Up a Nepal Offshore Development Center: A Practical Guide</b>
+            <span data-rx-en="When dedicated squads beat one-off outsourcing and how to build high-retention engineering centers." data-rx-ja="専任チームが単発外注を上回る理由と、定着率の高い開発拠点の立ち上げ方。">When dedicated squads beat one-off outsourcing and how to build high-retention engineering centers.</span>
+          </a>
+        </div>
+      </section>
+    </article>
+
+    <!-- Right Column: Sticky Sidebar -->
+    <aside class="post-sidebar">
+      <div class="sidebar-meta-card">
+        <div class="sidebar-meta-item">
+          <span class="meta-label" data-rx-en="Reading time" data-rx-ja="読了目安">Reading time</span>
+          <span class="meta-val" data-rx-en="8 min read" data-rx-ja="約8分">8 min read</span>
+        </div>
+        <div class="sidebar-meta-item">
+          <span class="meta-label" data-rx-en="Published" data-rx-ja="公開日">Published</span>
+          <span class="meta-val">May 2026</span>
+        </div>
+        <div class="sidebar-meta-item">
+          <span class="meta-label" data-rx-en="Category" data-rx-ja="カテゴリー">Category</span>
+          <span class="meta-val" data-rx-en="Software Development" data-rx-ja="ソフトウェア開発">Software Development</span>
+        </div>
+        <div class="sidebar-meta-item">
+          <span class="meta-label" data-rx-en="Progress" data-rx-ja="読了率">Progress</span>
+          <span class="meta-val" id="read-pct">0%</span>
+        </div>
+      </div>
+
+      <!-- Sticky Table of Contents -->
+      <nav class="sidebar-toc" aria-label="Table of contents" data-rx-aria-en="Table of contents" data-rx-aria-ja="目次">
+        <h4 data-rx-en="Table of Contents" data-rx-ja="目次">Table of Contents</h4>
+        <ul>
+          <li><a href="#why-go" data-rx-en="1. Why Go for Microservices" data-rx-ja="1. Go言語が選ばれる理由">1. Why Go for Microservices</a></li>
+          <li><a href="#kubernetes-resilience" data-rx-en="2. Kubernetes Pod Health" data-rx-ja="2. Kubernetes設計と安全な終了">2. Kubernetes Pod Health</a></li>
+          <li><a href="#circuit-breaking" data-rx-en="3. Circuit Breakers" data-rx-ja="3. 連鎖障害の防止">3. Circuit Breakers</a></li>
+          <li><a href="#observability" data-rx-en="4. Distributed Tracing" data-rx-ja="4. 分散トレーシング">4. Distributed Tracing</a></li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Consultation CTA -->
+      <div class="sidebar-cta">
+        <h5 data-rx-en="Need High-Load Backend Experts?" data-rx-ja="高負荷バックエンドのご相談">Need High-Load Backend Experts?</h5>
+        <p data-rx-en="Deploy senior Go engineers and container architects dedicated to your stack." data-rx-ja="Go言語・Kubernetesに精通した専任エンジニアチームをご提案します。">Deploy senior Go engineers and container architects dedicated to your stack.</p>
+        <a class="btn p" style="width:100%;justify-content:center;font-size:14px;padding:10px 18px;" href="index.html#contact" data-quote data-rx-en="Request a Quote" data-rx-ja="お見積り依頼">Request a Quote</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div class="copy-toast" id="copy-toast" data-rx-en="Link copied to clipboard!" data-rx-ja="リンクをクリップボードにコピーしました！">Link copied to clipboard!</div>
+
+<div id="rx-footer"></div>
+<script src="site.js"></script>
+
+<!-- Interactive Article Utilities -->
+<script>
+(function() {
+  var bar = document.getElementById('rx-reading-progress');
+  var pctEl = document.getElementById('read-pct');
+
+  function updateProgress() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    var clamped = Math.min(Math.max(Math.round(scrolled), 0), 100);
+    if (bar) bar.style.width = clamped + '%';
+    if (pctEl) pctEl.textContent = clamped + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  var tocLinks = document.querySelectorAll('.sidebar-toc a');
+  var sections = [];
+  tocLinks.forEach(function(link) {
+    var id = link.getAttribute('href');
+    if (id && id.startsWith('#')) {
+      var sec = document.querySelector(id);
+      if (sec) sections.push({ link: link, sec: sec });
+    }
+  });
+
+  function highlightTOC() {
+    var scrollPos = window.scrollY + 150;
+    var activeFound = false;
+    for (var i = sections.length - 1; i >= 0; i--) {
+      var item = sections[i];
+      if (item.sec.offsetTop <= scrollPos) {
+        tocLinks.forEach(function(l) { l.classList.remove('active'); });
+        item.link.classList.add('active');
+        activeFound = true;
+        break;
+      }
+    }
+    if (!activeFound) {
+      tocLinks.forEach(function(l) { l.classList.remove('active'); });
+    }
+  }
+  window.addEventListener('scroll', highlightTOC, { passive: true });
+  highlightTOC();
+})();
+</script>
+</body>
+</html>

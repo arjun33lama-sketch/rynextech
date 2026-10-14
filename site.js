@@ -62,7 +62,7 @@
     '<div class="rx-footer" role="contentinfo"><div class="rx-f-inner">' +
       '<div class="rx-f-grid">' +
         '<div class="rx-f-brand">' +
-          '<a class="rx-brand" href="index.html" aria-label="Rynex Tech"><span class="rx-mark" aria-hidden="true">R</span><span>Rynex <b>Tech</b></span></a>' +
+          '<a class="rx-brand" href="index.html" aria-label="Rynex Tech"><img class="rx-logo" src="images/rynexlogo.png" alt="Rynex Tech" height="38" style="height:38px;width:auto"></a>' +
           '<p class="rx-about">' + t('Nepali engineers, delivering the Japanese way. Dedicated software teams, 24/7 client support and cross-border hiring for companies in Japan and beyond.',
             'ネパールのエンジニアが、日本品質でお届けします。専任ソフトウェアチーム、24時間365日のサポート、国境を越えた採用支援を提供します。') + '</p>' +
           '<div class="rx-social">' + SOCIAL.filter(function (x) { return x[0]; }).map(function (x) { return soc(x[0], x[1], x[2]); }).join('') + '</div>' +
@@ -81,7 +81,7 @@
           a('legal.html#privacy', 'Privacy Policy', 'プライバシーポリシー') + a('legal.html#terms', 'Terms of Service', '利用規約') + '</div>' +
         '<div class="rx-f-contact"><h4>' + t('Contact', 'お問い合わせ') + '</h4>' +
           '<div class="rx-card"><h5>' + t('Nepal Office', 'ネパールオフィス') + '</h5>' +
-            '<p>' + t('Kathmandu, Nepal', 'ネパール・カトマンズ') + '</p>' +
+            '<p>' + t('Kathmandu 44600, Bagmati Province, Nepal', 'ネパール・バグマティ州カトマンズ 44600') + '</p>' +
             '<p><a href="tel:+9779767984140">+977 9767984140</a></p>' +
             '<p><a href="mailto:info@rynextech.com">info@rynextech.com</a></p>' +
             '<p>' + t('Mon–Fri · 9:00–18:00 NPT', '月〜金 · 9:00〜18:00（ネパール時間）') + '</p></div>' +
@@ -92,7 +92,7 @@
         '</div>' +
       '</div>' +
       '<div class="rx-news"><div><h4>' + t('Stay in the loop', '最新情報を受け取る') + '</h4><p>' + t('Practical notes on building software and teams across borders.', '国境を越えたソフトウェア開発とチームづくりの実践ノートをお届けします。') + '</p></div>' +
-        '<form class="rx-nl" id="nl"><input type="email" name="email" placeholder="Your email" aria-label="Email" required data-rx-ph-en="Your email" data-rx-ph-ja="メールアドレス" data-rx-aria-en="Email" data-rx-aria-ja="メールアドレス">' +
+        '<form class="rx-nl" id="nl"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"><input type="email" name="email" placeholder="Your email" aria-label="Email" required data-rx-ph-en="Your email" data-rx-ph-ja="メールアドレス" data-rx-aria-en="Email" data-rx-aria-ja="メールアドレス">' +
         '<button type="submit" data-rx-en="Subscribe" data-rx-ja="登録">Subscribe</button></form>' +
         '<p class="rx-nlmsg" id="nlmsg" aria-live="polite"></p></div>' +
       '<div class="rx-f-bottom"><span>' + t('© 2026 Rynex Tech. All rights reserved. · Company Reg. No. 351154/81/82', '© 2026 Rynex Tech. 無断転載を禁じます。 · 会社登録番号 351154/81/82') + '</span>' +
@@ -131,9 +131,17 @@
     });
     // Page title and meta description (legal & sitemap set them on <body>).
     var bd = document.body, tt = bd.getAttribute(ja ? 'data-rx-title-ja' : 'data-rx-title-en');
-    if (tt) document.title = tt;
+    if (tt) {
+      document.title = tt;
+      var ogt = document.querySelector('meta[property="og:title"]'); if (ogt) ogt.content = tt;
+      var twt = document.querySelector('meta[name="twitter:title"]'); if (twt) twt.content = tt;
+    }
     var dd = bd.getAttribute(ja ? 'data-rx-desc-ja' : 'data-rx-desc-en'), md = document.querySelector('meta[name="description"]');
-    if (dd && md) md.setAttribute('content', dd);
+    if (dd) {
+      if (md) md.setAttribute('content', dd);
+      var ogd = document.querySelector('meta[property="og:description"]'); if (ogd) ogd.content = dd;
+      var twd = document.querySelector('meta[name="twitter:description"]'); if (twd) twd.content = dd;
+    }
   }
   new MutationObserver(apply).observe(root, { attributes: true, attributeFilter: ['lang'] });
   apply();
@@ -156,13 +164,44 @@
   function onScroll() { hd.classList.toggle('rx-scrolled', window.scrollY > 8); }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // Newsletter: index & projects have their own handler; others use mailto.
-  if (page !== 'main' && page !== 'projects') {
-    document.getElementById('nl').addEventListener('submit', function (e) {
+  // Unified newsletter submission handler across all pages
+  var nlForm = document.getElementById('nl');
+  if (nlForm) {
+    nlForm.addEventListener('submit', async function (e) {
       e.preventDefault();
-      var email = this.querySelector('[name="email"]').value;
-      location.href = 'mailto:info@rynextech.com?subject=' + encodeURIComponent('Newsletter signup') + '&body=' + encodeURIComponent('Please subscribe this email address: ' + email);
-      document.getElementById('nlmsg').textContent = root.lang === 'en' ? 'Your email app will open to send the signup request.' : 'メールアプリが開きます。送信してご登録ください。';
+      var btn = nlForm.querySelector('button[type="submit"]');
+      var input = nlForm.querySelector('input[name="email"]');
+      var msg = document.getElementById('nlmsg');
+      var email = input ? input.value.trim() : '';
+      if (!email) return;
+      var ja = root.lang !== 'en';
+      if (btn) btn.disabled = true;
+      if (msg) msg.textContent = ja ? '送信中...' : 'Subscribing...';
+      try {
+        var fd = new FormData(nlForm);
+        fd.append('_subject', 'New newsletter subscription - Rynex Tech');
+        fd.append('language', root.lang || 'ja');
+        var res = await fetch('https://formsubmit.co/ajax/info@rynextech.com', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: fd
+        });
+        var data = await res.json();
+        if (res.ok && String(data.success) === 'true') {
+          if (msg) msg.textContent = ja ? 'ご登録ありがとうございます！' : 'Thanks for subscribing!';
+          nlForm.reset();
+        } else {
+          throw new Error('Submission error');
+        }
+      } catch (err) {
+        if (msg) {
+          msg.innerHTML = (ja ? '自動送信できませんでした。' : 'Could not subscribe automatically. ') +
+            '<a href="mailto:info@rynextech.com?subject=Newsletter%20Signup&body=' + encodeURIComponent('Please subscribe: ' + email) + '" style="text-decoration:underline;font-weight:600">' +
+            (ja ? 'メールで登録' : 'Send via email') + '</a>';
+        }
+      } finally {
+        if (btn) btn.disabled = false;
+      }
     });
   }
 })();
