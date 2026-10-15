@@ -465,155 +465,220 @@
     <!-- Frequently Asked Questions (FAQ) -->
     <section id="faq">
       <div class="w">
-        <div class="faq-header">
-          <span class="eyebrow" data-rx-en="Got Questions?" data-rx-ja="よくあるご質問">Got Questions?</span>
-          <h2 data-rx-en="Frequently Asked &lt;em&gt;Questions.&lt;/em&gt;" data-rx-ja="よくあるご質問 &lt;em&gt;（FAQ）&lt;/em&gt;" data-rx-html>Frequently Asked <em>Questions.</em></h2>
-          <p class="lead" data-rx-en="Everything you need to know about our offshore squads, SES arrangements, bilingual communication, and engineering quality standards." data-rx-ja="オフショア開発体制、SES契約、バイリンガルによるコミュニケーション、品質管理基準についてよくいただくご質問にお答えします。">Everything you need to know about our offshore squads, SES arrangements, bilingual communication, and engineering quality standards.</p>
-        </div>
+        <div class="faq-layout">
+          <!-- Left Sticky Sidebar (Desktop) -->
+          <aside class="faq-sidebar">
+            <div class="faq-sidebar-top">
+              <span class="eyebrow" data-rx-en="Got Questions?" data-rx-ja="よくあるご質問">Got Questions?</span>
+              <h2 data-rx-en="Frequently Asked &lt;em&gt;Questions.&lt;/em&gt;" data-rx-ja="よくあるご質問 &lt;em&gt;（FAQ）&lt;/em&gt;" data-rx-html>Frequently Asked <em>Questions.</em></h2>
+              <p class="lead" data-rx-en="Everything you need to know about our offshore squads, SES arrangements, bilingual communication, and engineering quality standards." data-rx-ja="オフショア開発体制、SES契約、バイリンガルによるコミュニケーション、品質管理基準についてよくいただくご質問にお答えします。">Everything you need to know about our offshore squads, SES arrangements, bilingual communication, and engineering quality standards.</p>
+            </div>
 
-        <div class="faq-controls">
-          <div class="faq-search-box">
-            <input type="search" id="faq-search" class="faq-search-input" placeholder="Search questions or keywords…" aria-label="Search frequently asked questions" data-rx-ph-en="Search questions or keywords…" data-rx-ph-ja="キーワードや質問を検索…">
-            <span class="faq-search-icon" aria-hidden="true">🔍</span>
-          </div>
-          <div class="faq-pills" id="faq-pills" role="tablist" aria-label="FAQ Categories">
-            <button type="button" class="faq-pill active" data-cat="all" data-rx-en="All Questions" data-rx-ja="すべて">All Questions</button>
-            <button type="button" class="faq-pill" data-cat="offshore" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</button>
-            <button type="button" class="faq-pill" data-cat="contracts" data-rx-en="SES &amp; Contracts" data-rx-ja="SES・契約形態">SES &amp; Contracts</button>
-            <button type="button" class="faq-pill" data-cat="comm" data-rx-en="Language &amp; Communication" data-rx-ja="言語・コミュニケーション">Language &amp; Communication</button>
-            <button type="button" class="faq-pill" data-cat="quality" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</button>
-          </div>
-        </div>
+            <div class="faq-search-box">
+              <input type="search" id="faq-search" class="faq-search-input" placeholder="Search questions or keywords…" aria-label="Search frequently asked questions" data-rx-ph-en="Search questions or keywords…" data-rx-ph-ja="キーワードや質問を検索…">
+              <span class="faq-search-icon" aria-hidden="true">🔍</span>
+              <button type="button" id="faq-search-clear" class="faq-search-clear" aria-label="Clear search" data-rx-aria-en="Clear search" data-rx-aria-ja="検索をクリア" style="display:none;">✕</button>
+            </div>
 
-        <div class="faq-list" id="faq-list">
-          <!-- Item 1 -->
-          <div class="faq-item open" data-cat="offshore">
-            <button type="button" class="faq-question" aria-expanded="true">
-              <span data-rx-en="What advantages does setting up an offshore engineering squad in Nepal offer?" data-rx-ja="ネパールにオフショア開発チームを組成するメリットは何ですか？">What advantages does setting up an offshore engineering squad in Nepal offer?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 500px;">
-              <div class="faq-answer-inner">
-                <p data-rx-en="Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting)." data-rx-ja="ネパールにはカトマンズ大学やトリブバン大学などの名門情報系学部から毎年優秀なエンジニアが輩出されています。高い英語力と親日的な文化、日本語学習（JLPT N3〜N2）への高い意欲、そして日本国内採用と比べて30〜50%のコスト削減が大きな強みです。">Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting).</p>
-                <p data-rx-en="Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations." data-rx-ja="さらに東京との時差はわずか3時間15分。午後のコアタイムをまるまるリアルタイムで共有できるため、欧米オフショアのような返答待ちのタイムラグが発生しません。">Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations.</p>
+            <div class="faq-categories" id="faq-pills" role="tablist" aria-label="FAQ Categories">
+              <button type="button" class="faq-cat-btn faq-pill active" data-cat="all">
+                <span class="faq-cat-title" data-rx-en="All Questions" data-rx-ja="すべての質問">All Questions</span>
+                <span class="faq-cat-count">8</span>
+              </button>
+              <button type="button" class="faq-cat-btn faq-pill" data-cat="offshore">
+                <span class="faq-cat-title" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                <span class="faq-cat-count">3</span>
+              </button>
+              <button type="button" class="faq-cat-btn faq-pill" data-cat="contracts">
+                <span class="faq-cat-title" data-rx-en="SES &amp; Contracts" data-rx-ja="SES・契約形態">SES &amp; Contracts</span>
+                <span class="faq-cat-count">1</span>
+              </button>
+              <button type="button" class="faq-cat-btn faq-pill" data-cat="comm">
+                <span class="faq-cat-title" data-rx-en="Language &amp; Communication" data-rx-ja="言語・コミュニケーション">Language &amp; Communication</span>
+                <span class="faq-cat-count">1</span>
+              </button>
+              <button type="button" class="faq-cat-btn faq-pill" data-cat="quality">
+                <span class="faq-cat-title" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                <span class="faq-cat-count">3</span>
+              </button>
+            </div>
+
+            <!-- Desktop Sticky Consultation Card -->
+            <div class="faq-sidebar-cta">
+              <div class="faq-sidebar-cta-head">
+                <span class="faq-live-dot" aria-hidden="true"></span>
+                <span class="faq-sidebar-cta-badge" data-rx-en="Quick Advisory" data-rx-ja="迅速サポート">Quick Advisory</span>
+              </div>
+              <h3 data-rx-en="Still have questions?" data-rx-ja="個別のご相談はこちら">Still have questions?</h3>
+              <p data-rx-en="Our engineering directors in Tokyo, Kathmandu, and Australia can clarify scopes, rates, and onboarding within 1 business day." data-rx-ja="東京、カトマンズ、オーストラリアの技術役員が、プロジェクト要件や概算お見積り、チーム編成について迅速にお答えします。">Our engineering directors in Tokyo, Kathmandu, and Australia can clarify scopes, rates, and onboarding within 1 business day.</p>
+              <a class="btn p faq-cta-link" href="index.html#contact" data-quote data-rx-en="Talk to Leadership →" data-rx-ja="経営陣に相談する →">Talk to Leadership →</a>
+            </div>
+          </aside>
+
+          <!-- Right Content Column: Header Bar & FAQ List -->
+          <div class="faq-content">
+            <div class="faq-results-bar">
+              <div class="faq-results-count">
+                <span id="faq-count-num">8</span> <span data-rx-en="questions found" data-rx-ja="件の質問を表示中">questions found</span>
+              </div>
+              <button type="button" class="faq-toggle-all-btn" id="faq-toggle-all" data-rx-en="Expand all" data-rx-ja="すべて開く">Expand all</button>
+            </div>
+
+            <div class="faq-list" id="faq-list">
+              <!-- Item 1 -->
+              <div class="faq-item open" data-cat="offshore">
+                <button type="button" class="faq-question" aria-expanded="true">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                    <span class="faq-q-text" data-rx-en="What advantages does setting up an offshore engineering squad in Nepal offer?" data-rx-ja="ネパールにオフショア開発チームを組成するメリットは何ですか？">What advantages does setting up an offshore engineering squad in Nepal offer?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" style="max-height: 500px;">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting)." data-rx-ja="ネパールにはカトマンズ大学やトリブバン大学などの名門情報系学部から毎年優秀なエンジニアが輩出されています。高い英語力と親日的な文化、日本語学習（JLPT N3〜N2）への高い意欲、そして日本国内採用と比べて30〜50%のコスト削減が大きな強みです。">Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting).</p>
+                    <p data-rx-en="Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations." data-rx-ja="さらに東京との時差はわずか3時間15分。午後のコアタイムをまるまるリアルタイムで共有できるため、欧米オフショアのような返答待ちのタイムラグが発生しません。">Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="faq-item open" data-cat="contracts">
+                <button type="button" class="faq-question" aria-expanded="true">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="SES &amp; Contracts" data-rx-ja="SES・契約形態">SES &amp; Contracts</span>
+                    <span class="faq-q-text" data-rx-en="What engagement models and contract types do you support?" data-rx-ja="契約形態や契約モデルにはどのようなものがありますか？">What engagement models and contract types do you support?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer" style="max-height: 500px;">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="We provide tailored contracts to match your risk profile and project lifecycle:" data-rx-ja="プロジェクトの規模や要件に合わせて柔軟な契約形態をご用意しています：">We provide tailored contracts to match your risk profile and project lifecycle:</p>
+                    <ul>
+                      <li><strong data-rx-en="SES Quasi-Delegation (準委任契約):" data-rx-ja="準委任型SES：">SES Quasi-Delegation (準委任契約):</strong> <span data-rx-en="Flexible monthly engineering capacity embedded directly into your sprints with agile autonomy." data-rx-ja="貴社スプリントに直接参画し、柔軟なリソース調整が可能な月額契約モデル。">Flexible monthly engineering capacity embedded directly into your sprints with agile autonomy.</span></li>
+                      <li><strong data-rx-en="Milestone / Contract Delivery (請負契約):" data-rx-ja="請負型開発：">Milestone / Contract Delivery (請負契約):</strong> <span data-rx-en="Fixed-scope delivery with clear deliverables, deadlines, and milestone sign-offs." data-rx-ja="明確な要件定義と納品マイルストーンを定めた成果物責任モデル。">Fixed-scope delivery with clear deliverables, deadlines, and milestone sign-offs.</span></li>
+                      <li><strong data-rx-en="Dedicated Offshore Squad / ODC (ラボ型開発):" data-rx-ja="専任ラボ型開発（ODC）：">Dedicated Offshore Squad / ODC (ラボ型開発):</strong> <span data-rx-en="A long-term dedicated team built exclusively for your product, accumulating deep domain expertise." data-rx-ja="自社専用チームとしてドメイン知識を蓄積しながら長期的にプロダクトを育てる専任開発拠点。">A long-term dedicated team built exclusively for your product, accumulating deep domain expertise.</span></li>
+                      <li><strong data-rx-en="HR Staffing &amp; Direct Hire (人材紹介・派遣):" data-rx-ja="人材紹介・派遣：">HR Staffing &amp; Direct Hire (人材紹介・派遣):</strong> <span data-rx-en="Direct recruitment of vetted bilingual engineers for Japanese domestic or remote roles." data-rx-ja="厳選されたバイリンガル技術者の日本国内採用・リモート直接雇用支援。">Direct recruitment of vetted bilingual engineers for Japanese domestic or remote roles.</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="faq-item" data-cat="offshore">
+                <button type="button" class="faq-question" aria-expanded="false">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                    <span class="faq-q-text" data-rx-en="Can we start with a small pilot or trial sprint before committing?" data-rx-ja="本格導入の前に、小規模なパイロット検証やトライアルスプリントは可能ですか？">Can we start with a small pilot or trial sprint before committing?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="Yes, absolutely. Over 70% of our enterprise clients start with a 2-to-4-week pilot sprint or a small squad of 2–3 engineers to tackle an existing backlog ticket, evaluate code quality, and establish communication rhythms. Once you are confident in our velocity and output, we scale up smoothly." data-rx-ja="はい、もちろん可能です。当社クライアントの7割以上が、まずは2〜4週間のトライアルスプリントや2〜3名のパイロット体制からスタートしています。実際のコード品質、レビューの丁寧さ、日々のコミュニケーションを体感していただき、十分にご納得いただいた上で本格的な体制へと拡張していただけます。">Yes, absolutely. Over 70% of our enterprise clients start with a 2-to-4-week pilot sprint or a small squad of 2–3 engineers to tackle an existing backlog ticket, evaluate code quality, and establish communication rhythms. Once you are confident in our velocity and output, we scale up smoothly.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="faq-item" data-cat="comm">
+                <button type="button" class="faq-question" aria-expanded="false">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="Language &amp; Communication" data-rx-ja="言語・コミュニケーション">Language &amp; Communication</span>
+                    <span class="faq-q-text" data-rx-en="How do we handle communication? Can your team communicate in Japanese?" data-rx-ja="コミュニケーションはどのように行われますか？日本語でのやり取りは可能ですか？">How do we handle communication? Can your team communicate in Japanese?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="We provide bilingual Bridge Software Engineers (BrSE) and project directors based between Tokyo and Kathmandu. Specifications, daily standups, and ticket comments can be handled completely in Japanese or English based on your preference." data-rx-ja="東京窓口およびカトマンズ拠点に、日本語と英語の両方に精通したバイリンガル・ブリッジSE（BrSE）やプロジェクト管理者が常駐しています。仕様書の確認、毎日のスタンドアップ、SlackやTeamsでのやり取りはすべて日本語で対応可能です。">We provide bilingual Bridge Software Engineers (BrSE) and project directors based between Tokyo and Kathmandu. Specifications, daily standups, and ticket comments can be handled completely in Japanese or English based on your preference.</p>
+                    <p data-rx-en="We integrate seamlessly into your preferred stack: Slack, Microsoft Teams, Discord, Jira, Linear, Notion, GitHub, and GitLab." data-rx-ja="Slack、Teams、Jira、Linear、GitHubなど、貴社が日常お使いのツール環境にそのまま合流してスムーズに業務を開始できます。">We integrate seamlessly into your preferred stack: Slack, Microsoft Teams, Discord, Jira, Linear, Notion, GitHub, and GitLab.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div class="faq-item" data-cat="quality">
+                <button type="button" class="faq-question" aria-expanded="false">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                    <span class="faq-q-text" data-rx-en="Who owns the intellectual property (IP) and source code?" data-rx-ja="ソースコードや知的財産権（IP）の帰属はどうなりますか？">Who owns the intellectual property (IP) and source code?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="100% of all intellectual property, source code, database architectures, configurations, and documentation belong entirely to you. Work is committed directly to your private company repositories from day one. Our contracts explicitly assign all rights to the client upon milestone payment." data-rx-ja="開発されたすべてのソースコード、設計書、データベース構造、知的財産権（IP）は100%お客様に帰属します。初日から貴社所有のプライベートリポジトリ（GitHub/GitLab等）に直接コミットし、契約書においても権利の完全譲渡を明記しております。">100% of all intellectual property, source code, database architectures, configurations, and documentation belong entirely to you. Work is committed directly to your private company repositories from day one. Our contracts explicitly assign all rights to the client upon milestone payment.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 6 -->
+              <div class="faq-item" data-cat="quality">
+                <button type="button" class="faq-question" aria-expanded="false">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                    <span class="faq-q-text" data-rx-en="How do you safeguard security, NDA compliance, and customer data?" data-rx-ja="セキュリティ対策や機密保持（NDA）、データ保護はどのように行われますか？">How do you safeguard security, NDA compliance, and customer data?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="Security is fundamental to our operating culture. Prior to any sensitive discussions, we execute bilateral NDAs enforceable under Japanese law. We follow strict security practices:" data-rx-ja="セキュリティとコンプライアンスは私たちの開発基盤の根幹です。商談開始前に日本法に準拠した機密保持契約（NDA）を締結し、以下のセキュリティ基準を徹底しています：">Security is fundamental to our operating culture. Prior to any sensitive discussions, we execute bilateral NDAs enforceable under Japanese law. We follow strict security practices:</p>
+                    <ul>
+                      <li data-rx-en="Mandatory 2FA/MFA across all code repositories, cloud infrastructure, and communication channels." data-rx-ja="すべてのリポジトリ、クラウド環境、社内ツールにおける多要素認証（2FA/MFA）の義務化。">Mandatory 2FA/MFA across all code repositories, cloud infrastructure, and communication channels.</li>
+                      <li data-rx-en="Clean-desk policies, encrypted disk storage (BitLocker/FileVault), and strict VPN access controls." data-rx-ja="暗号化端末（BitLocker/FileVault）、VPN経由の安全なネットワーク接続、クリーンデスク方針の徹底。">Clean-desk policies, encrypted disk storage (BitLocker/FileVault), and strict VPN access controls.</li>
+                      <li data-rx-en="Alignment with ISO/IEC 27001 information security standards and GDPR/APPI compliance." data-rx-ja="ISO/IEC 27001情報セキュリティ規格や個人情報保護法（APPI）に配慮したデータ取り扱い基準。">Alignment with ISO/IEC 27001 information security standards and GDPR/APPI compliance.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 7 -->
+              <div class="faq-item" data-cat="offshore">
+                <button type="button" class="faq-question" aria-expanded="false">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                    <span class="faq-q-text" data-rx-en="How quickly can a dedicated team or specialist be deployed?" data-rx-ja="チームの立ち上げやエンジニアのアサインにはどのくらいの期間がかかりますか？">How quickly can a dedicated team or specialist be deployed?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="For core modern stacks (React, Next.js, Node.js, Python, Go, Flutter, AWS/GCP), we can typically assemble and onboard an engineering squad within 1 to 2 weeks from our existing pool of senior and mid-level engineers. Specialized requirements or custom hiring pipelines take approximately 3 to 4 weeks." data-rx-ja="主要な技術スタック（React、Next.js、Node.js、Python、Go、Flutter、AWS/GCP等）であれば、当社のエンジニアプールから最短1〜2週間でチームを編成しキックオフが可能です。特殊なドメイン知識やオーダーメイド採用が必要な場合でも、厳選パイプラインを活用し約3〜4週間で着任可能です。">For core modern stacks (React, Next.js, Node.js, Python, Go, Flutter, AWS/GCP), we can typically assemble and onboard an engineering squad within 1 to 2 weeks from our existing pool of senior and mid-level engineers. Specialized requirements or custom hiring pipelines take approximately 3 to 4 weeks.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 8 -->
+              <div class="faq-item" data-cat="quality">
+                <button type="button" class="faq-question" aria-expanded="false">
+                  <div class="faq-q-left">
+                    <span class="faq-item-badge" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                    <span class="faq-q-text" data-rx-en="How does the 24/7 Client Support Desk work?" data-rx-ja="24時間365日のクライアントサポートデスクはどのように運用されますか？">How does the 24/7 Client Support Desk work?</span>
+                  </div>
+                  <span class="faq-toggle-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-inner">
+                    <p data-rx-en="Our Support Desk operates 24 hours a day, 365 days a year across rotating shifts. Requests are logged into a central ticket queue with defined SLA timers (e.g. Critical P1 response under 15 minutes). We monitor production server uptimes, resolve user queries, handle bug escalations, and provide monthly transparency reports." data-rx-ja="サポートデスクは24時間365日、シフト制で常時稼働しています。すべての問い合わせや障害はチケットシステムで一元管理され、重要度に応じたSLA（P1緊急障害は15分以内一次対応など）を厳守。サーバー監視、ユーザー対応、障害エスカレーション、月次稼働レポートの提出まで一貫して支援します。">Our Support Desk operates 24 hours a day, 365 days a year across rotating shifts. Requests are logged into a central ticket queue with defined SLA timers (e.g. Critical P1 response under 15 minutes). We monitor production server uptimes, resolve user queries, handle bug escalations, and provide monthly transparency reports.</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Item 2 -->
-          <div class="faq-item open" data-cat="contracts">
-            <button type="button" class="faq-question" aria-expanded="true">
-              <span data-rx-en="What engagement models and contract types do you support?" data-rx-ja="契約形態や契約モデルにはどのようなものがありますか？">What engagement models and contract types do you support?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 500px;">
-              <div class="faq-answer-inner">
-                <p data-rx-en="We provide tailored contracts to match your risk profile and project lifecycle:" data-rx-ja="プロジェクトの規模や要件に合わせて柔軟な契約形態をご用意しています：">We provide tailored contracts to match your risk profile and project lifecycle:</p>
-                <ul>
-                  <li><strong data-rx-en="SES Quasi-Delegation (準委任契約):" data-rx-ja="準委任型SES：">SES Quasi-Delegation (準委任契約):</strong> <span data-rx-en="Flexible monthly engineering capacity embedded directly into your sprints with agile autonomy." data-rx-ja="貴社スプリントに直接参画し、柔軟なリソース調整が可能な月額契約モデル。">Flexible monthly engineering capacity embedded directly into your sprints with agile autonomy.</span></li>
-                  <li><strong data-rx-en="Milestone / Contract Delivery (請負契約):" data-rx-ja="請負型開発：">Milestone / Contract Delivery (請負契約):</strong> <span data-rx-en="Fixed-scope delivery with clear deliverables, deadlines, and milestone sign-offs." data-rx-ja="明確な要件定義と納品マイルストーンを定めた成果物責任モデル。">Fixed-scope delivery with clear deliverables, deadlines, and milestone sign-offs.</span></li>
-                  <li><strong data-rx-en="Dedicated Offshore Squad / ODC (ラボ型開発):" data-rx-ja="専任ラボ型開発（ODC）：">Dedicated Offshore Squad / ODC (ラボ型開発):</strong> <span data-rx-en="A long-term dedicated team built exclusively for your product, accumulating deep domain expertise." data-rx-ja="自社専用チームとしてドメイン知識を蓄積しながら長期的にプロダクトを育てる専任開発拠点。">A long-term dedicated team built exclusively for your product, accumulating deep domain expertise.</span></li>
-                  <li><strong data-rx-en="HR Staffing &amp; Direct Hire (人材紹介・派遣):" data-rx-ja="人材紹介・派遣：">HR Staffing &amp; Direct Hire (人材紹介・派遣):</strong> <span data-rx-en="Direct recruitment of vetted bilingual engineers for Japanese domestic or remote roles." data-rx-ja="厳選されたバイリンガル技術者の日本国内採用・リモート直接雇用支援。">Direct recruitment of vetted bilingual engineers for Japanese domestic or remote roles.</span></li>
-                </ul>
-              </div>
+            <!-- Empty state when search produces no results -->
+            <div id="faq-empty-state" class="faq-empty" style="display:none;" data-rx-en="No questions found matching your search. Please reach out to us directly!" data-rx-ja="条件に一致する質問が見つかりませんでした。お気軽にお問い合わせください。">
+              No questions found matching your search. Please reach out to us directly!
+            </div>
+
+            <!-- Mobile-only Consultation Banner -->
+            <div class="faq-mobile-cta faq-cta-box">
+              <h3 data-rx-en="Still have questions about working together?" data-rx-ja="他にご不明な点やご相談はございますか？">Still have questions about working together?</h3>
+              <p data-rx-en="Our leadership team in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote." data-rx-ja="東京、カトマンズ、オーストラリアの経営陣が、ご要件に合わせて無料相談・お見積りをご案内します。">Our leadership team in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote.</p>
+              <a class="btn p" href="index.html#contact" data-quote data-rx-en="Request a Quote &amp; Free Advisory Call" data-rx-ja="お見積り・無料相談を依頼する">Request a Quote &amp; Free Advisory Call</a>
             </div>
           </div>
-
-          <!-- Item 3 -->
-          <div class="faq-item" data-cat="offshore">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span data-rx-en="Can we start with a small pilot or trial sprint before committing?" data-rx-ja="本格導入の前に、小規模なパイロット検証やトライアルスプリントは可能ですか？">Can we start with a small pilot or trial sprint before committing?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p data-rx-en="Yes, absolutely. Over 70% of our enterprise clients start with a 2-to-4-week pilot sprint or a small squad of 2–3 engineers to tackle an existing backlog ticket, evaluate code quality, and establish communication rhythms. Once you are confident in our velocity and output, we scale up smoothly." data-rx-ja="はい、もちろん可能です。当社クライアントの7割以上が、まずは2〜4週間のトライアルスプリントや2〜3名のパイロット体制からスタートしています。実際のコード品質、レビューの丁寧さ、日々のコミュニケーションを体感していただき、十分にご納得いただいた上で本格的な体制へと拡張していただけます。">Yes, absolutely. Over 70% of our enterprise clients start with a 2-to-4-week pilot sprint or a small squad of 2–3 engineers to tackle an existing backlog ticket, evaluate code quality, and establish communication rhythms. Once you are confident in our velocity and output, we scale up smoothly.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="faq-item" data-cat="comm">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span data-rx-en="How do we handle communication? Can your team communicate in Japanese?" data-rx-ja="コミュニケーションはどのように行われますか？日本語でのやり取りは可能ですか？">How do we handle communication? Can your team communicate in Japanese?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p data-rx-en="We provide bilingual Bridge Software Engineers (BrSE) and project directors based between Tokyo and Kathmandu. Specifications, daily standups, and ticket comments can be handled completely in Japanese or English based on your preference." data-rx-ja="東京窓口およびカトマンズ拠点に、日本語と英語の両方に精通したバイリンガル・ブリッジSE（BrSE）やプロジェクト管理者が常駐しています。仕様書の確認、毎日のスタンドアップ、SlackやTeamsでのやり取りはすべて日本語で対応可能です。">We provide bilingual Bridge Software Engineers (BrSE) and project directors based between Tokyo and Kathmandu. Specifications, daily standups, and ticket comments can be handled completely in Japanese or English based on your preference.</p>
-                <p data-rx-en="We integrate seamlessly into your preferred stack: Slack, Microsoft Teams, Discord, Jira, Linear, Notion, GitHub, and GitLab." data-rx-ja="Slack、Teams、Jira、Linear、GitHubなど、貴社が日常お使いのツール環境にそのまま合流してスムーズに業務を開始できます。">We integrate seamlessly into your preferred stack: Slack, Microsoft Teams, Discord, Jira, Linear, Notion, GitHub, and GitLab.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 5 -->
-          <div class="faq-item" data-cat="quality">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span data-rx-en="Who owns the intellectual property (IP) and source code?" data-rx-ja="ソースコードや知的財産権（IP）の帰属はどうなりますか？">Who owns the intellectual property (IP) and source code?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p data-rx-en="100% of all intellectual property, source code, database architectures, configurations, and documentation belong entirely to you. Work is committed directly to your private company repositories from day one. Our contracts explicitly assign all rights to the client upon milestone payment." data-rx-ja="開発されたすべてのソースコード、設計書、データベース構造、知的財産権（IP）は100%お客様に帰属します。初日から貴社所有のプライベートリポジトリ（GitHub/GitLab等）に直接コミットし、契約書においても権利の完全譲渡を明記しております。">100% of all intellectual property, source code, database architectures, configurations, and documentation belong entirely to you. Work is committed directly to your private company repositories from day one. Our contracts explicitly assign all rights to the client upon milestone payment.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 6 -->
-          <div class="faq-item" data-cat="quality">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span data-rx-en="How do you safeguard security, NDA compliance, and customer data?" data-rx-ja="セキュリティ対策や機密保持（NDA）、データ保護はどのように行われますか？">How do you safeguard security, NDA compliance, and customer data?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p data-rx-en="Security is fundamental to our operating culture. Prior to any sensitive discussions, we execute bilateral NDAs enforceable under Japanese law. We follow strict security practices:" data-rx-ja="セキュリティとコンプライアンスは私たちの開発基盤の根幹です。商談開始前に日本法に準拠した機密保持契約（NDA）を締結し、以下のセキュリティ基準を徹底しています：">Security is fundamental to our operating culture. Prior to any sensitive discussions, we execute bilateral NDAs enforceable under Japanese law. We follow strict security practices:</p>
-                <ul>
-                  <li data-rx-en="Mandatory 2FA/MFA across all code repositories, cloud infrastructure, and communication channels." data-rx-ja="すべてのリポジトリ、クラウド環境、社内ツールにおける多要素認証（2FA/MFA）の義務化。">Mandatory 2FA/MFA across all code repositories, cloud infrastructure, and communication channels.</li>
-                  <li data-rx-en="Clean-desk policies, encrypted disk storage (BitLocker/FileVault), and strict VPN access controls." data-rx-ja="暗号化端末（BitLocker/FileVault）、VPN経由の安全なネットワーク接続、クリーンデスク方針の徹底。">Clean-desk policies, encrypted disk storage (BitLocker/FileVault), and strict VPN access controls.</li>
-                  <li data-rx-en="Alignment with ISO/IEC 27001 information security standards and GDPR/APPI compliance." data-rx-ja="ISO/IEC 27001情報セキュリティ規格や個人情報保護法（APPI）に配慮したデータ取り扱い基準。">Alignment with ISO/IEC 27001 information security standards and GDPR/APPI compliance.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 7 -->
-          <div class="faq-item" data-cat="offshore">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span data-rx-en="How quickly can a dedicated team or specialist be deployed?" data-rx-ja="チームの立ち上げやエンジニアのアサインにはどのくらいの期間がかかりますか？">How quickly can a dedicated team or specialist be deployed?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p data-rx-en="For core modern stacks (React, Next.js, Node.js, Python, Go, Flutter, AWS/GCP), we can typically assemble and onboard an engineering squad within 1 to 2 weeks from our existing pool of senior and mid-level engineers. Specialized requirements or custom hiring pipelines take approximately 3 to 4 weeks." data-rx-ja="主要な技術スタック（React、Next.js、Node.js、Python、Go、Flutter、AWS/GCP等）であれば、当社のエンジニアプールから最短1〜2週間でチームを編成しキックオフが可能です。特殊なドメイン知識やオーダーメイド採用が必要な場合でも、厳選パイプラインを活用し約3〜4週間で着任可能です。">For core modern stacks (React, Next.js, Node.js, Python, Go, Flutter, AWS/GCP), we can typically assemble and onboard an engineering squad within 1 to 2 weeks from our existing pool of senior and mid-level engineers. Specialized requirements or custom hiring pipelines take approximately 3 to 4 weeks.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 8 -->
-          <div class="faq-item" data-cat="quality">
-            <button type="button" class="faq-question" aria-expanded="false">
-              <span data-rx-en="How does the 24/7 Client Support Desk work?" data-rx-ja="24時間365日のクライアントサポートデスクはどのように運用されますか？">How does the 24/7 Client Support Desk work?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p data-rx-en="Our Support Desk operates 24 hours a day, 365 days a year across rotating shifts. Requests are logged into a central ticket queue with defined SLA timers (e.g. Critical P1 response under 15 minutes). We monitor production server uptimes, resolve user queries, handle bug escalations, and provide monthly transparency reports." data-rx-ja="サポートデスクは24時間365日、シフト制で常時稼働しています。すべての問い合わせや障害はチケットシステムで一元管理され、重要度に応じたSLA（P1緊急障害は15分以内一次対応など）を厳守。サーバー監視、ユーザー対応、障害エスカレーション、月次稼働レポートの提出まで一貫して支援します。">Our Support Desk operates 24 hours a day, 365 days a year across rotating shifts. Requests are logged into a central ticket queue with defined SLA timers (e.g. Critical P1 response under 15 minutes). We monitor production server uptimes, resolve user queries, handle bug escalations, and provide monthly transparency reports.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Empty state when search produces no results -->
-        <div id="faq-empty-state" class="faq-empty" style="display:none;" data-rx-en="No questions found matching your search. Please reach out to us directly!" data-rx-ja="条件に一致する質問が見つかりませんでした。お気軽にお問い合わせください。">
-          No questions found matching your search. Please reach out to us directly!
-        </div>
-
-        <!-- Consultation Banner -->
-        <div class="faq-cta-box">
-          <h3 data-rx-en="Still have questions about working together?" data-rx-ja="他にご不明な点やご相談はございますか？">Still have questions about working together?</h3>
-          <p data-rx-en="Our leadership team in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote." data-rx-ja="東京、カトマンズ、オーストラリアの経営陣が、ご要件に合わせて無料相談・お見積りをご案内します。">Our leadership team in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote.</p>
-          <a class="btn p" href="index.html#contact" data-quote data-rx-en="Request a Quote &amp; Free Advisory Call" data-rx-ja="お見積り・無料相談を依頼する">Request a Quote &amp; Free Advisory Call</a>
         </div>
       </div>
     </section>
@@ -1051,11 +1116,18 @@
       var faqList = document.getElementById('faq-list');
       if (!faqList) return;
       var items = Array.prototype.slice.call(faqList.querySelectorAll('.faq-item'));
-      var pills = document.querySelectorAll('.faq-pill');
+      var pills = Array.prototype.slice.call(document.querySelectorAll('.faq-pill'));
       var searchInput = document.getElementById('faq-search');
+      var searchClear = document.getElementById('faq-search-clear');
       var emptyState = document.getElementById('faq-empty-state');
+      var countNum = document.getElementById('faq-count-num');
+      var toggleAllBtn = document.getElementById('faq-toggle-all');
       var activeCategory = 'all';
       var searchQuery = '';
+
+      function isJa() {
+        return document.documentElement.lang !== 'en';
+      }
 
       function initHeights() {
         items.forEach(function (item) {
@@ -1068,6 +1140,20 @@
             }
           }
         });
+        updateToggleAllButtonText();
+      }
+
+      function updateToggleAllButtonText() {
+        if (!toggleAllBtn) return;
+        var visibleItems = items.filter(function (it) { return it.style.display !== 'none'; });
+        if (visibleItems.length === 0) return;
+        var allOpen = visibleItems.every(function (it) { return it.classList.contains('open'); });
+        var ja = isJa();
+        if (allOpen) {
+          toggleAllBtn.textContent = ja ? 'すべて閉じる' : 'Collapse all';
+        } else {
+          toggleAllBtn.textContent = ja ? 'すべて開く' : 'Expand all';
+        }
       }
 
       faqList.addEventListener('click', function (e) {
@@ -1087,7 +1173,31 @@
           btn.setAttribute('aria-expanded', 'true');
           if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
         }
+        updateToggleAllButtonText();
       });
+
+      if (toggleAllBtn) {
+        toggleAllBtn.addEventListener('click', function () {
+          var visibleItems = items.filter(function (it) { return it.style.display !== 'none'; });
+          var allOpen = visibleItems.every(function (it) { return it.classList.contains('open'); });
+          var willOpen = !allOpen;
+
+          visibleItems.forEach(function (item) {
+            var btn = item.querySelector('.faq-question');
+            var answer = item.querySelector('.faq-answer');
+            if (willOpen) {
+              item.classList.add('open');
+              if (btn) btn.setAttribute('aria-expanded', 'true');
+              if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+            } else {
+              item.classList.remove('open');
+              if (btn) btn.setAttribute('aria-expanded', 'false');
+              if (answer) answer.style.maxHeight = '0px';
+            }
+          });
+          updateToggleAllButtonText();
+        });
+      }
 
       function applyFilter() {
         var query = searchQuery.trim().toLowerCase();
@@ -1107,9 +1217,11 @@
           }
         });
 
+        if (countNum) countNum.textContent = visibleCount;
         if (emptyState) {
           emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
         }
+        updateToggleAllButtonText();
       }
 
       pills.forEach(function (pill) {
@@ -1124,16 +1236,33 @@
       if (searchInput) {
         searchInput.addEventListener('input', function () {
           searchQuery = searchInput.value;
+          if (searchClear) searchClear.style.display = searchQuery ? 'grid' : 'none';
+          applyFilter();
+        });
+      }
+
+      if (searchClear) {
+        searchClear.addEventListener('click', function () {
+          if (searchInput) {
+            searchInput.value = '';
+            searchQuery = '';
+            searchInput.focus();
+          }
+          searchClear.style.display = 'none';
           applyFilter();
         });
       }
 
       window.addEventListener('resize', initHeights);
       new MutationObserver(function () {
-        setTimeout(initHeights, 50);
+        setTimeout(function () {
+          initHeights();
+          updateToggleAllButtonText();
+        }, 50);
       }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
       initHeights();
+      applyFilter();
     })();
   </script>
 </body>
