@@ -4,6 +4,16 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// HTTP Security Headers (RX-018)
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  next();
+});
+
 // Serve static assets from project root
 app.use(express.static(__dirname, {
   extensions: ['html', 'htm']

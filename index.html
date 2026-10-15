@@ -4,23 +4,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rynex Tech — Nepal Software Engineering &amp; Talent Services</title>
+  <title data-title-en="Rynex Tech — Nepal Software Engineering &amp; Talent Services" data-title-ja="Rynex Tech — ネパール発のソフトウェア開発・24時間サポート・SES人材サービス">Rynex Tech — ネパール発のソフトウェア開発・24時間サポート・SES人材サービス</title>
   <meta name="description"
-    content="Dedicated Nepali engineering teams, senior-led methodology and talent partnerships for companies in Japan and beyond.">
+    content="ネパールの専任エンジニアチーム、24時間365日のチケットサポート、SES・人材パートナーシップを、日本をはじめ世界の企業に提供します。"
+    data-description-en="Dedicated Nepali engineering teams, senior-led methodology and talent partnerships for companies in Japan and beyond."
+    data-description-ja="ネパールの専任エンジニアチーム、24時間365日のチケットサポート、SES・人材パートナーシップを、日本をはじめ世界の企業に提供します。">
   <link rel="canonical" href="https://jp.rynextech.com/index.html">
+  <link rel="alternate" hreflang="ja" href="https://jp.rynextech.com/">
+  <link rel="alternate" hreflang="en" href="https://jp.rynextech.com/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://jp.rynextech.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rynex Tech">
-  <meta property="og:title" content="Rynex Tech — Nepal Software Engineering &amp; Talent Services">
-  <meta property="og:description" content="Dedicated Nepali engineering teams, senior-led methodology and talent partnerships for companies in Japan and beyond.">
+  <meta property="og:title" content="Rynex Tech — ネパール発のソフトウェア開発・24時間サポート・SES人材サービス"
+    data-og-title-en="Rynex Tech — Nepal Software Engineering &amp; Talent Services"
+    data-og-title-ja="Rynex Tech — ネパール発のソフトウェア開発・24時間サポート・SES人材サービス">
+  <meta property="og:description" content="ネパールの専任エンジニアチーム、24時間365日のチケットサポート、SES・人材パートナーシップを、日本をはじめ世界の企業に提供します。"
+    data-og-desc-en="Dedicated Nepali engineering teams, senior-led methodology and talent partnerships for companies in Japan and beyond."
+    data-og-desc-ja="ネパールの専任エンジニアチーム、24時間365日のチケットサポート、SES・人材パートナーシップを、日本をはじめ世界の企業に提供します。">
   <meta property="og:url" content="https://jp.rynextech.com/index.html">
   <meta property="og:image" content="https://jp.rynextech.com/images/rynexlogo.png">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rynex Tech — Nepal Software Engineering &amp; Talent Services">
-  <meta name="twitter:description" content="Dedicated Nepali engineering teams, senior-led methodology and talent partnerships for companies in Japan and beyond.">
+  <meta name="twitter:title" content="Rynex Tech — ネパール発のソフトウェア開発・24時間サポート・SES人材サービス"
+    data-tw-title-en="Rynex Tech — Nepal Software Engineering &amp; Talent Services"
+    data-tw-title-ja="Rynex Tech — ネパール発のソフトウェア開発・24時間サポート・SES人材サービス">
+  <meta name="twitter:description" content="ネパールの専任エンジニアチーム、24時間365日のチケットサポート、SES・人材パートナーシップを、日本をはじめ世界の企業に提供します。"
+    data-tw-desc-en="Dedicated Nepali engineering teams, senior-led methodology and talent partnerships for companies in Japan and beyond."
+    data-tw-desc-ja="ネパールの専任エンジニアチーム、24時間365日のチケットサポート、SES・人材パートナーシップを、日本をはじめ世界の企業に提供します。">
   <meta name="twitter:image" content="https://jp.rynextech.com/images/rynexlogo.png">
-  <script>try { if (localStorage.getItem("rx-lang") === "en") document.documentElement.lang = "en" } catch (e) { }</script>
+  <script>
+    try {
+      var ql = new URLSearchParams(window.location.search).get('lang');
+      var sl = ql || localStorage.getItem("rx-lang");
+      if (sl === "en") document.documentElement.lang = "en";
+      else document.documentElement.lang = "ja";
+    } catch (e) { }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -31,6 +51,11 @@
 </head>
 
 <body data-page="main">
+  <noscript>
+    <div style="background:#2b1f20;color:#fff;padding:12px 20px;text-align:center;font-size:14px;">
+      <span><strong>Rynex Tech:</strong> Direct Email: <a href="mailto:info@rynextech.com" style="color:#fca5a5;text-decoration:underline">info@rynextech.com</a> | Japan: <a href="tel:+81424098256" style="color:#fca5a5">042-409-8256</a> | Nepal: <a href="tel:+9779767984140" style="color:#fca5a5">+977 9767984140</a></span>
+    </div>
+  </noscript>
   <div id="rx-header"></div>
 
   <main>
@@ -320,11 +345,11 @@
             <small data-copy-en="Early Learning Centre" data-copy-ja="幼児教育センター">Early Learning Centre</small>
             <h3 data-copy-en="Morning Buds" data-copy-ja="Morning Buds">Morning Buds</h3>
           </a>
-          <a class="card proj" href="http://159.198.32.82:7000/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit">
+          <div class="card proj">
             <div class="th"><img loading="lazy" alt="Hazar Bazar grocery delivery platform" width="1200" height="675" decoding="async" src="images/clients/imageshazarbazar.jpg"></div>
             <small data-copy-en="Ongoing" data-copy-ja="進行中">Ongoing</small>
             <h3>Hazar Bazar</h3>
-          </a>
+          </div>
           <!-- Previous featured projects, kept for reference:
           <div class="card proj">
             <div class="th"><img loading="lazy" alt="Computer vision console detecting helmets on a live site camera"
@@ -462,79 +487,91 @@
       </div>
     </section>
 
-    <!-- Frequently Asked Questions (FAQ) -->
-    <section id="faq">
+    <!-- Frequently Asked Questions (FAQ) Section -->
+    <section id="faq" class="faq-section">
       <div class="w">
-        <div class="faq-layout">
-          <!-- Left Sticky Sidebar (Desktop) -->
+        <div class="faq-desktop-wrapper">
+          <!-- Desktop Sticky Sidebar / Mobile Section Header -->
           <aside class="faq-sidebar">
-            <div class="faq-sidebar-top">
-              <span class="eyebrow" data-rx-en="Got Questions?" data-rx-ja="よくあるご質問">Got Questions?</span>
-              <h2 data-rx-en="Frequently Asked &lt;em&gt;Questions.&lt;/em&gt;" data-rx-ja="よくあるご質問 &lt;em&gt;（FAQ）&lt;/em&gt;" data-rx-html>Frequently Asked <em>Questions.</em></h2>
-              <p class="lead" data-rx-en="Everything you need to know about our offshore squads, SES arrangements, bilingual communication, and engineering quality standards." data-rx-ja="オフショア開発体制、SES契約、バイリンガルによるコミュニケーション、品質管理基準についてよくいただくご質問にお答えします。">Everything you need to know about our offshore squads, SES arrangements, bilingual communication, and engineering quality standards.</p>
-            </div>
-
-            <div class="faq-search-box">
-              <input type="search" id="faq-search" class="faq-search-input" placeholder="Search questions or keywords…" aria-label="Search frequently asked questions" data-rx-ph-en="Search questions or keywords…" data-rx-ph-ja="キーワードや質問を検索…">
-              <span class="faq-search-icon" aria-hidden="true">🔍</span>
-              <button type="button" id="faq-search-clear" class="faq-search-clear" aria-label="Clear search" data-rx-aria-en="Clear search" data-rx-aria-ja="検索をクリア" style="display:none;">✕</button>
-            </div>
-
-            <div class="faq-categories" id="faq-pills" role="tablist" aria-label="FAQ Categories">
-              <button type="button" class="faq-cat-btn faq-pill active" data-cat="all">
-                <span class="faq-cat-title" data-rx-en="All Questions" data-rx-ja="すべての質問">All Questions</span>
-                <span class="faq-cat-count">8</span>
-              </button>
-              <button type="button" class="faq-cat-btn faq-pill" data-cat="offshore">
-                <span class="faq-cat-title" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
-                <span class="faq-cat-count">3</span>
-              </button>
-              <button type="button" class="faq-cat-btn faq-pill" data-cat="contracts">
-                <span class="faq-cat-title" data-rx-en="SES &amp; Contracts" data-rx-ja="SES・契約形態">SES &amp; Contracts</span>
-                <span class="faq-cat-count">1</span>
-              </button>
-              <button type="button" class="faq-cat-btn faq-pill" data-cat="comm">
-                <span class="faq-cat-title" data-rx-en="Language &amp; Communication" data-rx-ja="言語・コミュニケーション">Language &amp; Communication</span>
-                <span class="faq-cat-count">1</span>
-              </button>
-              <button type="button" class="faq-cat-btn faq-pill" data-cat="quality">
-                <span class="faq-cat-title" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
-                <span class="faq-cat-count">3</span>
-              </button>
-            </div>
-
-            <!-- Desktop Sticky Consultation Card -->
-            <div class="faq-sidebar-cta">
-              <div class="faq-sidebar-cta-head">
-                <span class="faq-live-dot" aria-hidden="true"></span>
-                <span class="faq-sidebar-cta-badge" data-rx-en="Quick Advisory" data-rx-ja="迅速サポート">Quick Advisory</span>
+            <div class="faq-sidebar-inner">
+              <div class="faq-sidebar-header">
+                <span class="eyebrow" data-rx-en="Got Questions?" data-rx-ja="よくあるご質問">Got Questions?</span>
+                <h2 data-rx-en="Frequently Asked &lt;em&gt;Questions.&lt;/em&gt;" data-rx-ja="よくあるご質問 &lt;em&gt;（FAQ）&lt;/em&gt;" data-rx-html>Frequently Asked <em>Questions.</em></h2>
+                <p class="faq-lead" data-rx-en="Everything you need to know about our Nepal offshore squads, SES arrangements, bilingual communication, and engineering quality standards." data-rx-ja="オフショア開発体制、SES契約、バイリンガルによるコミュニケーション、品質管理基準についてよくいただくご質問にお答えします。">Everything you need to know about our Nepal offshore squads, SES arrangements, bilingual communication, and engineering quality standards.</p>
               </div>
-              <h3 data-rx-en="Still have questions?" data-rx-ja="個別のご相談はこちら">Still have questions?</h3>
-              <p data-rx-en="Our engineering directors in Tokyo, Kathmandu, and Australia can clarify scopes, rates, and onboarding within 1 business day." data-rx-ja="東京、カトマンズ、オーストラリアの技術役員が、プロジェクト要件や概算お見積り、チーム編成について迅速にお答えします。">Our engineering directors in Tokyo, Kathmandu, and Australia can clarify scopes, rates, and onboarding within 1 business day.</p>
-              <a class="btn p faq-cta-link" href="index.html#contact" data-quote data-rx-en="Talk to Leadership →" data-rx-ja="経営陣に相談する →">Talk to Leadership →</a>
+
+              <!-- Search Control -->
+              <div class="faq-search-box">
+                <input type="search" id="faq-search" class="faq-search-input" placeholder="Search questions or keywords…" aria-label="Search frequently asked questions" data-rx-ph-en="Search questions or keywords…" data-rx-ph-ja="キーワードや質問を検索…">
+                <span class="faq-search-icon" aria-hidden="true">🔍</span>
+                <button type="button" id="faq-search-clear" class="faq-search-clear" aria-label="Clear search" style="display:none;">✕</button>
+              </div>
+
+              <!-- Category Navigation (Vertical Sidebar on Desktop, Horizontal Pills on Mobile) -->
+              <nav class="faq-nav" id="faq-categories" aria-label="FAQ Categories">
+                <div class="faq-nav-label" data-rx-en="Filter by Category" data-rx-ja="カテゴリーで絞り込む">Filter by Category</div>
+                <div class="faq-pills" id="faq-pills" role="tablist">
+                  <button type="button" class="faq-pill active" data-cat="all" role="tab" aria-selected="true">
+                    <span class="faq-pill-text" data-rx-en="All Questions" data-rx-ja="すべての質問">All Questions</span>
+                    <span class="faq-count">8</span>
+                  </button>
+                  <button type="button" class="faq-pill" data-cat="offshore" role="tab" aria-selected="false">
+                    <span class="faq-pill-text" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                    <span class="faq-count">3</span>
+                  </button>
+                  <button type="button" class="faq-pill" data-cat="contracts" role="tab" aria-selected="false">
+                    <span class="faq-pill-text" data-rx-en="SES &amp; Contracts" data-rx-ja="SES・契約形態">SES &amp; Contracts</span>
+                    <span class="faq-count">1</span>
+                  </button>
+                  <button type="button" class="faq-pill" data-cat="comm" role="tab" aria-selected="false">
+                    <span class="faq-pill-text" data-rx-en="Language &amp; Communication" data-rx-ja="言語・コミュニケーション">Language &amp; Communication</span>
+                    <span class="faq-count">1</span>
+                  </button>
+                  <button type="button" class="faq-pill" data-cat="quality" role="tab" aria-selected="false">
+                    <span class="faq-pill-text" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                    <span class="faq-count">3</span>
+                  </button>
+                </div>
+              </nav>
+
+              <!-- Direct Advisory Card -->
+              <div class="faq-sidebar-card">
+                <div class="faq-sidebar-card-badge" data-rx-en="Direct Advisory" data-rx-ja="無料相談窓口">Direct Advisory</div>
+                <h4 data-rx-en="Need custom scoping?" data-rx-ja="個別の要件をご相談ですか？">Need custom scoping?</h4>
+                <p data-rx-en="Our engineering leadership in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote." data-rx-ja="東京、カトマンズ、オーストラリアの技術役員が、オンラインにてご要望を直接お伺いします。">Our engineering leadership in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote.</p>
+                <div class="faq-sidebar-actions">
+                  <a class="btn p" href="#contact" data-quote data-rx-en="Request a Quote" data-rx-ja="お見積り依頼">Request a Quote</a>
+                  <a class="faq-sidebar-email" href="mailto:info@rynextech.com">info@rynextech.com</a>
+                </div>
+              </div>
             </div>
           </aside>
 
-          <!-- Right Content Column: Header Bar & FAQ List -->
-          <div class="faq-content">
-            <div class="faq-results-bar">
-              <div class="faq-results-count">
-                <span id="faq-count-num">8</span> <span data-rx-en="questions found" data-rx-ja="件の質問を表示中">questions found</span>
+          <!-- Main FAQ Column -->
+          <div class="faq-main-column">
+            <!-- Toolbar: Active Filter & Expand/Collapse Toggle -->
+            <div class="faq-column-toolbar">
+              <div class="faq-category-indicator">
+                <span class="faq-current-label" id="faq-current-label" data-rx-en="All Questions" data-rx-ja="すべての質問">All Questions</span>
+                <span class="faq-current-badge" id="faq-visible-count">8 questions</span>
               </div>
-              <button type="button" class="faq-toggle-all-btn" id="faq-toggle-all" data-rx-en="Expand all" data-rx-ja="すべて開く">Expand all</button>
+              <div class="faq-toolbar-actions">
+                <button type="button" id="faq-toggle-all" class="faq-toggle-all-btn" data-rx-en="Expand All" data-rx-ja="すべて開く">Expand All</button>
+              </div>
             </div>
 
+            <!-- FAQ List -->
             <div class="faq-list" id="faq-list">
               <!-- Item 1 -->
               <div class="faq-item open" data-cat="offshore">
                 <button type="button" class="faq-question" aria-expanded="true">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
-                    <span class="faq-q-text" data-rx-en="What advantages does setting up an offshore engineering squad in Nepal offer?" data-rx-ja="ネパールにオフショア開発チームを組成するメリットは何ですか？">What advantages does setting up an offshore engineering squad in Nepal offer?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                    <span data-rx-en="What advantages does setting up an offshore engineering squad in Nepal offer?" data-rx-ja="ネパールにオフショア開発チームを組成するメリットは何ですか？">What advantages does setting up an offshore engineering squad in Nepal offer?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
-                <div class="faq-answer" style="max-height: 500px;">
+                <div class="faq-answer">
                   <div class="faq-answer-inner">
                     <p data-rx-en="Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting)." data-rx-ja="ネパールにはカトマンズ大学やトリブバン大学などの名門情報系学部から毎年優秀なエンジニアが輩出されています。高い英語力と親日的な文化、日本語学習（JLPT N3〜N2）への高い意欲、そして日本国内採用と比べて30〜50%のコスト削減が大きな強みです。">Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting).</p>
                     <p data-rx-en="Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations." data-rx-ja="さらに東京との時差はわずか3時間15分。午後のコアタイムをまるまるリアルタイムで共有できるため、欧米オフショアのような返答待ちのタイムラグが発生しません。">Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations.</p>
@@ -545,13 +582,13 @@
               <!-- Item 2 -->
               <div class="faq-item open" data-cat="contracts">
                 <button type="button" class="faq-question" aria-expanded="true">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="SES &amp; Contracts" data-rx-ja="SES・契約形態">SES &amp; Contracts</span>
-                    <span class="faq-q-text" data-rx-en="What engagement models and contract types do you support?" data-rx-ja="契約形態や契約モデルにはどのようなものがありますか？">What engagement models and contract types do you support?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="SES &amp; Contracts" data-rx-ja="SES・契約形態">SES &amp; Contracts</span>
+                    <span data-rx-en="What engagement models and contract types do you support?" data-rx-ja="契約形態や契約モデルにはどのようなものがありますか？">What engagement models and contract types do you support?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
-                <div class="faq-answer" style="max-height: 500px;">
+                <div class="faq-answer">
                   <div class="faq-answer-inner">
                     <p data-rx-en="We provide tailored contracts to match your risk profile and project lifecycle:" data-rx-ja="プロジェクトの規模や要件に合わせて柔軟な契約形態をご用意しています：">We provide tailored contracts to match your risk profile and project lifecycle:</p>
                     <ul>
@@ -567,9 +604,9 @@
               <!-- Item 3 -->
               <div class="faq-item" data-cat="offshore">
                 <button type="button" class="faq-question" aria-expanded="false">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
-                    <span class="faq-q-text" data-rx-en="Can we start with a small pilot or trial sprint before committing?" data-rx-ja="本格導入の前に、小規模なパイロット検証やトライアルスプリントは可能ですか？">Can we start with a small pilot or trial sprint before committing?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                    <span data-rx-en="Can we start with a small pilot or trial sprint before committing?" data-rx-ja="本格導入の前に、小規模なパイロット検証やトライアルスプリントは可能ですか？">Can we start with a small pilot or trial sprint before committing?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
@@ -583,9 +620,9 @@
               <!-- Item 4 -->
               <div class="faq-item" data-cat="comm">
                 <button type="button" class="faq-question" aria-expanded="false">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="Language &amp; Communication" data-rx-ja="言語・コミュニケーション">Language &amp; Communication</span>
-                    <span class="faq-q-text" data-rx-en="How do we handle communication? Can your team communicate in Japanese?" data-rx-ja="コミュニケーションはどのように行われますか？日本語でのやり取りは可能ですか？">How do we handle communication? Can your team communicate in Japanese?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="Language &amp; Communication" data-rx-ja="言語・コミュニケーション">Language &amp; Communication</span>
+                    <span data-rx-en="How do we handle communication? Can your team communicate in Japanese?" data-rx-ja="コミュニケーションはどのように行われますか？日本語でのやり取りは可能ですか？">How do we handle communication? Can your team communicate in Japanese?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
@@ -600,9 +637,9 @@
               <!-- Item 5 -->
               <div class="faq-item" data-cat="quality">
                 <button type="button" class="faq-question" aria-expanded="false">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
-                    <span class="faq-q-text" data-rx-en="Who owns the intellectual property (IP) and source code?" data-rx-ja="ソースコードや知的財産権（IP）の帰属はどうなりますか？">Who owns the intellectual property (IP) and source code?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                    <span data-rx-en="Who owns the intellectual property (IP) and source code?" data-rx-ja="ソースコードや知的財産権（IP）の帰属はどうなりますか？">Who owns the intellectual property (IP) and source code?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
@@ -616,9 +653,9 @@
               <!-- Item 6 -->
               <div class="faq-item" data-cat="quality">
                 <button type="button" class="faq-question" aria-expanded="false">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
-                    <span class="faq-q-text" data-rx-en="How do you safeguard security, NDA compliance, and customer data?" data-rx-ja="セキュリティ対策や機密保持（NDA）、データ保護はどのように行われますか？">How do you safeguard security, NDA compliance, and customer data?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                    <span data-rx-en="How do you safeguard security, NDA compliance, and customer data?" data-rx-ja="セキュリティ対策や機密保持（NDA）、データ保護はどのように行われますか？">How do you safeguard security, NDA compliance, and customer data?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
@@ -637,9 +674,9 @@
               <!-- Item 7 -->
               <div class="faq-item" data-cat="offshore">
                 <button type="button" class="faq-question" aria-expanded="false">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
-                    <span class="faq-q-text" data-rx-en="How quickly can a dedicated team or specialist be deployed?" data-rx-ja="チームの立ち上げやエンジニアのアサインにはどのくらいの期間がかかりますか？">How quickly can a dedicated team or specialist be deployed?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="Offshore &amp; Squads" data-rx-ja="オフショア・専任チーム">Offshore &amp; Squads</span>
+                    <span data-rx-en="How quickly can a dedicated team or specialist be deployed?" data-rx-ja="チームの立ち上げやエンジニアのアサインにはどのくらいの期間がかかりますか？">How quickly can a dedicated team or specialist be deployed?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
@@ -653,30 +690,27 @@
               <!-- Item 8 -->
               <div class="faq-item" data-cat="quality">
                 <button type="button" class="faq-question" aria-expanded="false">
-                  <div class="faq-q-left">
-                    <span class="faq-item-badge" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
-                    <span class="faq-q-text" data-rx-en="How does the 24/7 Client Support Desk work?" data-rx-ja="24時間365日のクライアントサポートデスクはどのように運用されますか？">How does the 24/7 Client Support Desk work?</span>
+                  <div class="faq-question-text">
+                    <span class="faq-item-kicker" data-rx-en="Quality &amp; Security" data-rx-ja="品質・セキュリティ">Quality &amp; Security</span>
+                    <span data-rx-en="How does the Client Support Desk work and what are the SLA commitments?" data-rx-ja="クライアントサポートデスクの運用体制とSLA保証について教えてください。">How does the Client Support Desk work and what are the SLA commitments?</span>
                   </div>
                   <span class="faq-toggle-icon" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-answer">
                   <div class="faq-answer-inner">
-                    <p data-rx-en="Our Support Desk operates 24 hours a day, 365 days a year across rotating shifts. Requests are logged into a central ticket queue with defined SLA timers (e.g. Critical P1 response under 15 minutes). We monitor production server uptimes, resolve user queries, handle bug escalations, and provide monthly transparency reports." data-rx-ja="サポートデスクは24時間365日、シフト制で常時稼働しています。すべての問い合わせや障害はチケットシステムで一元管理され、重要度に応じたSLA（P1緊急障害は15分以内一次対応など）を厳守。サーバー監視、ユーザー対応、障害エスカレーション、月次稼働レポートの提出まで一貫して支援します。">Our Support Desk operates 24 hours a day, 365 days a year across rotating shifts. Requests are logged into a central ticket queue with defined SLA timers (e.g. Critical P1 response under 15 minutes). We monitor production server uptimes, resolve user queries, handle bug escalations, and provide monthly transparency reports.</p>
+                    <p data-rx-en="Our Support Desk provides 24/7/365 operational coverage for dedicated enterprise support contracts (with contractually guaranteed Critical P1 incident response under 15 minutes). For standard service tiers, we provide high-availability business-hour monitoring (9:00–18:00 Tokyo/Kathmandu) with automated critical uptime alerting and defined escalation paths." data-rx-ja="当社のサポートデスクは、専任エンタープライズ契約向けに24時間365日のシフト体制（重大障害P1に対する15分以内の一次対応SLA保証）を提供しています。標準プランでは、営業時間帯（日本・ネパール時間 9:00〜18:00）の迅速なチケット対応と、自動サーバー監視・緊急エスカレーション体制を完備しています。">Our Support Desk provides 24/7/365 operational coverage for dedicated enterprise support contracts (with contractually guaranteed Critical P1 incident response under 15 minutes). For standard service tiers, we provide high-availability business-hour monitoring (9:00–18:00 Tokyo/Kathmandu) with automated critical uptime alerting and defined escalation paths.</p>
+                    <p data-rx-en="All requests are tracked through our client ticketing system with full visibility into statuses, SLA timers, commit references, and monthly transparency reporting." data-rx-ja="すべてのリクエストはクライアントチケットシステムを通じて管理され、対応ステータス、SLA消化状況、コミット履歴、月次報告書を透明性高くご確認いただけます。">All requests are tracked through our client ticketing system with full visibility into statuses, SLA timers, commit references, and monthly transparency reporting.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Empty state when search produces no results -->
+            <!-- Empty State -->
             <div id="faq-empty-state" class="faq-empty" style="display:none;" data-rx-en="No questions found matching your search. Please reach out to us directly!" data-rx-ja="条件に一致する質問が見つかりませんでした。お気軽にお問い合わせください。">
-              No questions found matching your search. Please reach out to us directly!
-            </div>
-
-            <!-- Mobile-only Consultation Banner -->
-            <div class="faq-mobile-cta faq-cta-box">
-              <h3 data-rx-en="Still have questions about working together?" data-rx-ja="他にご不明な点やご相談はございますか？">Still have questions about working together?</h3>
-              <p data-rx-en="Our leadership team in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote." data-rx-ja="東京、カトマンズ、オーストラリアの経営陣が、ご要件に合わせて無料相談・お見積りをご案内します。">Our leadership team in Tokyo, Kathmandu, and Australia is available for a free consultation or tailored quote.</p>
-              <a class="btn p" href="index.html#contact" data-quote data-rx-en="Request a Quote &amp; Free Advisory Call" data-rx-ja="お見積り・無料相談を依頼する">Request a Quote &amp; Free Advisory Call</a>
+              <div class="faq-empty-icon" aria-hidden="true">🔍</div>
+              <h4 data-rx-en="No matching questions" data-rx-ja="該当する質問が見つかりませんでした">No matching questions</h4>
+              <p data-rx-en="Try searching for another keyword or reach out directly to our engineering team." data-rx-ja="別のキーワードで検索するか、担当チームまで直接お問い合わせください。">Try searching for another keyword or reach out directly to our engineering team.</p>
+              <button type="button" class="btn" id="faq-reset-filters" data-rx-en="Reset Search &amp; Filters" data-rx-ja="検索と条件をリセット">Reset Search &amp; Filters</button>
             </div>
           </div>
         </div>
@@ -746,6 +780,7 @@
         <h3 id="qt">Request a Quote</h3>
         <p class="lead">Share a few details and our team will get back to you within one business day.</p>
         <form class="qf" id="qf">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="row"><label>Full name<input name="name" required autocomplete="name"
                 placeholder="Taro Yamada"></label>
             <label>Work email<input name="email" type="email" required autocomplete="email"
@@ -777,7 +812,7 @@
               placeholder="What are you building, and when do you need it?"></textarea></label>
           <button class="btn p" type="submit">Send request</button>
           <p class="fine">We only use your details to reply to this request. <a href="legal.html#privacy" target="_blank" rel="noopener">Privacy Policy</a></p>
-          <p class="fine" id="qerr" style="color:#ef4444"></p>
+          <p class="fine" id="qerr" style="color:#ef4444" role="alert" aria-live="assertive"></p>
         </form>
       </div>
       <div class="ok" id="qok" hidden><i>✅</i>
@@ -802,6 +837,7 @@
         <p class="lead">Tell us a bit about yourself. Our team will review your application and reply within 3 business
           days.</p>
         <form class="qf" id="apf">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <label>Position<input id="apr" name="position" readonly></label>
           <div class="row"><label>Full name<input name="name" required autocomplete="name"
                 placeholder="Taro Yamada"></label>
@@ -833,7 +869,7 @@
               placeholder="Tell us a little about yourself and the work you enjoy."></textarea></label>
           <label>CV (PDF, optional)<input name="cv" type="file" accept=".pdf"></label>
           <button class="btn p" type="submit">Submit application</button>
-          <p class="fine" id="aperr" style="color:#ef4444"></p>
+          <p class="fine" id="aperr" style="color:#ef4444" role="alert" aria-live="assertive"></p>
         </form>
       </div>
       <div class="ok" id="apok" hidden><i>✅</i>
@@ -847,6 +883,7 @@
 
   <script>
     (function () {
+      function $i(id) { return document.getElementById(id); }
       const D = {
         offshore: {
           e: '01 · Offshore Development', t: 'Offshore Development',
@@ -936,10 +973,11 @@
         }
       });
       dmq.onclick = () => { dm.close(); openQ(cur) };
-      [dm, qm, imageViewer].forEach(d => d.addEventListener('close', unlock));
-      const MAIL_TO = 'prabesht002@gmail.com';
+      [dm, qm, $i('apm'), imageViewer].filter(Boolean).forEach(d => d.addEventListener('close', unlock));
+      const MAIL_TO = 'info@rynextech.com';
       const W3F_KEY = ''; /* optional: paste a free Web3Forms access key (web3forms.com) for more reliable delivery */
       async function sendMail(form, subject) {
+        if (form.querySelector('input[name="_honey"]')?.value) return false;
         const fd = new FormData(form); fd.append('language', lang); let url;
         if (W3F_KEY) { fd.delete('cv'); fd.append('access_key', W3F_KEY); fd.append('subject', subject); fd.append('from_name', 'Rynex Tech website'); url = 'https://api.web3forms.com/submit' }
         else { fd.append('_subject', subject); fd.append('_template', 'table'); fd.append('_captcha', 'false'); url = 'https://formsubmit.co/ajax/' + MAIL_TO }
@@ -967,7 +1005,7 @@
       Object.assign(T, TX); Object.assign(H, HX); Object.assign(PH, PX);
       Object.assign(T, { 'Please select': '選択してください', 'Expected salary': '希望給与', 'Available from': '入社可能時期', 'Immediately': 'すぐに', 'Within 2 weeks': '2週間以内', 'Within 1 month': '1か月以内', '2 months or more': '2か月以上', 'Preferred work arrangement': '希望する勤務形態', 'On-site': '出社', 'Hybrid': 'ハイブリッド', 'Remote': 'リモート', 'No preference': 'こだわりなし' }); Object.assign(PH, { "e.g. NPR 80,000 / month or JPY 300,000 / month": "例：月額 NPR 80,000 または JPY 300,000" }); Object.assign(PH, {"Technology categories": "技術カテゴリー", "Search tools": "ツールを検索", "Enlarge sample service request dashboard": "サービスリクエストダッシュボードのサンプルを拡大表示", "Enlarge sample code review workspace": "コードレビュー画面のサンプルを拡大表示", "Enlarge sample workflow board": "ワークフローボードのサンプルを拡大表示", "Close image preview": "画像プレビューを閉じる", "Image preview": "画像プレビュー"});
       const ALT = { "Vemora Studio website": "Vemora Studioのウェブサイト", "Pathryx logo": "Pathryxのロゴ", "Hansol Learning Center website homepage": "Hansol Learning Centerのウェブサイトのトップページ", "Vemora Ops website sign-in screen": "Vemora Opsのサインイン画面", "Test Center Nepal logo": "Test Center Nepalのロゴ", "Hazar Bazar grocery delivery platform": "食料品配達プラットフォーム Hazar Bazar","Code editor, pull request and terminal on a dedicated offshore team workspace": "専任オフショアチームの作業環境に表示されたコードエディター、プルリクエスト、ターミナル", "Support agent dashboard with live ticket queue and SLA timers": "リアルタイムのチケットキューとSLAタイマーを表示するサポート担当者向けダッシュボード", "Candidate profile cards linking Nepal and Japan for recruitment": "ネパールと日本をつなぐ採用向けの候補者プロフィールカード", "Senior engineer reviewing software architecture and technical decisions": "ソフトウェアアーキテクチャと技術的な意思決定をレビューするシニアエンジニア", "Sample service request dashboard showing a queue and ticket statuses": "キューとチケットのステータスを表示するサービスリクエストダッシュボードのサンプル", "Sample code review workspace with a merged pull request": "マージ済みプルリクエストを表示するコードレビュー画面のサンプル", "Sample Kanban board with cards progressing through workflow stages": "ワークフローの各段階をカードが進むカンバンボードのサンプル", "Computer vision console detecting helmets on a live site camera": "現場のライブカメラでヘルメットを検出するコンピュータビジョンコンソール", "News publishing website with a traffic spike dashboard and servers": "アクセス急増を示すダッシュボードとサーバーを備えたニュース配信サイト", "Fleet map with routes, trucks and vehicle status panel": "ルート、トラック、車両ステータスパネルを表示するフリートマップ", "Hiring pipeline kanban board with candidate cards": "候補者カードを並べた採用パイプラインのカンバンボード", "Content calendar with a social post preview and analytics": "SNS投稿プレビューと分析を備えたコンテンツカレンダー", "Shopper rewards app with cashback balance, coins and receipt": "キャッシュバック残高、コイン、レシートを表示するショッパー向けリワードアプリ", "Senior engineer reviewing AI-assisted code changes": "AI支援によるコード変更をレビューするシニアエンジニア", "Kathmandu office building with Himalayas, temple and prayer flags": "ヒマラヤ、寺院、タルチョーを背景にしたカトマンズのオフィスビル", "Himalayas and Mount Fuji linked by a glowing arc, stupa and torii gate": "光る弧でヒマラヤと富士山を結び、仏塔と鳥居を配したイメージ", "Software engineers working together at desks in an office": "オフィスのデスクで一緒に作業するソフトウェアエンジニアたち"};
-      const $i = id => document.getElementById(id); let applyId = 0;
+      let applyId = 0;
       function renderJobs() {
         const q = $i('cq').value.trim().toLowerCase(), L = LB[lang];
         const r = JOBS.filter(j => (!$i('cl').value || j.loc === $i('cl').value) && (!$i('cv').value || j.lvl === $i('cv').value) && (!$i('ct').value || j.typ === $i('ct').value) && (!q || (j.en.t + ' ' + j.ja.t + ' ' + j.tags.join(' ') + ' ' + j.en.d).toLowerCase().includes(q)));
@@ -979,8 +1017,37 @@
         const b = e.target.closest('[data-job]'); if (!b) return; applyId = +b.dataset.job;
         $i('apb').hidden = false; $i('apok').hidden = true; $i('apf').reset(); $i('apr').value = JOBS.find(j => j.id === applyId)[lang].t; $i('apm').showModal(); lock()
       });
-      $i('apm').addEventListener('close', unlock);
-      $i('apf').addEventListener('submit', e => { e.preventDefault(); handleSend($i('apf'), 'New job application - ' + $i('apr').value, 'aperr', () => { $i('apb').hidden = true; $i('apok').hidden = false }) });
+      const cvInput = $i('apf') ? $i('apf').querySelector('input[name="cv"]') : null;
+      function validateCv() {
+        if (!cvInput || !cvInput.files || !cvInput.files[0]) return true;
+        const file = cvInput.files[0];
+        const isPdf = file.name.toLowerCase().endsWith('.pdf') || file.type === 'application/pdf';
+        const isJa = lang === 'ja';
+        const aperr = $i('aperr');
+        if (!isPdf) {
+          if (aperr) aperr.textContent = isJa ? 'CVはPDF形式（.pdf）でアップロードしてください。' : 'Please upload your CV in PDF format (.pdf).';
+          cvInput.value = '';
+          return false;
+        }
+        if (file.size > 5 * 1024 * 1024) {
+          if (aperr) aperr.textContent = isJa ? 'ファイルサイズが大きすぎます。5MB以下のファイルを選択してください。' : 'File is too large. Please upload a PDF file under 5MB.';
+          cvInput.value = '';
+          return false;
+        }
+        if (aperr) aperr.textContent = '';
+        return true;
+      }
+      if (cvInput) {
+        cvInput.addEventListener('change', validateCv);
+      }
+      $i('apf').addEventListener('submit', e => {
+        e.preventDefault();
+        if (!validateCv()) return;
+        handleSend($i('apf'), 'New job application - ' + $i('apr').value, 'aperr', () => {
+          $i('apb').hidden = true;
+          $i('apok').hidden = false;
+        });
+      });
       const TITLE = { en: document.title, ja: 'Rynex Tech — ネパール発のソフトウェア開発・24時間サポート・人材サービス' };
       const MD = document.querySelector('meta[name=description]');
       const DESC = { en: MD.content, ja: 'ネパールの専任エンジニアチーム、24時間365日のチケットサポート、人材パートナーシップを、日本をはじめ世界の企業に提供します。' };
@@ -1120,16 +1187,26 @@
       var searchInput = document.getElementById('faq-search');
       var searchClear = document.getElementById('faq-search-clear');
       var emptyState = document.getElementById('faq-empty-state');
-      var countNum = document.getElementById('faq-count-num');
+      var resetBtn = document.getElementById('faq-reset-filters');
       var toggleAllBtn = document.getElementById('faq-toggle-all');
+      var currentLabel = document.getElementById('faq-current-label');
+      var visibleCountEl = document.getElementById('faq-visible-count');
       var activeCategory = 'all';
       var searchQuery = '';
 
+      var CAT_NAMES = {
+        all: { en: 'All Questions', ja: 'すべての質問' },
+        offshore: { en: 'Offshore & Squads', ja: 'オフショア・専任チーム' },
+        contracts: { en: 'SES & Contracts', ja: 'SES・契約形態' },
+        comm: { en: 'Language & Communication', ja: '言語・コミュニケーション' },
+        quality: { en: 'Quality & Security', ja: '品質・セキュリティ' }
+      };
+
       function isJa() {
-        return document.documentElement.lang !== 'en';
+        return (document.documentElement.lang || 'ja') === 'ja';
       }
 
-      function initHeights() {
+      function updateHeights() {
         items.forEach(function (item) {
           var answer = item.querySelector('.faq-answer');
           if (answer) {
@@ -1140,63 +1217,25 @@
             }
           }
         });
-        updateToggleAllButtonText();
       }
 
-      function updateToggleAllButtonText() {
+      function updateToggleAllButton() {
         if (!toggleAllBtn) return;
         var visibleItems = items.filter(function (it) { return it.style.display !== 'none'; });
-        if (visibleItems.length === 0) return;
+        if (!visibleItems.length) {
+          toggleAllBtn.style.display = 'none';
+          return;
+        }
+        toggleAllBtn.style.display = '';
         var allOpen = visibleItems.every(function (it) { return it.classList.contains('open'); });
         var ja = isJa();
         if (allOpen) {
-          toggleAllBtn.textContent = ja ? 'すべて閉じる' : 'Collapse all';
+          toggleAllBtn.textContent = ja ? 'すべて閉じる' : 'Collapse All';
+          toggleAllBtn.setAttribute('data-state', 'open');
         } else {
-          toggleAllBtn.textContent = ja ? 'すべて開く' : 'Expand all';
+          toggleAllBtn.textContent = ja ? 'すべて開く' : 'Expand All';
+          toggleAllBtn.setAttribute('data-state', 'closed');
         }
-      }
-
-      faqList.addEventListener('click', function (e) {
-        var btn = e.target.closest('.faq-question');
-        if (!btn) return;
-        var item = btn.closest('.faq-item');
-        if (!item) return;
-        var isOpen = item.classList.contains('open');
-        var answer = item.querySelector('.faq-answer');
-
-        if (isOpen) {
-          item.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
-          if (answer) answer.style.maxHeight = '0px';
-        } else {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
-        }
-        updateToggleAllButtonText();
-      });
-
-      if (toggleAllBtn) {
-        toggleAllBtn.addEventListener('click', function () {
-          var visibleItems = items.filter(function (it) { return it.style.display !== 'none'; });
-          var allOpen = visibleItems.every(function (it) { return it.classList.contains('open'); });
-          var willOpen = !allOpen;
-
-          visibleItems.forEach(function (item) {
-            var btn = item.querySelector('.faq-question');
-            var answer = item.querySelector('.faq-answer');
-            if (willOpen) {
-              item.classList.add('open');
-              if (btn) btn.setAttribute('aria-expanded', 'true');
-              if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
-            } else {
-              item.classList.remove('open');
-              if (btn) btn.setAttribute('aria-expanded', 'false');
-              if (answer) answer.style.maxHeight = '0px';
-            }
-          });
-          updateToggleAllButtonText();
-        });
       }
 
       function applyFilter() {
@@ -1217,17 +1256,55 @@
           }
         });
 
-        if (countNum) countNum.textContent = visibleCount;
         if (emptyState) {
           emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
         }
-        updateToggleAllButtonText();
+
+        var ja = isJa();
+        if (currentLabel) {
+          var catMeta = CAT_NAMES[activeCategory] || CAT_NAMES.all;
+          currentLabel.textContent = ja ? catMeta.ja : catMeta.en;
+        }
+        if (visibleCountEl) {
+          visibleCountEl.textContent = ja ? (visibleCount + '件') : (visibleCount + (visibleCount === 1 ? ' question' : ' questions'));
+        }
+
+        if (searchClear) {
+          searchClear.style.display = searchQuery.trim().length > 0 ? 'grid' : 'none';
+        }
+
+        updateToggleAllButton();
+        setTimeout(updateHeights, 20);
       }
+
+      faqList.addEventListener('click', function (e) {
+        var btn = e.target.closest('.faq-question');
+        if (!btn) return;
+        var item = btn.closest('.faq-item');
+        if (!item) return;
+        var isOpen = item.classList.contains('open');
+        var answer = item.querySelector('.faq-answer');
+
+        if (isOpen) {
+          item.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          if (answer) answer.style.maxHeight = '0px';
+        } else {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+        updateToggleAllButton();
+      });
 
       pills.forEach(function (pill) {
         pill.addEventListener('click', function () {
-          pills.forEach(function (p) { p.classList.remove('active'); });
+          pills.forEach(function (p) {
+            p.classList.remove('active');
+            p.setAttribute('aria-selected', 'false');
+          });
           pill.classList.add('active');
+          pill.setAttribute('aria-selected', 'true');
           activeCategory = pill.getAttribute('data-cat') || 'all';
           applyFilter();
         });
@@ -1236,32 +1313,59 @@
       if (searchInput) {
         searchInput.addEventListener('input', function () {
           searchQuery = searchInput.value;
-          if (searchClear) searchClear.style.display = searchQuery ? 'grid' : 'none';
           applyFilter();
         });
       }
 
       if (searchClear) {
         searchClear.addEventListener('click', function () {
-          if (searchInput) {
-            searchInput.value = '';
-            searchQuery = '';
-            searchInput.focus();
-          }
-          searchClear.style.display = 'none';
+          searchQuery = '';
+          searchInput.value = '';
+          searchInput.focus();
           applyFilter();
         });
       }
 
-      window.addEventListener('resize', initHeights);
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          searchQuery = '';
+          if (searchInput) searchInput.value = '';
+          activeCategory = 'all';
+          pills.forEach(function (p) {
+            var isAll = (p.getAttribute('data-cat') || '') === 'all';
+            p.classList.toggle('active', isAll);
+            p.setAttribute('aria-selected', isAll ? 'true' : 'false');
+          });
+          applyFilter();
+        });
+      }
+
+      if (toggleAllBtn) {
+        toggleAllBtn.addEventListener('click', function () {
+          var visibleItems = items.filter(function (it) { return it.style.display !== 'none'; });
+          var allOpen = visibleItems.every(function (it) { return it.classList.contains('open'); });
+          visibleItems.forEach(function (item) {
+            var btn = item.querySelector('.faq-question');
+            var answer = item.querySelector('.faq-answer');
+            if (allOpen) {
+              item.classList.remove('open');
+              if (btn) btn.setAttribute('aria-expanded', 'false');
+              if (answer) answer.style.maxHeight = '0px';
+            } else {
+              item.classList.add('open');
+              if (btn) btn.setAttribute('aria-expanded', 'true');
+              if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+          });
+          updateToggleAllButton();
+        });
+      }
+
+      window.addEventListener('resize', updateHeights);
       new MutationObserver(function () {
-        setTimeout(function () {
-          initHeights();
-          updateToggleAllButtonText();
-        }, 50);
+        applyFilter();
       }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
-      initHeights();
       applyFilter();
     })();
   </script>
