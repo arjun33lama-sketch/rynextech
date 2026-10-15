@@ -20,6 +20,7 @@
     ['services.html', 'Services', 'サービス'],
     ['projects.html', 'Portfolios', '実績'],
     ['blog.html', 'Blog', 'ブログ'],
+    ['index.html#faq', 'FAQ', 'よくある質問'],
     ['index.html#career', 'Career', '採用情報'],
     ['index.html#contact', 'Contact', 'お問い合わせ']
   ];
@@ -76,7 +77,7 @@
           a('about.html', 'About Us', '会社概要') + a('team.html', 'Our Team', '私たちのチーム') + a('projects.html', 'Portfolios', '実績') +
           a('index.html#career', 'Career', '採用情報') + a('sitemap.html', 'Sitemap', 'サイトマップ') + '</div>' +
         '<div class="rx-col"><h4>' + t('Resources', 'リソース') + '</h4>' +
-          a('blog.html', 'Blog', 'ブログ') + a('index.html#contact', 'Contact', 'お問い合わせ') +
+          a('blog.html', 'Blog', 'ブログ') + a('index.html#faq', 'FAQ', 'よくある質問') + a('index.html#contact', 'Contact', 'お問い合わせ') +
           a('index.html#contact', 'Request a Quote', 'お見積り依頼', ' data-quote') +
           a('legal.html#privacy', 'Privacy Policy', 'プライバシーポリシー') + a('legal.html#terms', 'Terms of Service', '利用規約') + '</div>' +
         '<div class="rx-f-contact"><h4>' + t('Contact', 'お問い合わせ') + '</h4>' +
