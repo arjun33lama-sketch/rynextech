@@ -142,6 +142,7 @@
       if (md) md.setAttribute('content', dd);
       var ogd = document.querySelector('meta[property="og:description"]'); if (ogd) ogd.content = dd;
       var twd = document.querySelector('meta[name="twitter:description"]'); if (twd) twd.content = dd;
+    }
     if (typeof siteNlState !== 'undefined') {
       var nlm = document.getElementById('nlmsg');
       if (nlm && siteNlState === 'success') {

@@ -984,13 +984,18 @@
           ]
         }
       };
-      const dm = document.getElementById('dm'), qm = document.getElementById('qm'),
-        imageViewer = document.getElementById('image-viewer'),
-        imageViewerContent = document.getElementById('image-viewer-content'); let cur = 'offshore';
+      const dm = $i('dm'), qm = $i('qm'),
+        imageViewer = $i('image-viewer'),
+        imageViewerContent = $i('image-viewer-content');
+      const dme = $i('dme'), dmt = $i('dmt'), dmi = $i('dmi'), dmp = $i('dmp'), dmm = $i('dmm'), dmq = $i('dmq');
+      const qf = $i('qf'), qbody = $i('qbody'), qok = $i('qok'), qs = $i('qs');
+      const nl = $i('nl'), nlmsg = $i('nlmsg');
+      let cur = 'offshore';
       const lock = () => document.body.classList.add('lock'), unlock = () => document.body.classList.remove('lock');
-      function openD(k) { cur = k; fill(k); dm.showModal(); lock() }
-      function openQ(k) { qbody.hidden = false; qok.hidden = true; qf.reset(); if (k) qs.value = k; qm.showModal(); lock() }
+      function openD(k) { cur = k; fill(k); if (dm) dm.showModal(); lock() }
+      function openQ(k) { if (qbody) qbody.hidden = false; if (qok) qok.hidden = true; if (qf) qf.reset(); if (k && qs) qs.value = k; if (qm) qm.showModal(); lock() }
       function openImage(img) {
+        if (!imageViewer || !imageViewerContent) return;
         imageViewerContent.src = img.currentSrc || img.src;
         imageViewerContent.alt = img.alt;
         imageViewer.showModal();
@@ -1010,7 +1015,7 @@
         }
       });
       document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && imageViewer.open) {
+        if (e.key === 'Escape' && imageViewer && imageViewer.open) {
           imageViewer.close();
           return;
         }
@@ -1019,7 +1024,7 @@
           openImage(e.target);
         }
       });
-      dmq.onclick = () => { dm.close(); openQ(cur) };
+      if (dmq) dmq.onclick = () => { if (dm) dm.close(); openQ(cur) };
       [dm, qm, $i('apm'), imageViewer].filter(Boolean).forEach(d => d.addEventListener('close', unlock));
       const MAIL_TO = 'info@rynextech.com';
       const W3F_KEY = ''; /* optional: paste a free Web3Forms access key (web3forms.com) for more reliable delivery */
@@ -1079,22 +1084,26 @@
             (ja ? 'メールアプリで送信する' : 'Send it with your email app') + '</a>' + cvNote;
         }
       }
-      qf.addEventListener('submit', e => { e.preventDefault(); handleSend(qf, 'New quote request - Rynex Tech website', 'qerr', () => { qbody.hidden = true; qok.hidden = false }) });
+      if (qf) {
+        qf.addEventListener('submit', e => { e.preventDefault(); handleSend(qf, 'New quote request - Rynex Tech website', 'qerr', () => { if (qbody) qbody.hidden = true; if (qok) qok.hidden = false }) });
+      }
       window.RX_NL_HANDLED = true;
       let nlState = null;
-      nl.addEventListener('submit', e => {
-        e.preventDefault();
-        sendMail(nl, 'New newsletter signup - Rynex Tech website').then(g => {
-          if (g) {
-            nlState = 'success';
-            nlmsg.textContent = UI[lang].sub;
-            nl.reset();
-          } else {
-            nlState = 'error';
-            nlmsg.textContent = lang === 'ja' ? '送信できませんでした。もう一度お試しください。' : 'Could not subscribe. Please try again.';
-          }
+      if (nl) {
+        nl.addEventListener('submit', e => {
+          e.preventDefault();
+          sendMail(nl, 'New newsletter signup - Rynex Tech website').then(g => {
+            if (g) {
+              nlState = 'success';
+              if (nlmsg) nlmsg.textContent = UI[lang].sub;
+              nl.reset();
+            } else {
+              nlState = 'error';
+              if (nlmsg) nlmsg.textContent = lang === 'ja' ? '送信できませんでした。もう一度お試しください。' : 'Could not subscribe. Please try again.';
+            }
+          });
         });
-      });
+      }
       // count-up
       const io = new IntersectionObserver(es => es.forEach(en => {
         if (!en.isIntersecting) return; io.unobserve(en.target);
@@ -1218,10 +1227,12 @@
         document.querySelectorAll('option[data-rx-en]').forEach(opt => {
           opt.textContent = j ? opt.getAttribute('data-rx-ja') : opt.getAttribute('data-rx-en');
         });
-        if (nlState === 'success') {
-          nlmsg.textContent = UI[l].sub;
-        } else if (nlState === 'error') {
-          nlmsg.textContent = l === 'ja' ? '送信できませんでした。もう一度お試しください。' : 'Could not subscribe. Please try again.';
+        if (nlmsg) {
+          if (nlState === 'success') {
+            nlmsg.textContent = UI[l].sub;
+          } else if (nlState === 'error') {
+            nlmsg.textContent = l === 'ja' ? '送信できませんでした。もう一度お試しください。' : 'Could not subscribe. Please try again.';
+          }
         }
         try { localStorage.setItem('rx-lang', l) } catch (e) { }
       }
