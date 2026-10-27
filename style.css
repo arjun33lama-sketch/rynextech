@@ -6673,22 +6673,24 @@ body[data-page="about"] .service-card-link:hover {
 }
 
 /* DUAL LOCATION OFFICES */
-body[data-page="about"] .about-offices-grid {
+.about-offices-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
 }
 
-body[data-page="about"] .about-office-card {
+.about-office-card {
   padding: 32px;
   background: #ffffff;
   border: 1px solid #eedcd9;
   border-radius: 24px;
   box-shadow: 0 12px 36px rgba(15, 23, 42, 0.04);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-body[data-page="about"] .office-flag {
+.office-flag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -6700,16 +6702,17 @@ body[data-page="about"] .office-flag {
   font-weight: 700;
   color: #991b1b;
   margin-bottom: 16px;
+  width: fit-content;
 }
 
-body[data-page="about"] .about-office-card h3 {
+.about-office-card h3 {
   font-size: 24px;
   font-weight: 800;
   color: #0f172a;
   margin: 0 0 12px;
 }
 
-body[data-page="about"] .office-detail-list {
+.office-detail-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -6718,7 +6721,7 @@ body[data-page="about"] .office-detail-list {
   gap: 12px;
 }
 
-body[data-page="about"] .office-detail-list li {
+.office-detail-list li {
   display: flex;
   gap: 10px;
   font-size: 14.5px;
@@ -6726,9 +6729,35 @@ body[data-page="about"] .office-detail-list li {
   color: #475569;
 }
 
-body[data-page="about"] .office-detail-list li b {
+.office-detail-list li b {
   color: #0f172a;
   min-width: 80px;
+}
+
+.office-map-frame {
+  width: 100%;
+  height: 220px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  margin-top: 20px;
+  display: block;
+}
+
+.office-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #d93d38;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.office-map-link:hover {
+  color: #991b1b;
+  text-decoration: underline;
 }
 
 /* ABOUT CTA CARD */
@@ -6805,7 +6834,7 @@ body[data-page="about"] .about-cta-card .btn.p:hover {
     grid-template-columns: 1fr;
   }
   body[data-page="about"] .about-services-grid,
-  body[data-page="about"] .about-offices-grid {
+  .about-offices-grid {
     grid-template-columns: 1fr;
   }
   body[data-page="about"] .about-cta-card {

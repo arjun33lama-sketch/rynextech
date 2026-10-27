@@ -93,7 +93,7 @@
         '</div>' +
       '</div>' +
       '<div class="rx-news"><div><h4>' + t('Stay in the loop', '最新情報を受け取る') + '</h4><p>' + t('Practical notes on building software and teams across borders.', '国境を越えたソフトウェア開発とチームづくりの実践ノートをお届けします。') + '</p></div>' +
-        '<form class="rx-nl" id="nl"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"><input type="email" name="email" placeholder="Your email" aria-label="Email" required data-rx-ph-en="Your email" data-rx-ph-ja="メールアドレス" data-rx-aria-en="Email" data-rx-aria-ja="メールアドレス">' +
+        '<form class="rx-nl" id="nl" action="https://formsubmit.co/info@rynextech.com" method="POST"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"><input type="hidden" name="_next" value="https://jp.rynextech.com/?sent=1"><input type="hidden" name="_subject" value="New newsletter subscription - Rynex Tech"><input type="hidden" name="_captcha" value="false"><input type="email" name="email" placeholder="Your email" aria-label="Email" required data-rx-ph-en="Your email" data-rx-ph-ja="メールアドレス" data-rx-aria-en="Email" data-rx-aria-ja="メールアドレス">' +
         '<button type="submit" data-rx-en="Subscribe" data-rx-ja="登録">Subscribe</button></form>' +
         '<p class="rx-nlmsg" id="nlmsg" aria-live="polite"></p></div>' +
       '<div class="rx-f-bottom"><span>' + t('© 2026 Rynex Tech. All rights reserved. · Company Reg. No. 351154/81/82', '© 2026 Rynex Tech. 無断転載を禁じます。 · 会社登録番号 351154/81/82') + '</span>' +
@@ -142,6 +142,15 @@
       if (md) md.setAttribute('content', dd);
       var ogd = document.querySelector('meta[property="og:description"]'); if (ogd) ogd.content = dd;
       var twd = document.querySelector('meta[name="twitter:description"]'); if (twd) twd.content = dd;
+    if (typeof siteNlState !== 'undefined') {
+      var nlm = document.getElementById('nlmsg');
+      if (nlm && siteNlState === 'success') {
+        nlm.textContent = ja ? 'ご登録ありがとうございます！' : 'Thanks for subscribing!';
+      } else if (nlm && siteNlState === 'error') {
+        nlm.innerHTML = (ja ? '自動送信できませんでした。' : 'Could not subscribe automatically. ') +
+          '<a href="mailto:info@rynextech.com?subject=Newsletter%20Signup" style="text-decoration:underline;font-weight:600">' +
+          (ja ? 'メールで登録' : 'Send via email') + '</a>';
+      }
     }
   }
   new MutationObserver(apply).observe(root, { attributes: true, attributeFilter: ['lang'] });
@@ -166,6 +175,7 @@
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   // Unified newsletter submission handler across all pages
+  var siteNlState = null;
   var nlForm = document.getElementById('nl');
   if (nlForm) {
     nlForm.addEventListener('submit', async function (e) {
@@ -190,12 +200,14 @@
         });
         var data = await res.json();
         if (res.ok && String(data.success) === 'true') {
+          siteNlState = 'success';
           if (msg) msg.textContent = ja ? 'ご登録ありがとうございます！' : 'Thanks for subscribing!';
           nlForm.reset();
         } else {
           throw new Error('Submission error');
         }
       } catch (err) {
+        siteNlState = 'error';
         if (msg) {
           msg.innerHTML = (ja ? '自動送信できませんでした。' : 'Could not subscribe automatically. ') +
             '<a href="mailto:info@rynextech.com?subject=Newsletter%20Signup&body=' + encodeURIComponent('Please subscribe: ' + email) + '" style="text-decoration:underline;font-weight:600">' +
