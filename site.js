@@ -170,6 +170,7 @@
   if (nlForm) {
     nlForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+      if (window.RX_NL_HANDLED) return; /* index.html has its own handler */
       var btn = nlForm.querySelector('button[type="submit"]');
       var input = nlForm.querySelector('input[name="email"]');
       var msg = document.getElementById('nlmsg');

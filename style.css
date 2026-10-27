@@ -8887,7 +8887,7 @@ html.t .rx-footer {
 }
 
 .rx-header .rx-bar {
-  max-width: 1320px;
+  /* max-width: 1320px; */
   height: 76px;
   margin: 0 auto;
   padding: 0 28px;

@@ -534,8 +534,8 @@
               <!-- Direct Advisory Card -->
               <div class="faq-sidebar-card">
                 <div class="faq-sidebar-card-badge" data-rx-en="Direct Advisory" data-rx-ja="無料相談窓口">Direct Advisory</div>
-                <h4 data-rx-en="Need custom scoping?" data-rx-ja="個別の要件をご相談ですか？">Need custom scoping?</h4>
-                <p data-rx-en="Our engineering leadership in Tokyo and Kathmandu is available for a free consultation or tailored quote." data-rx-ja="東京、カトマンズの技術役員が、オンラインにてご要望を直接お伺いします。">Our engineering leadership in Tokyo and Kathmandu is available for a free consultation or tailored quote.</p>
+                <h4 data-rx-en="Still have questions?" data-rx-ja="まだご不明な点がありますか？">Still have questions?</h4>
+                <p data-rx-en="Ask us anything about our Nepal and India engineering teams. Our leadership in Tokyo and Kathmandu is available for a free consultation or tailored quote." data-rx-ja="ネパール・インドのエンジニアチームについて、何でもご相談ください。東京、カトマンズの技術役員が、オンラインにてご要望を直接お伺いします。">Ask us anything about our Nepal and India engineering teams. Our leadership in Tokyo and Kathmandu is available for a free consultation or tailored quote.</p>
                 <div class="faq-sidebar-actions">
                   <a class="btn p" href="#contact" data-quote data-rx-en="Request a Quote" data-rx-ja="お見積り依頼">Request a Quote</a>
                   <a class="faq-sidebar-email" href="mailto:info@rynextech.com">info@rynextech.com</a>
@@ -570,8 +570,9 @@
                 </button>
                 <div class="faq-answer">
                   <div class="faq-answer-inner">
-                    <p data-rx-en="Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting)." data-rx-ja="ネパールにはカトマンズ大学やトリブバン大学などの名門情報系学部から毎年優秀なエンジニアが輩出されています。高い英語力と親日的な文化、日本語学習（JLPT N3〜N2）への高い意欲、そして日本国内採用と比べて30〜50%のコスト削減が大きな強みです。">Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting).</p>
+                    <p data-rx-en="Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University, as well as top universities in India. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting)." data-rx-ja="ネパールにはカトマンズ大学やトリブバン大学、さらにインドのトップ大学などの名門情報系学部から毎年優秀なエンジニアが輩出されています。高い英語力と親日的な文化、日本語学習（JLPT N3〜N2）への高い意欲、そして日本国内採用と比べて30〜50%のコスト削減が大きな強みです。">Nepal provides access to a deep pool of disciplined, highly motivated computer science graduates from leading universities like Kathmandu University and Tribhuvan University, as well as top universities in India. Key advantages include strong English fluency, growing Japanese capability (JLPT N3–N2), cultural affinity, and cost efficiency (typically 30–50% savings over domestic Japanese recruiting).</p>
                     <p data-rx-en="Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations." data-rx-ja="さらに東京との時差はわずか3時間15分。午後のコアタイムをまるまるリアルタイムで共有できるため、欧米オフショアのような返答待ちのタイムラグが発生しません。">Moreover, with only a 3 hour 15 minute time difference from Tokyo, your team enjoys 4–5 hours of real-time afternoon collaboration daily, eliminating the communication lag typical of Western outsourcing destinations.</p>
+                    <p data-rx-en="In addition to our Nepali engineers, we also have experienced Indian developers on our team, graduates of top universities in India, who can join your squad when a project needs extra capacity or specialist skills." data-rx-ja="ネパール人エンジニアに加え、インドのトップ大学出身の経験豊富なインド人開発者も在籍しており、追加のリソースや専門スキルが必要なプロジェクトにもチームの一員として参画できます。">In addition to our Nepali engineers, we also have experienced Indian developers on our team, graduates of top universities in India, who can join your squad when a project needs extra capacity or specialist skills.</p>
                   </div>
                 </div>
               </div>
@@ -975,10 +976,31 @@
       const W3F_KEY = ''; /* optional: paste a free Web3Forms access key (web3forms.com) for more reliable delivery */
       async function sendMail(form, subject) {
         if (form.querySelector('input[name="_honey"]')?.value) return false;
-        const fd = new FormData(form); fd.append('language', lang); let url;
-        if (W3F_KEY) { fd.delete('cv'); fd.append('access_key', W3F_KEY); fd.append('subject', subject); fd.append('from_name', 'Rynex Tech website'); url = 'https://api.web3forms.com/submit' }
-        else { fd.append('_subject', subject); fd.append('_template', 'table'); fd.append('_captcha', 'false'); url = 'https://formsubmit.co/ajax/' + MAIL_TO }
-        try { const r = await fetch(url, { method: 'POST', headers: { Accept: 'application/json' }, body: fd }); const j = await r.json(); console.log('mail result', j); return r.ok && String(j.success) === 'true' } catch (e) { console.error('mail error', e); return false }
+        const fd = new FormData(form); fd.delete('_honey'); fd.append('language', lang);
+        /* drop empty file parts (an empty file input is sent as a blank file and can make the request fail) */
+        let hasFile = false;
+        Array.from(fd.entries()).forEach(([k, v]) => { if (v instanceof File) { if (v.size === 0) fd.delete(k); else hasFile = true } });
+        let url, opts;
+        if (W3F_KEY) {
+          fd.delete('cv'); fd.append('access_key', W3F_KEY); fd.append('subject', subject); fd.append('from_name', 'Rynex Tech website');
+          url = 'https://api.web3forms.com/submit'; opts = { method: 'POST', headers: { Accept: 'application/json' }, body: fd };
+        } else {
+          fd.append('_subject', subject); fd.append('_template', 'table'); fd.append('_captcha', 'false');
+          url = 'https://formsubmit.co/ajax/' + MAIL_TO;
+          if (hasFile) opts = { method: 'POST', headers: { Accept: 'application/json' }, body: fd };
+          else {
+            const o = {}; fd.forEach((v, k) => { o[k] = v });
+            opts = { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(o) };
+          }
+        }
+        const ctl = new AbortController(), to = setTimeout(() => ctl.abort(), 20000);
+        try {
+          const r = await fetch(url, Object.assign({ signal: ctl.signal }, opts));
+          let j = {}; try { j = await r.json() } catch (_) { }
+          const ok = r.ok && String(j.success) === 'true';
+          if (!ok) console.warn('Mail not sent:', r.status, j.message || j);
+          return ok;
+        } catch (e) { console.error('mail error', e); return false } finally { clearTimeout(to) }
       }
       function mailtoLink(form, subject) { const body = Array.from(new FormData(form)).filter(x => typeof x[1] === 'string' && x[1]).map(x => x[0] + ': ' + x[1]).join('\n'); return 'mailto:' + MAIL_TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body) }
       async function handleSend(form, subject, errId, ok) {
@@ -987,6 +1009,7 @@
         if (good) ok(); else if (er) { const ja = lang === 'ja'; er.innerHTML = (ja ? '自動送信できませんでした。' : 'We could not send this automatically. ') + '<a href="' + mailtoLink(form, subject) + '" style="text-decoration:underline;font-weight:600">' + (ja ? 'メールアプリで送信する' : 'Send it with your email app') + '</a>' }
       }
       qf.addEventListener('submit', e => { e.preventDefault(); handleSend(qf, 'New quote request - Rynex Tech website', 'qerr', () => { qbody.hidden = true; qok.hidden = false }) });
+      window.RX_NL_HANDLED = true;
       nl.addEventListener('submit', e => { e.preventDefault(); sendMail(nl, 'New newsletter signup - Rynex Tech website').then(g => { nlmsg.textContent = g ? UI[lang].sub : (lang === 'ja' ? '送信できませんでした。もう一度お試しください。' : 'Could not subscribe. Please try again.'); if (g) nl.reset() }) });
       // count-up
       const io = new IntersectionObserver(es => es.forEach(en => {
