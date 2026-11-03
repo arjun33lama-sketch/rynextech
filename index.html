@@ -47,8 +47,6 @@
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Instrument+Serif:ital@1&family=Noto+Sans+JP:wght@400;600;800&family=Noto+Serif+JP:wght@500&display=swap"
     rel="stylesheet">
   
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -771,8 +769,17 @@
               <li><b data-copy-en="Phone:" data-copy-ja="電話：">Phone:</b> <a href="tel:+9779767984140">+977 9767984140</a></li>
               <li><b data-copy-en="Email:" data-copy-ja="メール：">Email:</b> <a href="mailto:info@rynextech.com">info@rynextech.com</a></li>
             </ul>
-            <div id="office-map-nepal" class="office-map-frame" data-lat="27.6874184796203" data-lng="85.29884156728862" data-title-en="Rynex Tech Kathmandu Office" data-title-ja="Rynex Tech カトマンズオフィス" data-addr-en="Kathmandu 44600, Bagmati Province, Nepal" data-addr-ja="ネパール・バグマティ州カトマンズ 44600">
-              <iframe class="office-map-frame" style="margin-top:0;height:100%;border:none;" loading="lazy" src="https://maps.google.com/maps?q=27.6874184796203,85.29884156728862&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="Rynex Tech Kathmandu Office Map" allowfullscreen></iframe>
+            <div class="office-gmap-container">
+              <iframe class="office-map-frame" loading="lazy" src="https://maps.google.com/maps?q=27.6874184796203,85.29884156728862&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="Rynex Tech Kathmandu Office Map" allowfullscreen></iframe>
+              <div class="office-map-pin" aria-hidden="true">
+                <div class="pin-pulse"></div>
+                <div class="pin-body">
+                  <svg viewBox="0 0 24 32" width="28" height="38" fill="none">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20c0-6.63-5.37-12-12-12z" fill="#EA4335" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.35))"/>
+                    <circle cx="12" cy="11" r="4.5" fill="#FFFFFF"/>
+                  </svg>
+                </div>
+              </div>
             </div>
             <a class="office-map-link" href="https://maps.google.com/?q=27.6874184796203,85.29884156728862" target="_blank" rel="noopener noreferrer" data-copy-en="Open in Google Maps ↗" data-copy-ja="Google マップで開く ↗">Open in Google Maps ↗</a>
           </div>
@@ -787,8 +794,17 @@
               <li><b data-copy-en="Phone:" data-copy-ja="電話：">Phone:</b> <a href="tel:+81424098256">042-409-8256</a></li>
               <li><b data-copy-en="Email:" data-copy-ja="メール：">Email:</b> <a href="mailto:info@rynextech.com">info@rynextech.com</a></li>
             </ul>
-            <div id="office-map-japan" class="office-map-frame" data-lat="35.6983" data-lng="139.5240" data-title-en="Rynex Tech Tokyo Representation" data-title-ja="Rynex Tech 東京窓口" data-addr-en="Room 201, Act Residence Shin-Koganei, 4-8-14 Higashicho, Koganei-shi, Tokyo 184-0011, Japan" data-addr-ja="〒184-0011 東京都小金井市東町4-8-14 アクト・レジデンス新小金井 201号室">
-              <iframe class="office-map-frame" style="margin-top:0;height:100%;border:none;" loading="lazy" src="https://maps.google.com/maps?q=35.6983,139.5240&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="Rynex Tech Tokyo Office Map" allowfullscreen></iframe>
+            <div class="office-gmap-container">
+              <iframe class="office-map-frame" loading="lazy" src="https://maps.google.com/maps?q=35.6983,139.5240&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="Rynex Tech Tokyo Office Map" allowfullscreen></iframe>
+              <div class="office-map-pin" aria-hidden="true">
+                <div class="pin-pulse"></div>
+                <div class="pin-body">
+                  <svg viewBox="0 0 24 32" width="28" height="38" fill="none">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20c0-6.63-5.37-12-12-12z" fill="#EA4335" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.35))"/>
+                    <circle cx="12" cy="11" r="4.5" fill="#FFFFFF"/>
+                  </svg>
+                </div>
+              </div>
             </div>
             <a class="office-map-link" href="https://maps.google.com/?q=35.6983,139.5240" target="_blank" rel="noopener noreferrer" data-copy-en="Open in Google Maps ↗" data-copy-ja="Google マップで開く ↗">Open in Google Maps ↗</a>
           </div>
