@@ -220,4 +220,88 @@
       }
     });
   }
+
+  // Interactive Office Maps with Animated Pin Marker
+  function initOfficeMaps() {
+    if (typeof L === 'undefined') return;
+    var mapEls = document.querySelectorAll('.office-map-frame[data-lat][data-lng]');
+    if (!mapEls.length) return;
+    var ja = root.lang !== 'en';
+    mapEls.forEach(function (el) {
+      if (el._leaflet_id) return;
+      var lat = parseFloat(el.getAttribute('data-lat'));
+      var lng = parseFloat(el.getAttribute('data-lng'));
+      if (isNaN(lat) || isNaN(lng)) return;
+
+      var title = el.getAttribute(ja ? 'data-title-ja' : 'data-title-en') || el.getAttribute('data-title-en') || 'Rynex Tech';
+      var addr = el.getAttribute(ja ? 'data-addr-ja' : 'data-addr-en') || el.getAttribute('data-addr-en') || '';
+
+      // Clear fallback content
+      el.innerHTML = '';
+
+      var map = L.map(el, {
+        center: [lat, lng],
+        zoom: 16,
+        scrollWheelZoom: false,
+        attributionControl: true
+      });
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+      }).addTo(map);
+
+      var markerIcon = L.divIcon({
+        className: 'rx-map-marker',
+        html: '<div class="rx-marker-pulse"></div><div class="rx-marker-pin"></div>',
+        iconSize: [28, 28],
+        iconAnchor: [14, 28],
+        popupAnchor: [0, -26]
+      });
+
+      var marker = L.marker([lat, lng], { icon: markerIcon }).addTo(map);
+      var popupHtml = '<div style="font-size:13px;line-height:1.4;">' +
+        '<b style="color:#111;font-size:14px;display:block;margin-bottom:3px;">' + title + '</b>' +
+        (addr ? '<span style="color:#4a5568;display:block;margin-bottom:6px;">' + addr + '</span>' : '') +
+        '<a href="https://maps.google.com/?q=' + lat + ',' + lng + '" target="_blank" rel="noopener" style="color:#e74c47;font-weight:700;text-decoration:none;">' +
+        (ja ? 'Google マップで開く ↗' : 'Open in Google Maps ↗') + '</a>' +
+        '</div>';
+      marker.bindPopup(popupHtml).openPopup();
+
+      setTimeout(function () {
+        map.invalidateSize();
+      }, 350);
+    });
+  }
+
+  function loadMapsLibrary() {
+    var mapEls = document.querySelectorAll('.office-map-frame[data-lat][data-lng]');
+    if (!mapEls.length) return;
+    if (typeof L !== 'undefined') {
+      initOfficeMaps();
+      return;
+    }
+    if (!document.getElementById('leaflet-css')) {
+      var link = document.createElement('link');
+      link.id = 'leaflet-css';
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      document.head.appendChild(link);
+    }
+    if (!document.getElementById('leaflet-js')) {
+      var script = document.createElement('script');
+      script.id = 'leaflet-js';
+      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      script.onload = function () {
+        initOfficeMaps();
+      };
+      document.head.appendChild(script);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadMapsLibrary);
+  } else {
+    loadMapsLibrary();
+  }
 })();
