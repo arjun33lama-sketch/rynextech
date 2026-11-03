@@ -19,6 +19,9 @@ app.use(express.static(__dirname, {
   extensions: ['html', 'htm']
 }));
 
+// Fallback aliases for client / clinet asset paths
+app.use(['/clinet', '/client', '/images/clinet'], express.static(path.join(__dirname, 'images/clients')));
+
 // Explicit SEO asset routes
 app.get('/robots.txt', (req, res) => {
   res.type('text/plain').sendFile(path.join(__dirname, 'robots.txt'));

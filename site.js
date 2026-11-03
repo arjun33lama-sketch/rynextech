@@ -82,14 +82,15 @@
           a('legal.html#privacy', 'Privacy Policy', 'プライバシーポリシー') + a('legal.html#terms', 'Terms of Service', '利用規約') + '</div>' +
         '<div class="rx-f-contact"><h4>' + t('Contact', 'お問い合わせ') + '</h4>' +
           '<div class="rx-card"><h5>' + t('Nepal Office', 'ネパールオフィス') + '</h5>' +
-            '<p>' + t('Kathmandu 44600, Bagmati Province, Nepal', 'ネパール・バグマティ州カトマンズ 44600') + '</p>' +
+            '<p><a href="https://maps.google.com/?q=27.6874184796203,85.29884156728862" target="_blank" rel="noopener noreferrer">' + t('Kathmandu 44600, Bagmati Province, Nepal', 'ネパール・バグマティ州カトマンズ 44600') + '</a></p>' +
             '<p><a href="tel:+9779767984140">+977 9767984140</a></p>' +
             '<p><a href="mailto:info@rynextech.com">info@rynextech.com</a></p>' +
             '<p>' + t('Mon–Fri · 9:00–18:00 NPT', '月〜金 · 9:00〜18:00（ネパール時間）') + '</p></div>' +
           '<div class="rx-card"><h5>' + t('Japan Representation', '日本窓口') + '</h5>' +
-            '<p>' + t('Room 201, Act Residence Shin-Koganei, 4-8-14 Higashicho, Koganei-shi, Tokyo 184-0011, Japan', '〒184-0011 東京都小金井市東町4-8-14 アクト・レジデンス新小金井 201号室') + '</p>' +
+            '<p><a href="https://maps.google.com/?q=35.6983,139.5240" target="_blank" rel="noopener noreferrer">' + t('Room 201, Act Residence Shin-Koganei, 4-8-14 Higashicho, Koganei-shi, Tokyo 184-0011, Japan', '〒184-0011 東京都小金井市東町4-8-14 アクト・レジデンス新小金井 201号室') + '</a></p>' +
             '<p><a href="tel:+81424098256">042-409-8256</a></p>' +
-            '<p><a href="mailto:info@rynextech.com">info@rynextech.com</a></p></div>' +
+            '<p><a href="mailto:info@rynextech.com">info@rynextech.com</a></p>' +
+            '<p>' + t('Mon–Fri · 9:00–17:00 JST', '月〜金 · 9:00〜17:00（日本標準時）') + '</p></div>' +
         '</div>' +
       '</div>' +
       '<div class="rx-news"><div><h4>' + t('Stay in the loop', '最新情報を受け取る') + '</h4><p>' + t('Practical notes on building software and teams across borders.', '国境を越えたソフトウェア開発とチームづくりの実践ノートをお届けします。') + '</p></div>' +
